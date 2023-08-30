@@ -73,6 +73,56 @@ namespace PROJETO_PPRT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2023_08_28_195536_removebg_preview__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Captura_de_tela_2023-08-28_195536-removebg-preview (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formulario_da_web {
+            get {
+                object obj = ResourceManager.GetObject("formulario-da-web", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_login {
+            get {
+                object obj = ResourceManager.GetObject("icon login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_de_usuario {
+            get {
+                object obj = ResourceManager.GetObject("login-de-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_log {
+            get {
+                object obj = ResourceManager.GetObject("png log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quadrado_de_cantos_arredondados {
             get {
                 object obj = ResourceManager.GetObject("quadrado-de-cantos-arredondados", resourceCulture);
@@ -83,9 +133,139 @@ namespace PROJETO_PPRT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso {
+        internal static System.Drawing.Bitmap quadrado_de_cantos_arredondados1 {
             get {
-                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso", resourceCulture);
+                object obj = ResourceManager.GetObject("quadrado-de-cantos-arredondados1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quadrado_de_cantos_arredondados2 {
+            get {
+                object obj = ResourceManager.GetObject("quadrado-de-cantos-arredondados2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seguidores {
+            get {
+                object obj = ResourceManager.GetObject("seguidores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso__1_ {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso__1_2 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso (1)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso__1_3 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso (1)3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso__1_4 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso (1)4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso1 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso2 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso3 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso4 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso5 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vista_frontal_do_conceito_de_bolo_de_chocolate_delicioso6 {
+            get {
+                object obj = ResourceManager.GetObject("vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

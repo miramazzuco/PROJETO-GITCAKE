@@ -16,5 +16,25 @@ namespace PROJETO_PPRT
         {
             InitializeComponent();
         }
+
+        private void panelmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frmprincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

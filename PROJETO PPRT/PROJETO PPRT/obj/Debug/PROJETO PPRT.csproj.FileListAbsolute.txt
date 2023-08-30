@@ -9,3 +9,15 @@ C:\Users\aluno\source\repos\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csp
 C:\Users\aluno\source\repos\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CoreCompileInputs.cache
 C:\Users\aluno\source\repos\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.exe
 C:\Users\aluno\source\repos\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.pdb
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.exe.config
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.exe
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.pdb
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.FrmCadastra.resources
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.frmlogin.resources
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Properties.Resources.resources
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.GenerateResource.cache
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.exe
+C:\Users\User\Desktop\gitprojeto\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.pdb

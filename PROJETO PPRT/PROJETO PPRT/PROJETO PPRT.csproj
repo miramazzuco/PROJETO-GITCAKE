@@ -58,6 +58,12 @@
     <Compile Include="FrmCadastra.Designer.cs">
       <DependentUpon>FrmCadastra.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastraUsuriao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastraUsuriao.Designer.cs">
+      <DependentUpon>FrmCadastraUsuriao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCadastra.resx">
       <DependentUpon>FrmCadastra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastraUsuriao.resx">
+      <DependentUpon>FrmCadastraUsuriao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>

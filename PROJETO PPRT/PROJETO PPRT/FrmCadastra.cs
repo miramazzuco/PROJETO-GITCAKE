@@ -21,5 +21,20 @@ namespace PROJETO_PPRT
         {
 
         }
+
+        private void btnvolta_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnpesquisa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

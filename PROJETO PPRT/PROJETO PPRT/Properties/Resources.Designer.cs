@@ -83,6 +83,16 @@ namespace PROJETO_PPRT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esqueceu {
+            get {
+                object obj = ResourceManager.GetObject("esqueceu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formulario_da_web {
             get {
                 object obj = ResourceManager.GetObject("formulario-da-web", resourceCulture);
@@ -156,6 +166,26 @@ namespace PROJETO_PPRT.Properties {
         internal static System.Drawing.Bitmap seguidores {
             get {
                 object obj = ResourceManager.GetObject("seguidores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SENHA {
+            get {
+                object obj = ResourceManager.GetObject("SENHA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap USUARIO {
+            get {
+                object obj = ResourceManager.GetObject("USUARIO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

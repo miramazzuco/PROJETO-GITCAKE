@@ -146,5 +146,14 @@
   <ItemGroup>
     <None Include="Resources\quadrado-de-cantos-arredondados2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esqueceu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USUARIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SENHA.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

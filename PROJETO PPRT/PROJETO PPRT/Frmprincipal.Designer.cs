@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmprincipal));
             this.panelmenu = new System.Windows.Forms.Panel();
-            this.panellogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btncompra = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panellogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btncompra = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelmenu.SuspendLayout();
             this.panellogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelmenu
@@ -59,50 +59,31 @@
             this.panelmenu.Controls.Add(this.panellogo);
             this.panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelmenu.Location = new System.Drawing.Point(0, 0);
+            this.panelmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelmenu.Name = "panelmenu";
-            this.panelmenu.Size = new System.Drawing.Size(287, 827);
+            this.panelmenu.Size = new System.Drawing.Size(215, 672);
             this.panelmenu.TabIndex = 0;
             this.panelmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmenu_Paint);
             // 
-            // panellogo
+            // btncompra
             // 
-            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
-            this.panellogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panellogo.Controls.Add(this.pictureBox2);
-            this.panellogo.Controls.Add(this.label1);
-            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panellogo.Location = new System.Drawing.Point(0, 0);
-            this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(287, 80);
-            this.panellogo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
-            this.label1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(287, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1195, 80);
-            this.panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(763, 283);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(707, 511);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btncompra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncompra.FlatAppearance.BorderSize = 0;
+            this.btncompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncompra.Image = ((System.Drawing.Image)(resources.GetObject("btncompra.Image")));
+            this.btncompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncompra.Location = new System.Drawing.Point(0, 261);
+            this.btncompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btncompra.Name = "btncompra";
+            this.btncompra.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btncompra.Size = new System.Drawing.Size(215, 49);
+            this.btncompra.TabIndex = 7;
+            this.btncompra.Text = "   Sobre nós";
+            this.btncompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btncompra.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -113,10 +94,11 @@
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 767);
+            this.button5.Location = new System.Drawing.Point(0, 623);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(287, 60);
+            this.button5.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(215, 49);
             this.button5.TabIndex = 6;
             this.button5.Text = "  Sair";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,10 +115,11 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 260);
+            this.button4.Location = new System.Drawing.Point(0, 212);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(287, 60);
+            this.button4.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(215, 49);
             this.button4.TabIndex = 5;
             this.button4.Text = "  Estoque";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,10 +135,11 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 200);
+            this.button3.Location = new System.Drawing.Point(0, 163);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(287, 60);
+            this.button3.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(215, 49);
             this.button3.TabIndex = 4;
             this.button3.Text = "  Cadastrar";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,15 +156,17 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 140);
+            this.button2.Location = new System.Drawing.Point(0, 114);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(287, 60);
+            this.button2.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(215, 49);
             this.button2.TabIndex = 3;
             this.button2.Text = "  Vendas";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -191,56 +177,84 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 80);
+            this.button1.Location = new System.Drawing.Point(0, 65);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(287, 60);
+            this.button1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(215, 49);
             this.button1.TabIndex = 2;
             this.button1.Text = "  Pedido";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // panellogo
+            // 
+            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
+            this.panellogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panellogo.Controls.Add(this.pictureBox2);
+            this.panellogo.Controls.Add(this.label1);
+            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panellogo.Location = new System.Drawing.Point(0, 0);
+            this.panellogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panellogo.Name = "panellogo";
+            this.panellogo.Size = new System.Drawing.Size(215, 65);
+            this.panellogo.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(257, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(193, 41);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // btncompra
+            // label1
             // 
-            this.btncompra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btncompra.FlatAppearance.BorderSize = 0;
-            this.btncompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btncompra.Image = ((System.Drawing.Image)(resources.GetObject("btncompra.Image")));
-            this.btncompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncompra.Location = new System.Drawing.Point(0, 320);
-            this.btncompra.Name = "btncompra";
-            this.btncompra.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btncompra.Size = new System.Drawing.Size(287, 60);
-            this.btncompra.TabIndex = 7;
-            this.btncompra.Text = "   Sobre nós";
-            this.btncompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btncompra.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(215, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 65);
+            this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(572, 230);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(530, 415);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Frmprincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1482, 827);
+            this.ClientSize = new System.Drawing.Size(1095, 672);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelmenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Frmprincipal";
             this.Text = "Frmprincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -248,8 +262,8 @@
             this.panelmenu.ResumeLayout(false);
             this.panellogo.ResumeLayout(false);
             this.panellogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

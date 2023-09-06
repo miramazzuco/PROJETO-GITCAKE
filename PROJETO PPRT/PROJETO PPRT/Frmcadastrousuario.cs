@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PROJETO_PPRT
 {
-    public partial class Frmsobrenós : Form
+    public partial class Frmcadastrousuario : Form
     {
-        public Frmsobrenós()
+        public Frmcadastrousuario()
         {
             InitializeComponent();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

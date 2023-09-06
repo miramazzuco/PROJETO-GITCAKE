@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +53,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmcadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmcadastro.Designer.cs">
+      <DependentUpon>Frmcadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmcadastrousuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmcadastrousuario.Designer.cs">
+      <DependentUpon>Frmcadastrousuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmlogin.Designer.cs">
       <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmpedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmpedido.Designer.cs">
+      <DependentUpon>Frmpedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Frmprincipal.cs">
       <SubType>Form</SubType>
@@ -64,22 +83,40 @@
     <Compile Include="Frmprincipal.Designer.cs">
       <DependentUpon>Frmprincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frmsobrenós.cs">
+    <Compile Include="Frmsobrenos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frmsobrenós.Designer.cs">
-      <DependentUpon>Frmsobrenós.cs</DependentUpon>
+    <Compile Include="Frmsobrenos.Designer.cs">
+      <DependentUpon>Frmsobrenos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmvendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmvendas.Designer.cs">
+      <DependentUpon>Frmvendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frmcadastro.resx">
+      <DependentUpon>Frmcadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmcadastrousuario.resx">
+      <DependentUpon>Frmcadastrousuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmpedido.resx">
+      <DependentUpon>Frmpedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmprincipal.resx">
       <DependentUpon>Frmprincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frmsobrenós.resx">
-      <DependentUpon>Frmsobrenós.cs</DependentUpon>
+    <EmbeddedResource Include="Frmsobrenos.resx">
+      <DependentUpon>Frmsobrenos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmvendas.resx">
+      <DependentUpon>Frmvendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

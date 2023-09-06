@@ -16,7 +16,7 @@ namespace PROJETO_PPRT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmsobrenós());
+            Application.Run(new Frmprincipal());
         }
     }
 }

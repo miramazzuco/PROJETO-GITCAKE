@@ -83,18 +83,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -112,6 +112,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quadrado-de-cantos-arredondados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-de-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seguidores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formulario-da-web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura_de_tela_2023-08-28_195536-removebg-preview %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso %281%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso %281%293.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso %281%294.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-frontal-do-conceito-de-bolo-de-chocolate-delicioso3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quadrado-de-cantos-arredondados1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quadrado-de-cantos-arredondados2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esqueceu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USUARIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SENHA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

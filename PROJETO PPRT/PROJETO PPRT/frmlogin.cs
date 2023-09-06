@@ -28,18 +28,16 @@ namespace PROJETO_PPRT
             Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(125, Color.White);
-
-        }     
+           
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
             
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

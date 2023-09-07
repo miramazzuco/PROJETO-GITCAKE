@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(166, 218);
+            this.label1.Location = new System.Drawing.Point(166, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 25);
             this.label1.TabIndex = 0;
@@ -85,7 +85,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(166, 307);
+            this.label3.Location = new System.Drawing.Point(166, 316);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 25);
             this.label3.TabIndex = 2;
@@ -104,14 +104,14 @@
             // 
             // txtproduto
             // 
-            this.txtproduto.Location = new System.Drawing.Point(330, 221);
+            this.txtproduto.Location = new System.Drawing.Point(330, 215);
             this.txtproduto.Name = "txtproduto";
             this.txtproduto.Size = new System.Drawing.Size(162, 22);
             this.txtproduto.TabIndex = 4;
             // 
             // txtpreco
             // 
-            this.txtpreco.Location = new System.Drawing.Point(330, 311);
+            this.txtpreco.Location = new System.Drawing.Point(330, 320);
             this.txtpreco.Name = "txtpreco";
             this.txtpreco.Size = new System.Drawing.Size(162, 22);
             this.txtpreco.TabIndex = 6;

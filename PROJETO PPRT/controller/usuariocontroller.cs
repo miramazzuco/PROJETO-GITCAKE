@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace controller
 {
-    internal class usuariocontroller
+    public class usuariocontroller
     {
     }
 }

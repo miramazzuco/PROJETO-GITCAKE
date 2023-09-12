@@ -1,0 +1,9 @@
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\controller.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\controller.pdb
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\modelo.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\modelo.pdb
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.csproj.AssemblyReference.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.csproj.CopyComplete
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.pdb

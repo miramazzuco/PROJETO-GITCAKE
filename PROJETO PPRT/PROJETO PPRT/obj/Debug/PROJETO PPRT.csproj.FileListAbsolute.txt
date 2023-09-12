@@ -26,3 +26,25 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO P
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmcadastrousuario.resources
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmpedido.resources
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmvendas.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.exe.config
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.exe
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PROJETO PPRT.pdb
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\controller.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\controller.pdb
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.pdb
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.AssemblyReference.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.SuggestedBindingRedirects.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmcadastro.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmcadastrousuario.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.frmlogin.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmpedido.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmprincipal.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmsobrenos.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmvendas.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Properties.Resources.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.GenerateResource.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CopyComplete
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.exe
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.pdb

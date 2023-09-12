@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace modelo
 {
-    internal class usuariomodelo
+    public class usuariomodelo
     {
+        public int idusuario;
+        public string nome;
+        public string senha;
+        public int perfil;
+        public string email;
+
+        public usuariomodelo()
+        {
+            nome = null;
+            senha = null;
+            perfil = 0;
+            email = null;
+        }
     }
 }

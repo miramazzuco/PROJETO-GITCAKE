@@ -13,14 +13,14 @@ using System.Data.Common;
 using System.Drawing;
 using Org.BouncyCastle.Utilities;
 
-namespace testando
+namespace gitcake
 {
     // classe de conexão com o bando de dados
     public class conexao
     {
         // atriabutos de conexão
         static private string servidor = "localhost";
-        static private string db = "testando";
+        static private string db = "gitcake";
         static private string usuario = "root";
         static private string senha = "";
         public MySqlConnection conn = null;

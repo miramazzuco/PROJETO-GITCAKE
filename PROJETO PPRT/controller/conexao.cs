@@ -13,14 +13,14 @@ using System.Data.Common;
 using System.Drawing;
 using Org.BouncyCastle.Utilities;
 
-namespace testando
+namespace gitcake
 {
     // classe de conexão com o bando de dados
     public class conexao
     {
         // atriabutos de conexão
         static private string servidor = "localhost";
-        static private string db = "testando";
+        static private string db = "gitcake";
         static private string usuario = "root";
         static private string senha = "";
         public MySqlConnection conn = null;
@@ -177,7 +177,7 @@ namespace testando
                         mail.Body = "Ola " + dt.Rows[0][1].ToString() + "sua senha é: " + senhanova;
                         mail.IsBodyHtml = true;//cria um arquivo html
 
-                        confirmar = uscontroller.editar(usuariomodelo);
+                       /*confirmar = uscontroller.editar(usuariomodelo);
                         mail.Priority = MailPriority.High;//prioridade de envio
                         try
                         {
@@ -198,7 +198,7 @@ namespace testando
                         {
                             throw new Exception("Erro ao enviar email: " + ex.Message);
                         }
-
+                       */
 
 
                     }

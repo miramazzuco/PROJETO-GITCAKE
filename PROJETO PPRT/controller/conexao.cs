@@ -157,7 +157,7 @@ namespace gitcake
                         mail.Sender = new MailAddress(email, "Sistema TDS");//ocuta o nome do email e by Sistema TDS (o emissor)
                         mail.From = new MailAddress(email, "Recuperar senha");//titulo do email
                         //email do usuario
-                        string emailusuario = dt.Rows[0][4].ToString();
+                        string emailusuario = dt.Rows[0][3].ToString();
                         mail.To.Add(new MailAddress(emailusuario, dt.Rows[0][1].ToString()));
                         mail.Subject = "lembrar senha";
                         //gerar senha aleatoria
@@ -169,8 +169,8 @@ namespace gitcake
 
                         usuariomodelo.senha = senhanova;
                         usuariomodelo.nome = dt.Rows[0][1].ToString();
-                        usuariomodelo.email = dt.Rows[0][4].ToString();
-                        usuariomodelo.perfil = Convert.ToInt32(dt.Rows[0][3].ToString());
+                        usuariomodelo.email = dt.Rows[0][3].ToString();
+                        usuariomodelo.perfil = Convert.ToInt32(dt.Rows[0][5].ToString());
                         usuariomodelo.idusuario = Convert.ToInt32(dt.Rows[0][0].ToString());
 
 

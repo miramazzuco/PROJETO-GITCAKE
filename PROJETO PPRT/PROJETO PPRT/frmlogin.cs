@@ -27,10 +27,11 @@ namespace PROJETO_PPRT
 
         private void btnlogar_Click(object sender, EventArgs e)
         {
+            conexao con = new conexao();
             usuariocontroller uscontrole = new usuariocontroller();
             //determino variaveis aos preenchimentos
             us.nome = txtusuario.Text;
-            us.senha = txtsenha.Text;
+            us.senha = con.getMD5Hash(txtsenha.Text);
 
             //condicional para caso os campos não forem preenchidos
             if (string.IsNullOrEmpty(us.nome))

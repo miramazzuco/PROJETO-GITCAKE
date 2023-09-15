@@ -67,18 +67,6 @@ namespace PROJETO_PPRT
           
         }
 
-        private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //convertendo a primeira coleta em string
-            codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-            //convert o inteiro para string
-            MessageBox.Show("Usuario selecionado : " + codigo.ToString());
-            txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-            txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
-            txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-            cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
-        }
-
         private void btneditarusuario_Click(object sender, EventArgs e)
         {
             usuariocontroller uscontroler = new usuariocontroller();
@@ -127,6 +115,31 @@ namespace PROJETO_PPRT
         private void txtsenha_MouseHover(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(txtsenha, "Tamanmho 8 carcteres letras e numeros");
+        }
+
+        private void dtusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //convertendo a primeira coleta em string
+            codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            //convert o inteiro para string
+            MessageBox.Show("Usuario selecionado :  " + codigo.ToString());
+            txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
+        }
+
+        private void dtusuario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //convertendo a primeira coleta em string
+            codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            //convert o inteiro para string
+            MessageBox.Show("Usuario selecionado :  " + codigo.ToString());
+            txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
         }
     }
 }

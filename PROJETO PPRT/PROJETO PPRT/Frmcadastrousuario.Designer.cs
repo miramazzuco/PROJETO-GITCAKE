@@ -96,7 +96,7 @@
             // txtnome
             // 
             this.txtnome.Location = new System.Drawing.Point(260, 187);
-            this.txtnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnome.Margin = new System.Windows.Forms.Padding(2);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(135, 20);
             this.txtnome.TabIndex = 4;
@@ -104,7 +104,7 @@
             // txtsenha
             // 
             this.txtsenha.Location = new System.Drawing.Point(260, 227);
-            this.txtsenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.Size = new System.Drawing.Size(135, 20);
             this.txtsenha.TabIndex = 5;
@@ -112,7 +112,7 @@
             // txtemail
             // 
             this.txtemail.Location = new System.Drawing.Point(260, 269);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(2);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(135, 20);
             this.txtemail.TabIndex = 7;
@@ -121,13 +121,14 @@
             // 
             this.dtusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtusuario.Location = new System.Drawing.Point(531, 167);
-            this.dtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.dtusuario.Name = "dtusuario";
             this.dtusuario.RowHeadersWidth = 51;
             this.dtusuario.RowTemplate.Height = 24;
             this.dtusuario.Size = new System.Drawing.Size(386, 228);
             this.dtusuario.TabIndex = 8;
-            this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
+            this.dtusuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentDoubleClick);
+            this.dtusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellDoubleClick);
             // 
             // btneditarusuario
             // 
@@ -136,7 +137,7 @@
             this.btneditarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btneditarusuario.Location = new System.Drawing.Point(502, 548);
-            this.btneditarusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btneditarusuario.Margin = new System.Windows.Forms.Padding(2);
             this.btneditarusuario.Name = "btneditarusuario";
             this.btneditarusuario.Size = new System.Drawing.Size(82, 36);
             this.btneditarusuario.TabIndex = 9;
@@ -151,7 +152,7 @@
             this.btnexcluirusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexcluirusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnexcluirusuario.Location = new System.Drawing.Point(793, 548);
-            this.btnexcluirusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnexcluirusuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnexcluirusuario.Name = "btnexcluirusuario";
             this.btnexcluirusuario.Size = new System.Drawing.Size(80, 36);
             this.btnexcluirusuario.TabIndex = 10;
@@ -166,7 +167,7 @@
             this.btncadastrarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncadastrarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btncadastrarusuario.Location = new System.Drawing.Point(188, 548);
-            this.btncadastrarusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btncadastrarusuario.Margin = new System.Windows.Forms.Padding(2);
             this.btncadastrarusuario.Name = "btncadastrarusuario";
             this.btncadastrarusuario.Size = new System.Drawing.Size(90, 36);
             this.btncadastrarusuario.TabIndex = 11;
@@ -178,10 +179,11 @@
             // 
             this.cboperfil.FormattingEnabled = true;
             this.cboperfil.Location = new System.Drawing.Point(260, 314);
-            this.cboperfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboperfil.Margin = new System.Windows.Forms.Padding(2);
             this.cboperfil.Name = "cboperfil";
             this.cboperfil.Size = new System.Drawing.Size(135, 21);
             this.cboperfil.TabIndex = 12;
+            this.cboperfil.SelectedIndexChanged += new System.EventHandler(this.cboperfil_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -201,7 +203,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(172, 58);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 52);
             this.pictureBox1.TabIndex = 14;
@@ -228,7 +230,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frmcadastrousuario";
             this.Text = "Frmcadastrousuario";
             this.Load += new System.EventHandler(this.Frmcadastrousuario_Load);

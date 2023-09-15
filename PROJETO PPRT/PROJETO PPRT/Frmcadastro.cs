@@ -39,21 +39,22 @@ namespace gitcake
 
         private void Frmcadastro_Load(object sender, EventArgs e)
         {
-
+          string  sql = "SELECT * from produto";
+            dataGridView1.DataSource = com.ObterDados(sql);
         }
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
             pmodelo.descricao = txtproduto.Text;
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            if (chkperecivel.Checked)
+            /*if (chkperecivel.Checked)
             {
                 pmodelo.perecivel = true;
             }
             else
             {
                 pmodelo.perecivel = false;
-            }
+            }*/
             pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
             pmodelo.data_val = dtpdata.Value;
             pmodelo.foto = lblfoto.Text;
@@ -100,11 +101,12 @@ namespace gitcake
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            
+              
 
         }
 
@@ -115,10 +117,10 @@ namespace gitcake
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
             pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
             pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-            if (chkperecivel.Checked)
+            /*if (chkperecivel.Checked)
                 pmodelo.perecivel = true;
             else
-                pmodelo.perecivel = false;
+                pmodelo.perecivel = false;*/
             pmodelo.data_val = dtpdata.Value;
             pmodelo.foto = lblfoto.Text;
             if (pController.cadastrarProduto(pmodelo, 2) == true)
@@ -129,6 +131,37 @@ namespace gitcake
             {
                 MessageBox.Show("Erro no cadastro");
             }
+        }
+        private void SelecionarClick(object sender, EventArgs e, string Id)
+        {
+            MessageBox.Show(" Produto Selecionado " + Id);
+        }
+
+        private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
+        {
+            if (!string.IsNullOrEmpty(qtde))
+            {
+                if (Convert.ToInt32(qtde) > qtdeprod || Convert.ToInt32(qtde) <= 0)
+                {
+                    MessageBox.Show("Quantidade indisponivel", "Alerta");
+                }
+            }
+        }
+
+        private void chkperecivel_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e, string Id)
+        {
+           // MessageBox.Show(" Produto Selecionado " + Id);
+        }
+
+        private void btnpesquisar_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text+"%'";
+            dataGridView1.DataSource = com.ObterDados(sql);
+
         }
     }
 }

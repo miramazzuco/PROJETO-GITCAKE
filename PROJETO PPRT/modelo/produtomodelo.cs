@@ -14,7 +14,7 @@ namespace modelo
         private string desc_prod;
         private int qtde_prod;
         private decimal preco_prod;
-        private Boolean perecivel_prod;
+        //private Boolean perecivel_prod;
         private DateTime data_validade;
         private string foto_prod;
         // contrutor da classe
@@ -26,7 +26,7 @@ namespace modelo
             this.qtde_prod = 0;
             this.preco_prod = 0;
 
-            this.perecivel_prod = false;
+            //this.perecivel_prod = false;
             this.data_validade = DateTime.Now;
             this.foto_prod = "0";
         }
@@ -52,11 +52,11 @@ namespace modelo
             get { return preco_prod; }
             set { preco_prod = value; }
         }
-        public bool perecivel
+        /*public bool perecivel
         {
             get { return perecivel_prod; }
             set { perecivel_prod = value; }
-        }
+        }*/
         public DateTime data_val
         {
             get { return data_validade; }

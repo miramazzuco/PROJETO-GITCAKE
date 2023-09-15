@@ -25,5 +25,15 @@ namespace PROJETO_PPRT
         {
 
         }
+
+        private void Frmpedido_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

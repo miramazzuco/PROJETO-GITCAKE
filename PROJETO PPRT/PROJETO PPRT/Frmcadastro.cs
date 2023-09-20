@@ -29,6 +29,17 @@ namespace gitcake
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           txtcodigo.Text = dataGridView1.Rows[e.RowIndex].Cells["idproduto"].Value.ToString();
+           txtproduto.Text = dataGridView1.Rows[e.RowIndex].Cells["produto"].Value.ToString();
+           txtpreco.Text = dataGridView1.Rows[e.RowIndex].Cells["preco"].Value.ToString();
+           txtquantidade.Text = dataGridView1.Rows[e.RowIndex].Cells["quantidade"].Value.ToString();
+           dtpdata.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["validade"].Value.ToString());
+           pictureBox1.Image = Image.FromFile(dataGridView1.Rows[e.RowIndex].Cells["foto"].Value.ToString());
+           lblfoto.Text = dataGridView1.Rows[e.RowIndex].Cells["foto"].Value.ToString();
+           tabPage1.Focus();
+           tabestoque.SelectedIndex = 0;
+
+
 
         }
 
@@ -47,21 +58,19 @@ namespace gitcake
         {
             pmodelo.descricao = txtproduto.Text;
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            /*if (chkperecivel.Checked)
-            {
-                pmodelo.perecivel = true;
-            }
-            else
-            {
-                pmodelo.perecivel = false;
-            }*/
             pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
             pmodelo.data_val = dtpdata.Value;
             pmodelo.foto = lblfoto.Text;
             produtocontroller pController = new produtocontroller();
             if (pController.cadastrarProduto(pmodelo, 1) == true)
+            {
 
                 MessageBox.Show("Cadastro com sucesso");
+                string sql = "SELECT * from produto";
+                dataGridView1.DataSource = com.ObterDados(sql);
+            }
+
+
             else
                 MessageBox.Show("Erro no Cadastro");
         }
@@ -126,6 +135,8 @@ namespace gitcake
             if (pController.cadastrarProduto(pmodelo, 2) == true)
             {
                 MessageBox.Show("Cadastra com Sucesso");
+                string sql = "SELECT * from produto";
+                dataGridView1.DataSource = com.ObterDados(sql);
             }
             else
             {
@@ -162,6 +173,74 @@ namespace gitcake
             string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text+"%'";
             dataGridView1.DataSource = com.ObterDados(sql);
 
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void btnedita_Click(object sender, EventArgs e)
+        {
+            conexao con = new conexao();
+             pmodelo.descricao = txtproduto.Text;
+            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+            pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                                        
+            pmodelo.foto = lblfoto.Text;
+            if (pController.cadastrarProduto(pmodelo, 2) == true)
+            {
+                MessageBox.Show("Atualizado com Sucesso");
+                tabPage2.Focus();
+                tabestoque.SelectedIndex = 1;
+                string sql = "SELECT * from produto";
+                dataGridView1.DataSource = com.ObterDados(sql);
+            }
+            else
+            {
+                MessageBox.Show("Erro no cadastro");
+            }
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+
+                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                if (string.IsNullOrEmpty(pmodelo.codigo.ToString()))
+                {
+
+                    MessageBox.Show("Codigo esta vazio");
+                    txtcodigo.Focus();
+                }
+                else
+                {
+                    if (pmodelo.codigo > 0)
+                    {
+                        if (pController.cadastrarProduto(pmodelo, 3) == true)
+                        {
+                            MessageBox.Show("produto excluido " + pmodelo.descricao);
+                            tabPage2.Focus();
+                            tabestoque.SelectedIndex = 1;
+                            string sql = "SELECT * from produto";
+                            dataGridView1.DataSource = com.ObterDados(sql);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Favor escolher um produto");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }
         }
     }
 }

@@ -30,10 +30,10 @@ namespace controller
 
                     case 2: // atualizar
 
-                        sql = "update produto set Desc_prod=@nome,Prec_prod=@preco,qtde_prod=@qtde,dat_validade=@data,Foto=@foto where Codpruduto=@id";
+                        sql = "update produto set produto=@nome,preco=@preco,quantidade=@qtde,validade=@data,foto=@foto where idproduto=@id";
                         break;
                     case 3:
-                        sql = "DELETE from produto where Codpruduto=@id";
+                        sql = "DELETE from produto where idproduto=@id";
                         break;
                 }
                 string[] campos = { "@nome", "@preco", "@qtde", "@data", "@foto" };

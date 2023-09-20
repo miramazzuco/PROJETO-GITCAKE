@@ -13,14 +13,14 @@ using System.Data.Common;
 using System.Drawing;
 using Org.BouncyCastle.Utilities;
 
-namespace testando
+namespace gitcake
 {
     // classe de conexão com o bando de dados
     public class conexao
     {
         // atriabutos de conexão
         static private string servidor = "localhost";
-        static private string db = "testando";
+        static private string db = "gitcake";
         static private string usuario = "root";
         static private string senha = "";
         public MySqlConnection conn = null;
@@ -157,7 +157,7 @@ namespace testando
                         mail.Sender = new MailAddress(email, "Sistema TDS");//ocuta o nome do email e by Sistema TDS (o emissor)
                         mail.From = new MailAddress(email, "Recuperar senha");//titulo do email
                         //email do usuario
-                        string emailusuario = dt.Rows[0][4].ToString();
+                        string emailusuario = dt.Rows[0][3].ToString();
                         mail.To.Add(new MailAddress(emailusuario, dt.Rows[0][1].ToString()));
                         mail.Subject = "lembrar senha";
                         //gerar senha aleatoria
@@ -169,15 +169,15 @@ namespace testando
 
                         usuariomodelo.senha = senhanova;
                         usuariomodelo.nome = dt.Rows[0][1].ToString();
-                        usuariomodelo.email = dt.Rows[0][4].ToString();
-                        usuariomodelo.perfil = Convert.ToInt32(dt.Rows[0][3].ToString());
+                        usuariomodelo.email = dt.Rows[0][3].ToString();
+                        usuariomodelo.perfil = Convert.ToInt32(dt.Rows[0][5].ToString());
                         usuariomodelo.idusuario = Convert.ToInt32(dt.Rows[0][0].ToString());
 
 
                         mail.Body = "Ola " + dt.Rows[0][1].ToString() + "sua senha é: " + senhanova;
                         mail.IsBodyHtml = true;//cria um arquivo html
 
-                        confirmar = uscontroller.editar(usuariomodelo);
+                       /*confirmar = uscontroller.editar(usuariomodelo);
                         mail.Priority = MailPriority.High;//prioridade de envio
                         try
                         {
@@ -198,7 +198,7 @@ namespace testando
                         {
                             throw new Exception("Erro ao enviar email: " + ex.Message);
                         }
-
+                       */
 
 
                     }

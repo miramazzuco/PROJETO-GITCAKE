@@ -7,39 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using controller;
+using gitcake;
+using modelo;
 
 namespace PROJETO_PPRT
 {
     public partial class Frmpedido : Form
     {
+        conexao com = new conexao();
         public Frmpedido()
         {
             InitializeComponent();
         }
 
-        private void Frmpedido_Load(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtendereco.Visible = false;
-            lblendereco.Visible = false;
+
         }
 
-        private void chkentrega_CheckedChanged(object sender, EventArgs e)
+        private void Frmpedido_Load(object sender, EventArgs e)
         {
+            
+        }
 
-            if (chkentrega.Checked)
-            {
-                txtendereco.Visible = true;
-                lblendereco.Visible = true;
-
-            }
-
-
-
-            else
-            {
-                txtendereco.Visible = false;
-                lblendereco.Visible = false;
-            }
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

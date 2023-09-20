@@ -31,7 +31,7 @@ namespace PROJETO_PPRT
             usuariocontroller uscontrole = new usuariocontroller();
             //determino variaveis aos preenchimentos
             us.nome = txtusuario.Text;
-            us.senha = con.getMD5Hash(txtsenha.Text);
+            us.senha = txtsenha.Text;
 
             //condicional para caso os campos não forem preenchidos
             if (string.IsNullOrEmpty(us.nome))

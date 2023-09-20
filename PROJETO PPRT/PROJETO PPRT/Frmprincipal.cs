@@ -89,6 +89,9 @@ namespace PROJETO_PPRT
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
+            
+                Application.Exit();
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -117,6 +120,6 @@ namespace PROJETO_PPRT
 
         }
 
-        
+       
     }
 }

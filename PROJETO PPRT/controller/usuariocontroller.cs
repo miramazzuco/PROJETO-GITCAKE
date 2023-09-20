@@ -22,7 +22,7 @@ namespace controller
         public bool cadastrar(usuariomodelo usuario) // passo o objetodo cadastro como parametro
         {// declaro a variavel da resposta da query
             bool resultado = false;
-            string sql = "insert into usuario(nome,senha,perfil,email)values('" + usuario.nome + "','" + con.getMD5Hash(usuario.senha) + "','" + usuario.perfil + "','" + usuario.email + "')";
+            string sql = "insert into usuario(nome,senha,perfil,email)values('" + usuario.nome + "','" + usuario.senha + "','" + usuario.perfil + "','" + usuario.email + "')";
             //chamando minha conexao
 
             MySqlConnection sqlcon = con.getConexao();
@@ -77,7 +77,7 @@ namespace controller
             command.CommandText = sql;
             //substituindo a variavel @ pelo comando objeto
             command.Parameters.AddWithValue("@nome", us.nome);
-            command.Parameters.AddWithValue("@senha", con.getMD5Hash(us.senha));
+            command.Parameters.AddWithValue("@senha", us.senha);
             command.Parameters.AddWithValue("@id", us.idusuario);
             command.Parameters.AddWithValue("@perfil", us.perfil);
             command.Parameters.AddWithValue("@email", us.email);

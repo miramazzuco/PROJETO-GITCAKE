@@ -177,7 +177,7 @@ namespace gitcake
                         mail.Body = "Ola " + dt.Rows[0][1].ToString() + "sua senha é: " + senhanova;
                         mail.IsBodyHtml = true;//cria um arquivo html
 
-                        confirmar = uscontroller.editar(usuariomodelo);
+                       /*confirmar = uscontroller.editar(usuariomodelo);
                         mail.Priority = MailPriority.High;//prioridade de envio
                         try
                         {
@@ -198,7 +198,7 @@ namespace gitcake
                         {
                             throw new Exception("Erro ao enviar email: " + ex.Message);
                         }
-
+                       */
 
 
                     }

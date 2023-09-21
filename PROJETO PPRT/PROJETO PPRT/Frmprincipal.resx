@@ -220,7 +220,7 @@
   <data name="panellogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAaUAAABICAYAAABWf+pGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAALrVJREFUeF7tXQl0G9W5bla2JhRKW9pC6QYN0FIKLX19tK/tO310OX30ldhJvCex
+        cQAAEnEB89x6jgAALrVJREFUeF7tXQl0G9W5bla2JhRKW9pC6QYN0FIKLX19tK/tO310OX30ldhJvCex
         E+92vO+7nRiSQMgGgZCNQHaykZ0kxPsueYnl3fIqL5Isy9ZiR0nf/4s7qiKPRqNdwvOd852xpbvNaGa+
         +9/73/9+hQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODA
         gQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODAgQMHDhw4cODAgQMHDhw4uCg0mpx5Gk32QpU846GJ4eQn
@@ -1060,4 +1060,10 @@
         lfMYAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>38</value>
+  </metadata>
 </root>

@@ -21,7 +21,6 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO P
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.exe
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.pdb
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmprincipal.resources
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmcadastro.resources
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmsobrenos.resources
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmcadastrousuario.resources
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmpedido.resources
@@ -103,3 +102,42 @@ C:\Users\User\Desktop\gitcAKE\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debu
 C:\Users\User\Desktop\gitcAKE\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CopyComplete
 C:\Users\User\Desktop\gitcAKE\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.exe
 C:\Users\User\Desktop\gitcAKE\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.pdb
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\controller.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MySql.Data.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Buffers.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.IO.Pipelines.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Memory.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\ZstdSharp.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\controller.pdb
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\controller.dll.config
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.pdb
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.dll.config
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.pdb
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MySql.Data.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Buffers.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.IO.Pipelines.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Memory.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\gitcake.Frmcadastro.resources
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.CopyComplete

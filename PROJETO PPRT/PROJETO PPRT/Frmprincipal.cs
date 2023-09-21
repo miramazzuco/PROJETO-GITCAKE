@@ -20,6 +20,8 @@ namespace PROJETO_PPRT
 
         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
+            timer1.Start();
+            label2.Text = DateTime.Now.ToString("HH:mm:ss");
 
         }
 
@@ -121,6 +123,9 @@ namespace PROJETO_PPRT
 
         }
 
-       
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

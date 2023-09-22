@@ -49,7 +49,7 @@ namespace PROJETO_PPRT
             //guardando o id do usuario retornado da consulta
             codigousuario = uscontrole.logar(us);
             //apresenta na tela qual usuario acabou de logar no programa
-            MessageBox.Show("USUARIO = " + codigousuario.ToString());
+            
             //condicionais para entrar no programa
             if (uscontrole.logar(us) >= 1)
             {

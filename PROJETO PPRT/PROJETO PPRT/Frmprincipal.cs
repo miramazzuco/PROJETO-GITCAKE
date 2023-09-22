@@ -1,4 +1,6 @@
-﻿using gitcake;
+﻿using controller;
+using gitcake;
+using modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +15,25 @@ namespace PROJETO_PPRT
 {
     public partial class Frmprincipal : Form
     {
+        
+
+
         public Frmprincipal()
         {
+           
+
             InitializeComponent();
         }
 
+        
         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
             timer1.Start();
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
+
+
+            DateTime data = DateTime.Now;
+            label3.Text = data.ToString("dd/MM/yyyy");
 
         }
 
@@ -39,9 +51,7 @@ namespace PROJETO_PPRT
         }
 
         private void Frmprincipal_Load(object sender, EventArgs e)
-        {
-
-        
+        {  
 
         }
 
@@ -97,12 +107,7 @@ namespace PROJETO_PPRT
             
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-            
-           
-        }
+       
 
         private void btnvendas_Click(object sender, EventArgs e)
         {
@@ -126,6 +131,16 @@ namespace PROJETO_PPRT
         private void timer1_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

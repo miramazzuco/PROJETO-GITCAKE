@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using controller;
 using gitcake;
 using modelo;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace PROJETO_PPRT
 {
@@ -87,10 +90,11 @@ namespace PROJETO_PPRT
                 registrar.Name = "Selecionar";
                 registrar.Text = "Selecionar";
                 registrar.Font = new Font("Arial", 8, FontStyle.Bold);
-                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text,descricao.Text,Convert.ToInt32(qtde.Text),Convert.ToDecimal(preco.Text)));
+                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text,descricao.Text,qtde.Text,preco.Text));
                 registrar.Location = new Point(10, 162);
                 registrar.Width = 100;
                 registrar.FlatStyle = FlatStyle.Popup;
+                registrar.ForeColor = Color.FromArgb(255,255,128);
 
 
 
@@ -111,9 +115,15 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void SelecionarClick(object sender, EventArgs e, string id,string produto,int quantidade,decimal preço)
+        private void SelecionarClick(object sender, EventArgs e, string id,string produto,string quantidade,string preco)
         {
-            listView1.Items.Add(id + produto + quantidade + preço);
+            listView1.Items.Add(id);
+            listView1.Items.Add("");
+            listView1.Items.Add(produto);
+            listView1.Items.Add(quantidade);
+            listView1.Items.Add("R$"+ preco);
+            listView1.Items.Add("");
+
 
             MessageBox.Show("Produto selcionado " + id);
         }

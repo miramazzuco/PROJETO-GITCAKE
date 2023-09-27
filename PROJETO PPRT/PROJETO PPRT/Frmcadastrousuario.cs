@@ -1,4 +1,5 @@
 ﻿using controller;
+using gitcake;
 using modelo;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace PROJETO_PPRT
 
         private void btncadastrarusuario_Click(object sender, EventArgs e)
         {
+            conexao con = new conexao();
             usuariomodelo usmodelo = new usuariomodelo();
             //declarei o modelo de cada campo
             usmodelo.nome = txtnome.Text;
@@ -51,7 +53,9 @@ namespace PROJETO_PPRT
             {
                 if(uscontroller.cadastrar(usmodelo) == true)
                 {
-                    MessageBox.Show("usuario cadastrado com sucesso, bem-vindo(a) " + txtnome.Text);
+                    MessageBox.Show("usuario cadastrado com sucesso, bem-vindo(a)  " + txtnome.Text);
+                    string sql = "SELECT * from usuario";
+                    dtusuario.DataSource = con.ObterDados(sql);
                     //confirmação de cadastro
                 }
                 else

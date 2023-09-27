@@ -66,6 +66,7 @@ namespace gitcake
             {
 
                 MessageBox.Show("Cadastro com sucesso");
+                // Atualizar o produto
                 string sql = "SELECT * from produto";
                 dataGridView1.DataSource = com.ObterDados(sql);
             }

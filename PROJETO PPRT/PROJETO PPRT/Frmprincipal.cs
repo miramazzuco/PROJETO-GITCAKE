@@ -1,6 +1,7 @@
 ﻿using controller;
 using gitcake;
 using modelo;
+using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +16,17 @@ namespace PROJETO_PPRT
 {
     public partial class Frmprincipal : Form
     {
-        
+        int usi;
 
 
-        public Frmprincipal()
+        public Frmprincipal(int usuario)
         {
-           
 
+            usi = usuario;
             InitializeComponent();
         }
 
-        
+
         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
             timer1.Start();
@@ -51,7 +52,11 @@ namespace PROJETO_PPRT
         }
 
         private void Frmprincipal_Load(object sender, EventArgs e)
-        {  
+        {
+            usuariomodelo umodelo = new usuariomodelo();
+            usuariocontroller ucontrole = new usuariocontroller();
+            umodelo = ucontrole.CarregaUsuario(usi);
+            label5.Text = umodelo.nome;
 
         }
 
@@ -102,17 +107,17 @@ namespace PROJETO_PPRT
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
-            
-                Application.Exit();
-            
+
+            Application.Exit();
+
         }
 
-       
+
 
         private void btnvendas_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-           Frmvendas ad = new Frmvendas(); 
+            Frmvendas ad = new Frmvendas();
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;
@@ -138,9 +143,6 @@ namespace PROJETO_PPRT
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

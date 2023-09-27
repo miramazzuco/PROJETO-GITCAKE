@@ -115,13 +115,14 @@
             // 
             // dtusuario
             // 
+            this.dtusuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
             this.dtusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtusuario.Location = new System.Drawing.Point(708, 206);
+            this.dtusuario.Location = new System.Drawing.Point(612, 161);
             this.dtusuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtusuario.Name = "dtusuario";
             this.dtusuario.RowHeadersWidth = 51;
             this.dtusuario.RowTemplate.Height = 24;
-            this.dtusuario.Size = new System.Drawing.Size(515, 281);
+            this.dtusuario.Size = new System.Drawing.Size(743, 281);
             this.dtusuario.TabIndex = 8;
             this.dtusuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentDoubleClick);
             this.dtusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellDoubleClick);

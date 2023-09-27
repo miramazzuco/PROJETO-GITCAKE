@@ -53,7 +53,7 @@ namespace PROJETO_PPRT
             //condicionais para entrar no programa
             if (uscontrole.logar(us) >= 1)
             {
-                Frmprincipal principal = new Frmprincipal();
+                Frmprincipal principal = new Frmprincipal(codigousuario);
                 principal.ShowDialog();//estabeleço qual pagina vai rodar apos o login
             }
             else

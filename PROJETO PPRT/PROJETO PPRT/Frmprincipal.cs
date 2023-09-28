@@ -11,12 +11,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml;
+using System.Diagnostics;
 
 namespace PROJETO_PPRT
 {
     public partial class Frmprincipal : Form
     {
         int usi;
+        private Button currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentChildForm;
 
 
         public Frmprincipal(int usuario)
@@ -143,6 +148,20 @@ namespace PROJETO_PPRT
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+            // Caminho para o documento do Word que você deseja abrir
+            string filePath = @"C:\Users\cunha\Downloads\Documento 10.docx";
+
+            // Verifique se o arquivo existe antes de tentar abrir
+            if (System.IO.File.Exists(filePath))
+            {
+                // Abra o arquivo com o aplicativo padrão associado
+                Process.Start(filePath);
+            }
+        }
+
+      
     }
 }

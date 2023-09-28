@@ -39,7 +39,7 @@ namespace gitcake
            tabPage1.Focus();
            tabestoque.SelectedIndex = 0;
 
-
+            
 
         }
 
@@ -112,12 +112,7 @@ namespace gitcake
         {
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-              
-
-        }
+        
 
         private void btneditarproduto_Click(object sender, EventArgs e)
         {
@@ -193,8 +188,8 @@ namespace gitcake
             if (pController.cadastrarProduto(pmodelo, 2) == true)
             {
                 MessageBox.Show("Atualizado com Sucesso");
-                tabPage2.Focus();
-                tabestoque.SelectedIndex = 1;
+                //tabPage2.Focus();
+               // tabestoque.SelectedIndex = 1;
                 string sql = "SELECT * from produto";
                 dataGridView1.DataSource = com.ObterDados(sql);
             }

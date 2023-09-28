@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmprincipal));
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnsobrenos = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnestoque = new System.Windows.Forms.Button();
@@ -42,12 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.panellogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,6 +74,27 @@
             this.panelmenu.TabIndex = 0;
             this.panelmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmenu_Paint);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 614);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(287, 101);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "     Ajuda";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnsobrenos
             // 
             this.btnsobrenos.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,7 +110,7 @@
             this.btnsobrenos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnsobrenos.Size = new System.Drawing.Size(287, 119);
             this.btnsobrenos.TabIndex = 7;
-            this.btnsobrenos.Text = "   Sobre nós";
+            this.btnsobrenos.Text = "     Sobre nós";
             this.btnsobrenos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsobrenos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsobrenos.UseVisualStyleBackColor = true;
@@ -103,7 +124,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.Location = new System.Drawing.Point(0, 731);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
@@ -131,7 +152,7 @@
             this.btnestoque.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnestoque.Size = new System.Drawing.Size(287, 100);
             this.btnestoque.TabIndex = 5;
-            this.btnestoque.Text = "  Estoque";
+            this.btnestoque.Text = "     Estoque";
             this.btnestoque.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnestoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnestoque.UseVisualStyleBackColor = true;
@@ -152,7 +173,7 @@
             this.btncadastrar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btncadastrar.Size = new System.Drawing.Size(287, 116);
             this.btncadastrar.TabIndex = 4;
-            this.btncadastrar.Text = "  Cadastrar";
+            this.btncadastrar.Text = "     Cadastrar";
             this.btncadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btncadastrar.UseVisualStyleBackColor = true;
@@ -173,7 +194,7 @@
             this.btnvendas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnvendas.Size = new System.Drawing.Size(287, 99);
             this.btnvendas.TabIndex = 3;
-            this.btnvendas.Text = "  Vendas";
+            this.btnvendas.Text = "     Vendas";
             this.btnvendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnvendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnvendas.UseVisualStyleBackColor = true;
@@ -194,7 +215,7 @@
             this.btnpedido.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnpedido.Size = new System.Drawing.Size(287, 100);
             this.btnpedido.TabIndex = 2;
-            this.btnpedido.Text = "  Pedido";
+            this.btnpedido.Text = "     Pedido";
             this.btnpedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnpedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnpedido.UseVisualStyleBackColor = true;
@@ -255,11 +276,22 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(173, 44);
+            this.label5.Location = new System.Drawing.Point(271, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(138, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Usuario :";
             // 
             // label3
             // 
@@ -297,37 +329,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(40, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Usuario :";
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 614);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(287, 101);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "    Ajuda";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Frmprincipal
             // 

@@ -1,4 +1,5 @@
 ﻿using controller;
+using gitcake;
 using modelo;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,14 @@ namespace PROJETO_PPRT
     {
         int idperfil;
         int codigo;
+        
+
         usuariocontroller uscontroller = new usuariocontroller();
         public Frmcadastrousuario()
         {
             InitializeComponent();
         }
+        conexao com = new conexao();
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -53,6 +57,7 @@ namespace PROJETO_PPRT
                 {
                     MessageBox.Show("usuario cadastrado com sucesso, bem-vindo(a) " + txtnome.Text);
                     //confirmação de cadastro
+                    
                 }
                 else
                 {

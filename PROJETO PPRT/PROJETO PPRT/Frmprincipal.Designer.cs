@@ -45,14 +45,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelmenu.SuspendLayout();
             this.panellogo.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelmenu
@@ -125,11 +125,11 @@
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(0, 731);
+            this.button5.Location = new System.Drawing.Point(0, 762);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(287, 96);
+            this.button5.Size = new System.Drawing.Size(287, 65);
             this.button5.TabIndex = 6;
             this.button5.Text = "  Sair";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,7 +194,7 @@
             this.btnvendas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnvendas.Size = new System.Drawing.Size(287, 99);
             this.btnvendas.TabIndex = 3;
-            this.btnvendas.Text = "     Vendas";
+            this.btnvendas.Text = "     Financeiro";
             this.btnvendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnvendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnvendas.UseVisualStyleBackColor = true;
@@ -305,21 +305,11 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "label3";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(287, 80);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1920, 1080);
-            this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 276);
+            this.pictureBox1.Location = new System.Drawing.Point(574, 248);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(525, 359);
@@ -329,6 +319,15 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(293, 85);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1920, 1080);
+            this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // Frmprincipal
             // 
@@ -351,8 +350,8 @@
             this.panellogo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,12 +369,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnsobrenos;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

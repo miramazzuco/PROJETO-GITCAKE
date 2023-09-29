@@ -19,10 +19,7 @@ namespace PROJETO_PPRT
     public partial class Frmprincipal : Form
     {
         int usi;
-        private Button currentBtn;
-        private Panel leftBorderBtn;
-        private Form currentChildForm;
-
+        
 
         public Frmprincipal(int usuario)
         {
@@ -31,6 +28,7 @@ namespace PROJETO_PPRT
             InitializeComponent();
         }
 
+        
 
         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
@@ -160,8 +158,13 @@ namespace PROJETO_PPRT
                 // Abra o arquivo com o aplicativo padrão associado
                 Process.Start(filePath);
             }
+             
+          
         }
 
-      
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

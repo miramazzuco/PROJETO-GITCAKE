@@ -183,7 +183,7 @@
             this.tabestoque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabestoque.Name = "tabestoque";
             this.tabestoque.SelectedIndex = 0;
-            this.tabestoque.Size = new System.Drawing.Size(1357, 838);
+            this.tabestoque.Size = new System.Drawing.Size(1357, 1080);
             this.tabestoque.TabIndex = 13;
             this.tabestoque.Tag = "";
             // 
@@ -211,7 +211,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1349, 809);
+            this.tabPage1.Size = new System.Drawing.Size(1349, 1051);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inserir";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);

@@ -146,5 +146,7 @@ namespace PROJETO_PPRT
             txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
             cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
         }
+
+        
     }
 }

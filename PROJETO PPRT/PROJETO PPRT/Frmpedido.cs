@@ -13,18 +13,25 @@ using modelo;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Button = System.Windows.Forms.Button;
 using TextBox = System.Windows.Forms.TextBox;
+using MySqlX.XDevAPI.Relational;
+using System.IO;
+using System.Drawing.Printing;
+using MySqlX.XDevAPI;
 
 namespace PROJETO_PPRT
 {
     public partial class Frmpedido : Form
     {
+        private Font printFont;
+        private StreamReader StreamToPrint;
+        decimal total = 0;
         conexao com = new conexao();
         public Frmpedido()
         {
             InitializeComponent();
         }
 
-      
+
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
@@ -32,7 +39,7 @@ namespace PROJETO_PPRT
 
             dt = com.ObterDados("select  * from produto ");
             int registros;
-            int x= 0, y = 0;
+            int x = 0, y = 0;
             int qtdeproduto;
 
             for (registros = 0; registros < dt.Rows.Count; registros++)
@@ -63,9 +70,9 @@ namespace PROJETO_PPRT
                 TextBox qtde = new TextBox();
                 qtde.Name = "quantidade";
                 qtdeproduto = Convert.ToInt32(dt.Rows[registros][3].ToString());
-                qtde.Leave += new EventHandler((sender1, e1) => QtdeLeave(sender1, e1, qtde.Text, qtdeproduto));
+                // qtde.Leave += new EventHandler((sender1, e1) => QtdeLeave(sender1, e1, qtde.Text, qtdeproduto));
                 qtde.Location = new Point(10, 138);
-                
+
                 if (!string.IsNullOrEmpty(qtde.Text))
                 {
 
@@ -90,11 +97,11 @@ namespace PROJETO_PPRT
                 registrar.Name = "Selecionar";
                 registrar.Text = "Selecionar";
                 registrar.Font = new Font("Arial", 8, FontStyle.Bold);
-                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text,descricao.Text,qtde.Text,preco.Text));
+                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text, descricao.Text, qtde.Text, preco.Text));
                 registrar.Location = new Point(10, 162);
                 registrar.Width = 100;
                 registrar.FlatStyle = FlatStyle.Popup;
-                registrar.ForeColor = Color.FromArgb(255,255,128);
+                registrar.ForeColor = Color.FromArgb(255, 255, 128);
 
 
 
@@ -115,18 +122,61 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void SelecionarClick(object sender, EventArgs e, string id,string produto,string quantidade,string preco)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            listView1.Items.Add(id);
-            listView1.Items.Add("");
-            listView1.Items.Add(produto);
-            listView1.Items.Add(quantidade);
-            listView1.Items.Add("R$"+ preco);
-            listView1.Items.Add("");
 
-
-            MessageBox.Show("Produto selcionado " + id);
         }
+
+        private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
+        {
+            dataGridView1.ColumnCount = 5;
+
+            dataGridView1.Columns[0].Name = "Id";
+            dataGridView1.Columns[1].Name = "produto";
+            dataGridView1.Columns[2].Name = "preco";
+            dataGridView1.Columns[3].Name = "quantidade";
+            dataGridView1.Columns[4].Name = "SubTotal";
+
+            decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
+
+            dataGridView1.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                total = total + Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+            }
+
+            MessageBox.Show("Produto Selecionado" + total.ToString());
+            lblvalor.Text = total.ToString();
+            string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\MyFile.txt.txt";
+            using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
+            {
+                bw.Write(dataGridView1.Columns.Count);
+                bw.Write(dataGridView1.Rows.Count);
+                foreach (DataGridViewRow dgvR in dataGridView1.Rows)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; ++j)
+                    {
+                        object val = dgvR.Cells[j].Value;
+                        if (val == null)
+                        {
+                            bw.Write(false);
+                            bw.Write(false);
+                        }
+                        else
+                        {
+                            bw.Write(true);
+                            bw.Write(val.ToString());
+                        }
+                    }
+                }
+
+            }
+
+
+
+        }
+
 
         private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
         {
@@ -139,24 +189,87 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnimprimir_Click(object sender, EventArgs e)
         {
+            try
+            {
+                StreamToPrint = new StreamReader
+                   ("C:\\Users\\User\\Documents\\MyFile.txt.txt");
+                try
+                {
+                    printFont = new Font("Arial", 10);
+                    PrintDocument pd = new PrintDocument();
+                    pd.PrintPage += new PrintPageEventHandler
+                       (this.printDocument1_PrintPage);
+                    pd.Print();
+                }
+                finally
+                {
+                    StreamToPrint.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        public void GerarPDF()
         {
+            //Exemplo de dados para o DataGridView
+            dataGridView1.Columns.Add("idproduto", "coluna 1");
+            dataGridView1.Columns.Add("Column2", "Coluna 2");
+            dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
+            dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs ev)
         {
+            float linesPerPage = 0;
+            float yPos = 0;
+            int count = 0;
+            float leftMargin = ev.MarginBounds.Left;
+            float topMargin = ev.MarginBounds.Top;
+            string line = null;
+
+            // Calculate the number of lines per page.
+            linesPerPage = ev.MarginBounds.Height /
+               printFont.GetHeight(ev.Graphics);
+
+            // Print each line of the file.
+            while (count < linesPerPage &&
+               ((line = StreamToPrint.ReadLine()) != null))
+            {
+                yPos = topMargin + (count *
+                   printFont.GetHeight(ev.Graphics));
+                ev.Graphics.DrawString(line, printFont, Brushes.Black,
+                   leftMargin, yPos, new StringFormat());
+                count++;
+            }
+
+            // If more lines exist, print another page.
+            if (line != null)
+                ev.HasMorePages = true;
+            else
+                ev.HasMorePages = false;
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbltotal_Click(object sender, EventArgs e)
         {
 
         }
     }
+
+
+
+
+
+
+
+
+
+
 }

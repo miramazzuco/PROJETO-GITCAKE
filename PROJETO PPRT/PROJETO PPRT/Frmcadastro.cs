@@ -143,16 +143,7 @@ namespace gitcake
             MessageBox.Show(" Produto Selecionado " + Id);
         }
 
-        private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
-        {
-            if (!string.IsNullOrEmpty(qtde))
-            {
-                if (Convert.ToInt32(qtde) > qtdeprod || Convert.ToInt32(qtde) <= 0)
-                {
-                    MessageBox.Show("Quantidade indisponivel", "Alerta");
-                }
-            }
-        }
+       
 
         private void chkperecivel_CheckedChanged(object sender, EventArgs e)
         {

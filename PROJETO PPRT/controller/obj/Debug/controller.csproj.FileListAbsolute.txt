@@ -91,3 +91,9 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controlle
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.csproj.CopyComplete
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.dll
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\obj\Debug\controller.pdb
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\PdfSharp.Charting.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\PdfSharp.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\PdfSharp.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\PdfSharp.Charting.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\de\PdfSharp.Charting.resources.dll

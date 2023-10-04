@@ -42,6 +42,7 @@ namespace PROJETO_PPRT
             int x = 0, y = 0;
             int qtdeproduto;
 
+
             for (registros = 0; registros < dt.Rows.Count; registros++)
             {
                 Panel produto = new Panel();//criando o painel de produto
@@ -66,7 +67,7 @@ namespace PROJETO_PPRT
                 Label descricao = new Label();
                 descricao.Name = "produto";
                 descricao.Text = dt.Rows[registros][1].ToString();
-                descricao.Location = new Point(10, 98);
+                descricao.Location = new Point(15, 98);
                 TextBox qtde = new TextBox();
                 qtde.Name = "quantidade";
                 qtdeproduto = Convert.ToInt32(dt.Rows[registros][3].ToString());
@@ -137,17 +138,19 @@ namespace PROJETO_PPRT
             dataGridView1.Columns[3].Name = "quantidade";
             dataGridView1.Columns[4].Name = "SubTotal";
 
+            // calculo dos produtos selicionados
             decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
             dataGridView1.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
 
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                total = total + Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
-            }
+
+
+
+            total = total + subTotal;
+
 
             MessageBox.Show("Produto Selecionado" + total.ToString());
-            lblvalor.Text = total.ToString();
+            textBox1.Text = total.ToString();
             string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
@@ -257,7 +260,16 @@ namespace PROJETO_PPRT
 
         }
 
-        private void lbltotal_Click(object sender, EventArgs e)
+
+
+
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

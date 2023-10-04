@@ -147,8 +147,8 @@ namespace PROJETO_PPRT
             }
 
             MessageBox.Show("Produto Selecionado" + total.ToString());
-            lblvalor.Text = total.ToString();
-            string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\MyFile.txt.txt";
+            
+            string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
                 bw.Write(dataGridView1.Columns.Count);
@@ -257,9 +257,10 @@ namespace PROJETO_PPRT
 
         }
 
-        private void lbltotal_Click(object sender, EventArgs e)
+        private void btn_avancarpedido_Click(object sender, EventArgs e)
         {
-
+            Frmpagamento pg = new Frmpagamento();
+            pg.ShowDialog();
         }
     }
 

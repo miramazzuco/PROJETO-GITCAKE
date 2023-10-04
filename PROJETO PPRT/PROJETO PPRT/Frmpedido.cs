@@ -22,6 +22,7 @@ namespace PROJETO_PPRT
 {
     public partial class Frmpedido : Form
     {
+        // Declaração de variáveis de classe e objetos.
         private Font printFont;
         private StreamReader StreamToPrint;
         decimal total = 0;
@@ -35,6 +36,7 @@ namespace PROJETO_PPRT
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
+            // Criação de um DataTable para armazenar dados da consulta SQL.
             DataTable dt = new DataTable();
 
             dt = com.ObterDados("select  * from produto ");
@@ -45,33 +47,42 @@ namespace PROJETO_PPRT
 
             for (registros = 0; registros < dt.Rows.Count; registros++)
             {
-                Panel produto = new Panel();//criando o painel de produto
-                produto.Location = new Point(x, y);//defino o local
+                // Criação de um painel para exibir informações do produto.
+                Panel produto = new Panel();
+                produto.Location = new Point(x, y);
                 produto.Height = 190;
                 produto.Width = 115;
-                //produto.BorderStyle = BorderStyle.FixedSingle;
+
+
                 Label idproduto = new Label();//crio uma label
                 idproduto.Name = "idproduto";
                 idproduto.Location = new Point(-2, 10);
                 idproduto.Text = dt.Rows[registros][0].ToString();//mostra o registro
+
+
                 PictureBox foto = new PictureBox();//crio a area da foto
                 foto.Location = new Point(15, 0);
                 foto.SizeMode = PictureBoxSizeMode.StretchImage;
                 foto.Name = "foto";
                 foto.Image = Image.FromFile(dt.Rows[registros][5].ToString());
                 foto.Height = 90;
+
+
                 Label preco = new Label();
                 preco.Name = "preco";
                 preco.Text = dt.Rows[registros][2].ToString();
                 preco.Location = new Point(10, 119);
+
+
                 Label descricao = new Label();
                 descricao.Name = "produto";
                 descricao.Text = dt.Rows[registros][1].ToString();
                 descricao.Location = new Point(15, 98);
+
+
                 TextBox qtde = new TextBox();
                 qtde.Name = "quantidade";
                 qtdeproduto = Convert.ToInt32(dt.Rows[registros][3].ToString());
-                // qtde.Leave += new EventHandler((sender1, e1) => QtdeLeave(sender1, e1, qtde.Text, qtdeproduto));
                 qtde.Location = new Point(10, 138);
 
                 if (!string.IsNullOrEmpty(qtde.Text))
@@ -114,46 +125,50 @@ namespace PROJETO_PPRT
                 produto.Controls.Add(registrar);
                 produto.Controls.Add(qtde);
 
-                //painel criado da caixa
-                //add cada produto da consulta ao painel
+
+                // Adiciona o painel ao painel de layout (flowLayoutPanel1)
                 flowLayoutPanel1.Controls.Add(produto);
-                //somando 100 a 
+
+
+                // Calcula a posição para o próximo produto.
                 y += 100;
                 x = 0;
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
         {
-            dataGridView1.ColumnCount = 5;
 
+
+            // Criação de colunas e adiciona informações do produto ao DataGridView.
+            dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].Name = "Id";
             dataGridView1.Columns[1].Name = "produto";
             dataGridView1.Columns[2].Name = "preco";
             dataGridView1.Columns[3].Name = "quantidade";
             dataGridView1.Columns[4].Name = "SubTotal";
 
-            // calculo dos produtos selicionados
+
+            // Cálculo do subtotal do produto selecionado.
             decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
+
+
+            // Adiciona informações do produto à DataGridView e atualiza o total.
             dataGridView1.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
-
-
-
-
             total = total + subTotal;
-
-
             MessageBox.Show("Produto Selecionado" + total.ToString());
             textBox1.Text = total.ToString();
+
+
+            // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
+
+                // Grava informações sobre as colunas e as células na DataGridView.
                 bw.Write(dataGridView1.Columns.Count);
                 bw.Write(dataGridView1.Rows.Count);
                 foreach (DataGridViewRow dgvR in dataGridView1.Rows)
@@ -176,13 +191,12 @@ namespace PROJETO_PPRT
 
             }
 
-
-
         }
 
 
         private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
         {
+            // Método chamado quando ocorre um evento Leave em um campo de quantidade.
             if (!string.IsNullOrEmpty(qtde))
             {
                 if (Convert.ToInt32(qtde) > qtdeprod || Convert.ToInt32(qtde) <= 0)
@@ -220,6 +234,8 @@ namespace PROJETO_PPRT
 
         public void GerarPDF()
         {
+
+            // Método para gerar um PDF com base nos dados do DataGridView.
             //Exemplo de dados para o DataGridView
             dataGridView1.Columns.Add("idproduto", "coluna 1");
             dataGridView1.Columns.Add("Column2", "Coluna 2");
@@ -260,10 +276,6 @@ namespace PROJETO_PPRT
 
         }
 
-
-
-
-
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -273,15 +285,10 @@ namespace PROJETO_PPRT
         {
 
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
-
-
-
-
-
-
-
-
-
 
 }

@@ -18,17 +18,23 @@ namespace gitcake
 {
     public partial class Frmcadastro : Form
     {
-        produtomodelo pmodelo = new produtomodelo();
-        produtocontroller pController = new produtocontroller();
-        int codigoproduto; // Variável para identificar o código do produto
-        conexao com = new conexao();
+        produtomodelo pmodelo = new produtomodelo();     // Cria uma instância do modelo de produto.
+
+        produtocontroller pController = new produtocontroller();   // Cria uma instância do controlador de produto.
+
+        int codigoproduto;   // Variável para identificar o código do produto
+
+        conexao com = new conexao();  //Cria uma instância da classe de conexão com o banco de dados.
+
         public Frmcadastro()
         {
-            InitializeComponent();
+            InitializeComponent();  // Inicializa a janela do Windows Forms.
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            // Preenche campos de entrada na interface com os dados do produto selecionado no DataGridView.
             txtcodigo.Text = dataGridView1.Rows[e.RowIndex].Cells["idproduto"].Value.ToString();
             txtproduto.Text = dataGridView1.Rows[e.RowIndex].Cells["produto"].Value.ToString();
             txtpreco.Text = dataGridView1.Rows[e.RowIndex].Cells["preco"].Value.ToString();
@@ -52,12 +58,15 @@ namespace gitcake
         {
 
             // Carrega os dados da tabela 'produto' no DataGridView
+
             string sql = "SELECT * from produto";
             dataGridView1.DataSource = com.ObterDados(sql);
         }
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
+            // Lê os dados da interface, cria um objeto de modelo de produto e tenta cadastrá-lo no banco de dados.
+
             pmodelo.descricao = txtproduto.Text;
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
             pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
@@ -79,6 +88,7 @@ namespace gitcake
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // Permite ao usuário selecionar uma imagem para o produto usando um OpenFileDialog.
             try
             {
                 //chamo a caixa de dialago da foto
@@ -121,15 +131,12 @@ namespace gitcake
 
         private void btneditarproduto_Click(object sender, EventArgs e)
         {
+            // Lê os dados da interface, cria um objeto de modelo de produto e  atualiza o produto no banco de dados.
 
             pmodelo.descricao = txtproduto.Text;
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
             pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
             pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-            /*if (chkperecivel.Checked)
-                pmodelo.perecivel = true;
-            else
-                pmodelo.perecivel = false;*/
             pmodelo.data_val = dtpdata.Value;
             pmodelo.foto = lblfoto.Text;
             if (pController.cadastrarProduto(pmodelo, 2) == true)
@@ -152,6 +159,7 @@ namespace gitcake
 
         private void chkperecivel_CheckedChanged(object sender, EventArgs e)
         {
+
         }
 
         private void button1_Click(object sender, EventArgs e, string Id)
@@ -161,6 +169,8 @@ namespace gitcake
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
+            // Permite ao usuário pesquisar produtos com base em um texto de pesquisa e atualiza o DataGridView com os resultados.
+
             string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text + "%'";
             dataGridView1.DataSource = com.ObterDados(sql);
 
@@ -174,6 +184,7 @@ namespace gitcake
 
         private void btnedita_Click(object sender, EventArgs e)
         {
+            // Lê os dados da interface, cria um objeto de modelo de produto e  atualizar o produto no banco de dados.
             conexao con = new conexao();
             pmodelo.descricao = txtproduto.Text;
             pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
@@ -197,6 +208,7 @@ namespace gitcake
 
         private void btnexcluir_Click(object sender, EventArgs e)
         {
+            // Lê o código do produto da interface e  excluir o produto do banco de dados.
             try
             {
 

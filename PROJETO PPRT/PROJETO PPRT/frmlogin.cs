@@ -68,8 +68,7 @@ namespace PROJETO_PPRT
         {
             Close();
         }
-
-           
+ 
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
@@ -77,7 +76,6 @@ namespace PROJETO_PPRT
         }
 
       
-
         private void btnrecuperarsenha_Click(object sender, EventArgs e)
         {
             conexao com = new conexao();

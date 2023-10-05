@@ -1,40 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using controller;
 using modelo;
-using System.Diagnostics.Eventing.Reader;
-
-
-
 
 namespace gitcake
 {
     public partial class Frmcadastro : Form
     {
-        produtomodelo pmodelo = new produtomodelo();     // Cria uma instância do modelo de produto.
-
-        produtocontroller pController = new produtocontroller();   // Cria uma instância do controlador de produto.
-
-        int codigoproduto;   // Variável para identificar o código do produto
-
-        conexao com = new conexao();  //Cria uma instância da classe de conexão com o banco de dados.
+        produtomodelo pmodelo = new produtomodelo();
+        produtocontroller pController = new produtocontroller();
+        int codigoproduto;
+        conexao com = new conexao();
 
         public Frmcadastro()
         {
-            InitializeComponent();  // Inicializa a janela do Windows Forms.
+            InitializeComponent();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            // Preenche campos de entrada na interface com os dados do produto selecionado no DataGridView.
             txtcodigo.Text = dataGridView1.Rows[e.RowIndex].Cells["idproduto"].Value.ToString();
             txtproduto.Text = dataGridView1.Rows[e.RowIndex].Cells["produto"].Value.ToString();
             txtpreco.Text = dataGridView1.Rows[e.RowIndex].Cells["preco"].Value.ToString();
@@ -44,206 +31,151 @@ namespace gitcake
             lblfoto.Text = dataGridView1.Rows[e.RowIndex].Cells["foto"].Value.ToString();
             tabPage1.Focus();
             tabestoque.SelectedIndex = 0;
-
-
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Frmcadastro_Load(object sender, EventArgs e)
         {
-
-            // Carrega os dados da tabela 'produto' no DataGridView
-
             string sql = "SELECT * from produto";
             dataGridView1.DataSource = com.ObterDados(sql);
         }
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
-            // Lê os dados da interface, cria um objeto de modelo de produto e tenta cadastrá-lo no banco de dados.
-
-            pmodelo.descricao = txtproduto.Text;
-            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-            pmodelo.data_val = dtpdata.Value;
-            pmodelo.foto = lblfoto.Text;
-            produtocontroller pController = new produtocontroller();
-            if (pController.cadastrarProduto(pmodelo, 1) == true)
+            if (ValidarCampos())
             {
+                pmodelo.descricao = txtproduto.Text;
+                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                pmodelo.data_val = dtpdata.Value;
+                pmodelo.foto = lblfoto.Text;
+                produtocontroller pController = new produtocontroller();
+                if (pController.cadastrarProduto(pmodelo, 1) == true)
+                {
+                    MessageBox.Show("Cadastro com sucesso");
+                    string sql = "SELECT * from produto";
+                    dataGridView1.DataSource = com.ObterDados(sql);
+                }
+                else
+                {
+                    MessageBox.Show("Erro no Cadastro");
+                }
+            }
+        }
 
-                MessageBox.Show("Cadastro com sucesso");
-                string sql = "SELECT * from produto";
-                dataGridView1.DataSource = com.ObterDados(sql);
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtproduto.Text))
+            {
+                MessageBox.Show("O campo 'Produto' é obrigatório.");
+                return false;
             }
 
+            if (!decimal.TryParse(txtpreco.Text, out decimal preco) || preco <= 0)
+            {
+                MessageBox.Show("Preço inválido. Insira um valor numérico positivo.");
+                return false;
+            }
 
-            else
-                MessageBox.Show("Erro no Cadastro");
+            if (!int.TryParse(txtquantidade.Text, out int quantidade) || quantidade < 0)
+            {
+                MessageBox.Show("Quantidade inválida. Insira um valor numérico não negativo.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(lblfoto.Text) || !File.Exists(lblfoto.Text))
+            {
+                MessageBox.Show("Selecione uma imagem válida.");
+                return false;
+            }
+
+            return true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Permite ao usuário selecionar uma imagem para o produto usando um OpenFileDialog.
             try
             {
-                //chamo a caixa de dialago da foto
                 OpenFileDialog foto = new OpenFileDialog();
                 foto.Filter = "image File(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
 
-                //verificar se apertou no ok do dialg
                 if (foto.ShowDialog() == DialogResult.OK)
                 {
-                    //mostrar o nome da foto
                     lblfoto.Text = foto.FileName;
-
-                    //caminho da imagem para ser exibida no form
                     Image arquivo = Image.FromFile(foto.FileName);
-                    pictureBox1.Image = arquivo; //carregar a foto
-
+                    pictureBox1.Image = arquivo;
                 }
                 else
                 {
-                    MessageBox.Show("nao escolheu a foto");
+                    MessageBox.Show("Você não escolheu uma foto.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro :" + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
 
-        private void txtproduto_TextChanged(object sender, EventArgs e)
+        private void btneditarproduto_Click(object sender, EventArgs e)
         {
+            if (ValidarCampos())
+            {
+                pmodelo.descricao = txtproduto.Text;
+                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                pmodelo.data_val = dtpdata.Value;
+                pmodelo.foto = lblfoto.Text;
+                if (pController.cadastrarProduto(pmodelo, 2) == true)
+                {
+                    MessageBox.Show("Cadastro com Sucesso");
+                    string sql = "SELECT * from produto";
+                    dataGridView1.DataSource = com.ObterDados(sql);
+                }
+                else
+                {
+                    MessageBox.Show("Erro no cadastro");
+                }
+            }
+        }
 
+        private void btnpesquisar_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text + "%'";
+            dataGridView1.DataSource = com.ObterDados(sql);
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                if (pmodelo.codigo <= 0)
+                {
+                    MessageBox.Show("Favor escolher um produto válido.");
+                    return;
+                }
+
+                if (MessageBox.Show("Tem certeza de que deseja excluir este produto?", "Confirmação de Exclusão", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (pController.cadastrarProduto(pmodelo, 3) == true)
+                    {
+                        MessageBox.Show("Produto excluído: " + pmodelo.descricao);
+                        tabPage2.Focus();
+                        tabestoque.SelectedIndex = 1;
+                        string sql = "SELECT * from produto";
+                        dataGridView1.DataSource = com.ObterDados(sql);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
-        }
-
-
-
-        private void btneditarproduto_Click(object sender, EventArgs e)
-        {
-            // Lê os dados da interface, cria um objeto de modelo de produto e  atualiza o produto no banco de dados.
-
-            pmodelo.descricao = txtproduto.Text;
-            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-            pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-            pmodelo.data_val = dtpdata.Value;
-            pmodelo.foto = lblfoto.Text;
-            if (pController.cadastrarProduto(pmodelo, 2) == true)
-            {
-                MessageBox.Show("Cadastra com Sucesso");
-                string sql = "SELECT * from produto";
-                dataGridView1.DataSource = com.ObterDados(sql);
-            }
-            else
-            {
-                MessageBox.Show("Erro no cadastro");
-            }
-        }
-        private void SelecionarClick(object sender, EventArgs e, string Id)
-        {
-            MessageBox.Show(" Produto Selecionado " + Id);
-        }
-
-
-
-        private void chkperecivel_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e, string Id)
-        {
-            // MessageBox.Show(" Produto Selecionado " + Id);
-        }
-
-        private void btnpesquisar_Click(object sender, EventArgs e)
-        {
-            // Permite ao usuário pesquisar produtos com base em um texto de pesquisa e atualiza o DataGridView com os resultados.
-
-            string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text + "%'";
-            dataGridView1.DataSource = com.ObterDados(sql);
-
-        }
-
-        private void btneditar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void btnedita_Click(object sender, EventArgs e)
-        {
-            // Lê os dados da interface, cria um objeto de modelo de produto e  atualizar o produto no banco de dados.
-            conexao con = new conexao();
-            pmodelo.descricao = txtproduto.Text;
-            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-            pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-
-            pmodelo.foto = lblfoto.Text;
-            if (pController.cadastrarProduto(pmodelo, 2) == true)
-            {
-                MessageBox.Show("Atualizado com Sucesso");
-                //tabPage2.Focus();
-                // tabestoque.SelectedIndex = 1;
-                string sql = "SELECT * from produto";
-                dataGridView1.DataSource = com.ObterDados(sql);
-            }
-            else
-            {
-                MessageBox.Show("Erro no cadastro");
-            }
-        }
-
-        private void btnexcluir_Click(object sender, EventArgs e)
-        {
-            // Lê o código do produto da interface e  excluir o produto do banco de dados.
-            try
-            {
-
-
-                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-                if (string.IsNullOrEmpty(pmodelo.codigo.ToString()))
-                {
-
-                    MessageBox.Show("Codigo esta vazio");
-                    txtcodigo.Focus();
-                }
-                else
-                {
-                    if (pmodelo.codigo > 0)
-                    {
-                        if (pController.cadastrarProduto(pmodelo, 3) == true)
-                        {
-                            MessageBox.Show("produto excluido " + pmodelo.descricao);
-                            tabPage2.Focus();
-                            tabestoque.SelectedIndex = 1;
-                            string sql = "SELECT * from produto";
-                            dataGridView1.DataSource = com.ObterDados(sql);
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Favor escolher um produto");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro" + ex.Message);
-            }
         }
     }
 }

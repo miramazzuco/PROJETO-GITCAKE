@@ -28,11 +28,27 @@ namespace controller
 {
     public class pedidocontroller
     {
+        conexao con = new conexao();
         // public static void GerarPDF(DataGridView dataGridView)
         //{
         //     throw new NotImplementedException();
         // }
 
+        public bool excluirproduto(int idproduto)
+        {
+            bool resultado = false;
+            MySqlConnection sqlcon = con.getConexao();
+            string sql = "delete from produto where idproduto =" + idproduto;
+            sqlcon.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
+            mySqlCommand.CommandType = System.Data.CommandType.Text;
+            mySqlCommand.CommandText = sql;
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
+            {
+                resultado = true;
+            }
+            return resultado;
+        }
         public class GerarPDF
         {
             private Button printButton = new Button();

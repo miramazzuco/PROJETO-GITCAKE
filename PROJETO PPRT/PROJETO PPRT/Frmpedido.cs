@@ -122,40 +122,43 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
         {
-            dataGridView1.ColumnCount = 5;
+            decimal subTotal = 0;
+            dtitempedido.ColumnCount = 5;
+            dtitempedido.Columns[0].Name = "Id";
+            dtitempedido.Columns[1].Name = "produto";
+            dtitempedido.Columns[2].Name = "preco";
+            dtitempedido.Columns[3].Name = "quantidade";
+            dtitempedido.Columns[4].Name = "SubTotal";
 
-            dataGridView1.Columns[0].Name = "Id";
-            dataGridView1.Columns[1].Name = "produto";
-            dataGridView1.Columns[2].Name = "preco";
-            dataGridView1.Columns[3].Name = "quantidade";
-            dataGridView1.Columns[4].Name = "SubTotal";
+           // dtitempedido.DataSource
+            if (String.IsNullOrEmpty(quantidade))//condicional para quantidade nula
+                quantidade = "1";
+            
 
-            decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
+            subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
-            dataGridView1.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
+            dtitempedido.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
 
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            for (int i = 0; i < dtitempedido.RowCount; i++)
             {
-                total = total + Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+                total = total + Convert.ToDecimal(dtitempedido.Rows[i].Cells[4].Value);
+               
             }
 
-            MessageBox.Show("Produto Selecionado" + total.ToString());
+            MessageBox.Show("Produto Selecionado" + subTotal.ToString());
+            txttotal.Text = total.ToString();
             
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
-                bw.Write(dataGridView1.Columns.Count);
-                bw.Write(dataGridView1.Rows.Count);
-                foreach (DataGridViewRow dgvR in dataGridView1.Rows)
+                bw.Write(dtitempedido.Columns.Count);
+                bw.Write(dtitempedido.Rows.Count);
+                foreach (DataGridViewRow dgvR in dtitempedido.Rows)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; ++j)
+                    for (int j = 0; j < dtitempedido.Columns.Count; ++j)
                     {
                         object val = dgvR.Cells[j].Value;
                         if (val == null)
@@ -218,10 +221,10 @@ namespace PROJETO_PPRT
         public void GerarPDF()
         {
             //Exemplo de dados para o DataGridView
-            dataGridView1.Columns.Add("idproduto", "coluna 1");
-            dataGridView1.Columns.Add("Column2", "Coluna 2");
-            dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
-            dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
+            dtitempedido.Columns.Add("idproduto", "coluna 1");
+            dtitempedido.Columns.Add("Column2", "Coluna 2");
+            dtitempedido.Rows.Add("Linha1Col1", "Linha1Col2");
+            dtitempedido.Rows.Add("Linha2Col1", "Linha2Col2");
 
         }
 
@@ -261,6 +264,11 @@ namespace PROJETO_PPRT
         {
             Frmpagamento pg = new Frmpagamento();
             pg.ShowDialog();
+        }
+
+        private void btn_excluirprodpedido_Click(object sender, EventArgs e)
+        {
+            pedidocontroller pdcontroller = new pedidocontroller();
         }
     }
 

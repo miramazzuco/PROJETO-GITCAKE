@@ -43,6 +43,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_fecharpagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,12 +186,23 @@
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
+            // btn_fecharpagamento
+            // 
+            this.btn_fecharpagamento.Location = new System.Drawing.Point(769, 12);
+            this.btn_fecharpagamento.Name = "btn_fecharpagamento";
+            this.btn_fecharpagamento.Size = new System.Drawing.Size(19, 23);
+            this.btn_fecharpagamento.TabIndex = 34;
+            this.btn_fecharpagamento.Text = "x";
+            this.btn_fecharpagamento.UseVisualStyleBackColor = true;
+            this.btn_fecharpagamento.Click += new System.EventHandler(this.btn_fecharpagamento_Click);
+            // 
             // Frmpagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_fecharpagamento);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox3);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_fecharpagamento;
     }
 }

@@ -56,23 +56,33 @@ namespace gitcake
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
-            pmodelo.descricao = txtproduto.Text;
-            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-            pmodelo.data_val = dtpdata.Value;
-            pmodelo.foto = lblfoto.Text;
+            
             produtocontroller pController = new produtocontroller();
-            if (pController.cadastrarProduto(pmodelo, 1) == true)
+            if(pmodelo.foto != "" && pmodelo.descricao != "" && String.IsNullOrEmpty(txtpreco.Text) && String.IsNullOrEmpty(txtquantidade.Text))
             {
+                pmodelo.descricao = txtproduto.Text;
+                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                pmodelo.data_val = dtpdata.Value;
+                pmodelo.foto = lblfoto.Text;
+                if (pController.cadastrarProduto(pmodelo, 1) == true)
+                {
 
-                MessageBox.Show("Cadastro com sucesso");
-                string sql = "SELECT * from produto";
-                dataGridView1.DataSource = com.ObterDados(sql);
+                    MessageBox.Show("Cadastro com sucesso");
+                    string sql = "SELECT * from produto";
+                    dataGridView1.DataSource = com.ObterDados(sql);
+                }
+                else {
+                    MessageBox.Show("Erro no Cadastro");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Insira todas as informações do produto");
             }
 
-
-            else
-                MessageBox.Show("Erro no Cadastro");
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

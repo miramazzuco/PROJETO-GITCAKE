@@ -30,11 +30,11 @@
         {
             this.btn_avancarpedido = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtitempedido = new System.Windows.Forms.DataGridView();
             this.btn_excluirprodpedido = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtitempedido)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_avancarpedido
@@ -45,7 +45,7 @@
             this.btn_avancarpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_avancarpedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_avancarpedido.Location = new System.Drawing.Point(482, 648);
-            this.btn_avancarpedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_avancarpedido.Margin = new System.Windows.Forms.Padding(2);
             this.btn_avancarpedido.Name = "btn_avancarpedido";
             this.btn_avancarpedido.Size = new System.Drawing.Size(141, 38);
             this.btn_avancarpedido.TabIndex = 5;
@@ -57,23 +57,22 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(482, 36);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(554, 574);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
-            // dataGridView1
+            // dtitempedido
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 36);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(380, 574);
-            this.dataGridView1.TabIndex = 21;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtitempedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
+            this.dtitempedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtitempedido.Location = new System.Drawing.Point(57, 36);
+            this.dtitempedido.Margin = new System.Windows.Forms.Padding(2);
+            this.dtitempedido.Name = "dtitempedido";
+            this.dtitempedido.RowHeadersWidth = 51;
+            this.dtitempedido.RowTemplate.Height = 24;
+            this.dtitempedido.Size = new System.Drawing.Size(380, 574);
+            this.dtitempedido.TabIndex = 21;
             // 
             // btn_excluirprodpedido
             // 
@@ -87,14 +86,15 @@
             this.btn_excluirprodpedido.TabIndex = 25;
             this.btn_excluirprodpedido.Text = "Excluir";
             this.btn_excluirprodpedido.UseVisualStyleBackColor = false;
+            this.btn_excluirprodpedido.Click += new System.EventHandler(this.btn_excluirprodpedido_Click);
             // 
-            // textBox1
+            // txttotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 666);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 27;
+            this.txttotal.Location = new System.Drawing.Point(130, 666);
+            this.txttotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(98, 20);
+            this.txttotal.TabIndex = 27;
             // 
             // label2
             // 
@@ -113,18 +113,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1095, 748);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_excluirprodpedido);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtitempedido);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btn_avancarpedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frmpedido";
             this.Text = "Frmpedido";
             this.Load += new System.EventHandler(this.Frmpedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtitempedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +133,9 @@
         #endregion
         private System.Windows.Forms.Button btn_avancarpedido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtitempedido;
         private System.Windows.Forms.Button btn_excluirprodpedido;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttotal;
         private System.Windows.Forms.Label label2;
     }
 }

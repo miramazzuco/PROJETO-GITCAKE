@@ -16,5 +16,10 @@ namespace PROJETO_PPRT
         {
             InitializeComponent();
         }
+
+        private void btn_fecharpagamento_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

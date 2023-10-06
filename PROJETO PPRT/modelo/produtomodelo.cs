@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+
 
 namespace modelo
 {
     public class produtomodelo
     {
-        
-    
+       
+
         private int cod_prod;
         private string desc_prod;
         private int qtde_prod;
@@ -18,6 +19,8 @@ namespace modelo
         private DateTime data_validade;
         private string foto_prod;
         // contrutor da classe
+
+        
 
         public produtomodelo()
         {
@@ -67,6 +70,8 @@ namespace modelo
             get { return foto_prod; }
             set { foto_prod = value; }
         }
+
+       
 
 
     }

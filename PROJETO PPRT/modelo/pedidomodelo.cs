@@ -22,7 +22,10 @@ namespace modelo
             prod = null;
             qtde = 0;
             preco = 0;
+
+
         }
+
 
     }
 

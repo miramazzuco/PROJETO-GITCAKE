@@ -16,5 +16,10 @@ namespace PROJETO_PPRT
         {
             InitializeComponent();
         }
+
+        private void Frmvendas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

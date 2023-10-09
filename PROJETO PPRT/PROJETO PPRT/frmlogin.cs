@@ -49,11 +49,11 @@ namespace PROJETO_PPRT
             //guardando o id do usuario retornado da consulta
             codigousuario = uscontrole.logar(us);
             //apresenta na tela qual usuario acabou de logar no programa
-            MessageBox.Show("USUARIO = " + codigousuario.ToString());
+            
             //condicionais para entrar no programa
             if (uscontrole.logar(us) >= 1)
             {
-                Frmprincipal principal = new Frmprincipal();
+                Frmprincipal principal = new Frmprincipal(codigousuario);
                 principal.ShowDialog();//estabeleço qual pagina vai rodar apos o login
             }
             else
@@ -68,8 +68,7 @@ namespace PROJETO_PPRT
         {
             Close();
         }
-
-           
+ 
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
@@ -77,7 +76,6 @@ namespace PROJETO_PPRT
         }
 
       
-
         private void btnrecuperarsenha_Click(object sender, EventArgs e)
         {
             conexao com = new conexao();

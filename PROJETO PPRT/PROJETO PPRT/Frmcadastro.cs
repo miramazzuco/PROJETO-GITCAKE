@@ -76,7 +76,7 @@ namespace gitcake
                 return false;
             }
 
-            if (!int.TryParse(txtquantidade.Text, out int quantidade) || quantidade < 0)
+            if (!int.TryParse(txtquantidade.Text, out int quantidade) || quantidade == 0)
             {
                 MessageBox.Show("Quantidade inválida. Insira um valor numérico não negativo.");
                 return false;
@@ -174,6 +174,11 @@ namespace gitcake
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

@@ -142,15 +142,17 @@
   <data name="btnsobrenos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCB0XHxZ1cUsjAAAB1UlEQVRYR+2XO0tcURSFR4OPwICB
-        0SaVry6VCFGCWhkfhY9gERMwYAIhpNB0g40pFBQUBQsV7HRkUAQLi+mSf5AmJH9n8i1ZGa65c6OYezDC
-        LPhgr7P3nH2YOfecO5ma7p3K5fIzKMIJTMAkFEy/y8KIBt1wBA/hAWzDumONaRFdLk9fTP4JntrGRK4P
-        FmzTF5O/gTHbmMiNw5xt+mLyLOi3r/NQRRpzLuuhMKLBDGzYVsTYJrywDSsavYNdaIJm2IN5p/9NTFQP
-        ryF/DRfwwyiuVhPlFdS7TbIoWoJ56EyZt5B3m2RRdOQwdd1o7v9hAVceM+I1h4ofQ+WgIX4Ow7byi6qx
-        lV93qPjyMbVNFkXaUB9Ax6t2+08YhAbQ0fsF2uERnMMptEAHfIUtUO0QfAftJ831ES7cJlkU6TxX40N/
-        qBE+249AG+zAAfTAE8caa4VRUO0yaCHv7bUJC26TLIpqm/DuFkDBLHyDaidZGmjuWbeLi+QZ9AbmzO3i
-        Ihns6/+tv/YgWQK9YoWk5HZxkcxBtYvkTwZgP+IVayxak0TO7W4vJpmGl7by2rxTtuFFs1WovP0S6215
-        xTa8aKb/BdELSxfNsW14eQG6hKIUna7pPimT+QVl7bqzx056BgAAAABJRU5ErkJggg==
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCgoBAzmXcsijAAACQ0lEQVRYR+2WTW9NURiFqyIVDFXV
+        RIiKpAYkQlJfE2EuBowYSFBVFNGBmPoOJkyKRGPim5GGX9CEqZ9zPc/Ouje3btXtuW1C0pU8yV7rvPs9
+        +56es7u7lvRfqFarDcIkrEtUhL8CY7FF+L7UDibqTDTaAB9hO3yCnuQX4Sycg9FkPWCNtc7pN+9INHkA
+        WzI+BidhBbwrBYjx+2Sn4GiyAbhXCjoRTSZgdcZ74LIenpUCxPh5sjHYnWwNTJSCTmRDeA2n4TOsT34f
+        boS7yfrBGmuds8u8Y9GoF6agPIm68BcktgjvL7e2N1F10cTHujn4UtXHdXwB5fe8uXbGotsWE7eCv2Qc
+        rlfEufYYSNv2xaQzcDC2suxhr9j2xaRhGIotwm/LsAi/VmKLZqkZguHY9uUkOB6rd5P5Cd2JzC5JrL47
+        NWWzUoxPQOUFfIf9sAlewGN4CBvhCLgBfcjY7BFYY61zDoA9Ki/gMIzCLdiRfB/cgRFYFfwczfamZic4
+        x7n2qLyAGe9AFdljXgugeCX4/d4E9/7691wVe9jLcePdmFUU+LjewO1F4i0cyu1axcVXsDx2wWVv7xHb
+        Ki5OZrhomvMes10k68uwoQ6zORfwBZbFFuF/ZNhQO5l9/pBNxbaKi9NwNVbv9/0NGuc+xh7FzJp3QA8p
+        X6EczRRjz4tmI4nMrsF0bKu46GHSY9VL8EDhAly1e4Je3IDMzjdlXjezvp75b9rMzUhvT3vP7x1YaC0t
+        4G8LeAr1v+Fi8SS3W9K/oK6uXzeZNOZIvAYeAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

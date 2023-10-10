@@ -17,7 +17,7 @@ namespace PROJETO_PPRT
 {
     public partial class Frmcadastrousuario : Form
     {
-        int idperfil;
+        int idperfil= 1;
         int codigo;
 
         usuariocontroller uscontroller = new usuariocontroller();
@@ -55,9 +55,9 @@ namespace PROJETO_PPRT
                 return;
             }
 
-            if (usmodelo.senha.Length < 8 || !usmodelo.senha.Any(char.IsLetter) || !usmodelo.senha.Any(char.IsDigit))
+            if (usmodelo.senha.Length < 4 || !usmodelo.senha.Any(char.IsLetter) || !usmodelo.senha.Any(char.IsDigit))
             {
-                MessageBox.Show("A senha deve ter pelo menos 8 caracteres e incluir letras e números.");
+                MessageBox.Show("A senha deve ter pelo menos 4 caracteres e incluir letras e números.");
                 return;
             }
 
@@ -79,7 +79,7 @@ namespace PROJETO_PPRT
                 txtnome.Text = string.Empty;
                 txtsenha.Text = string.Empty;
                 txtemail.Text = string.Empty;
-                cboperfil.SelectedIndex = -1;
+                cboperfil.SelectedIndex = 1;
             }
             else
             {
@@ -154,7 +154,8 @@ namespace PROJETO_PPRT
 
         private void cboperfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idperfil = Convert.ToInt32(((DataRowView)cboperfil.SelectedItem)["idperfil"]);
+            
+                idperfil = Convert.ToInt32(((DataRowView)cboperfil.SelectedItem)["idperfil"]);
         }
 
         private bool IsValidEmail(string email)
@@ -168,6 +169,18 @@ namespace PROJETO_PPRT
             {
                 return false;
             }
+        }
+
+        private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //convertendo a primeira coleta em string
+            codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            //convert o inteiro para string
+            MessageBox.Show("Usuario selecionado :  " + codigo.ToString());
+            txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
         }
     }
 

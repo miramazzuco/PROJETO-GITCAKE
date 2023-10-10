@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml;
 using System.Diagnostics;
+using OfficeOpenXml;
 
 namespace PROJETO_PPRT
 {
@@ -79,7 +80,7 @@ namespace PROJETO_PPRT
             pictureBox1.Visible = false;
         }
 
-        private void btnsobrenos_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmsobrenos" a ele.
 
@@ -93,8 +94,8 @@ namespace PROJETO_PPRT
             ad.Show();
             pictureBox1.Visible = false;
 
-
         }
+
 
         private void btnestoque_Click(object sender, EventArgs e)
         {
@@ -113,6 +114,8 @@ namespace PROJETO_PPRT
 
         private void btnvendas_Click(object sender, EventArgs e)
         {
+
+
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmvendas" a ele.
             panel2.Controls.Clear();
             Frmvendas ad = new Frmvendas();
@@ -169,6 +172,19 @@ namespace PROJETO_PPRT
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnsobrenos_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+           Frmsobrenos ad = new Frmsobrenos();  
+
+            ad.TopLevel = false;
+            ad.Dock = DockStyle.Fill;
+            ad.FormBorderStyle = FormBorderStyle.None;
+            panel2.Controls.Add(ad);
+            ad.Show();
+            pictureBox1.Visible = false;
         }
     }
 }

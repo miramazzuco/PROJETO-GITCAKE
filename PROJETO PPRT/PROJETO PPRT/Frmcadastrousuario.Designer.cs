@@ -124,7 +124,7 @@
             this.dtusuario.RowTemplate.Height = 24;
             this.dtusuario.Size = new System.Drawing.Size(861, 423);
             this.dtusuario.TabIndex = 8;
-           
+            this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
             // 
             // btneditarusuario
             // 
@@ -188,7 +188,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(192, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(320, 39);
+            this.label5.Size = new System.Drawing.Size(307, 38);
             this.label5.TabIndex = 13;
             this.label5.Text = "Detalhes do usúario";
             this.label5.Click += new System.EventHandler(this.label5_Click);

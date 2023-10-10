@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gitcake;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PROJETO_PPRT
 {
     public partial class Frmvendas : Form
     {
+        conexao com = new conexao();
         public Frmvendas()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace PROJETO_PPRT
 
         private void Frmvendas_Load(object sender, EventArgs e)
         {
-
+            string sql = "SELECT * from pedido";
+            dtpedidos.DataSource = com.ObterDados(sql);
         }
     }
 }

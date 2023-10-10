@@ -17,6 +17,7 @@ using MySqlX.XDevAPI.Relational;
 using System.IO;
 using System.Drawing.Printing;
 using MySqlX.XDevAPI;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 
 namespace PROJETO_PPRT
 {
@@ -26,6 +27,7 @@ namespace PROJETO_PPRT
         private StreamReader StreamToPrint;
         decimal total = 0;
         conexao com = new conexao();
+        itemcontroller itemcontroller = new itemcontroller();
         public Frmpedido()
         {
             InitializeComponent();
@@ -103,6 +105,25 @@ namespace PROJETO_PPRT
                 registrar.FlatStyle = FlatStyle.Popup;
                 registrar.ForeColor = Color.FromArgb(255, 255, 128);
 
+                int produtoId = Convert.ToInt32(dt.Rows[registros][0].ToString());
+                int quantidadeSelecionada = int.Parse(qtde.Text); // Supondo que você tenha um campo de entrada para a quantidade.
+                itemmodelo produtoSelecionado = itemcontroller.CarregaItem(produtoId); // Implemente um método para obter o produto pelo ID.
+
+                if (produtoSelecionado != null)
+                {
+                   decimal subtotal = Convert.ToInt32(qtde.ToString()) * Convert.ToDecimal(preco.ToString());
+
+                    itemmodelo itemPedido = new itemmodelo()
+                    {
+                    
+                        iditem = produtoId,
+                        quantidadeitem = quantidadeSelecionada,
+                        subtotalitem = subtotal
+                    };
+
+                    // Adicione o ItemPedido à lista de itens do pedido
+                  //.Itens.Add(itemPedido);
+                }
 
 
                 //adicionando os componentes ao painel
@@ -125,6 +146,10 @@ namespace PROJETO_PPRT
 
         private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
         {
+            
+
+            
+
             decimal subTotal = 0;
             dtitempedido.ColumnCount = 5;
             dtitempedido.Columns[0].Name = "Id";
@@ -269,6 +294,11 @@ namespace PROJETO_PPRT
         private void btn_excluirprodpedido_Click(object sender, EventArgs e)
         {
             pedidocontroller pdcontroller = new pedidocontroller();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

@@ -26,6 +26,7 @@ namespace modelo
 
         }
 
+        public List<itemmodelo> itens { get; set; }
 
     }
 

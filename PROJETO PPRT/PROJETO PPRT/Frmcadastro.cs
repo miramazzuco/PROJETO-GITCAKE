@@ -159,11 +159,6 @@ namespace gitcake
         {
         }
 
-        private void button1_Click(object sender, EventArgs e, string Id)
-        {
-           // MessageBox.Show(" Produto Selecionado " + Id);
-        }
-
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text+"%'";
@@ -171,11 +166,7 @@ namespace gitcake
 
         }
 
-        private void btneditar_Click(object sender, EventArgs e)
-        {
-
-           
-        }
+       
 
         private void btnedita_Click(object sender, EventArgs e)
         {

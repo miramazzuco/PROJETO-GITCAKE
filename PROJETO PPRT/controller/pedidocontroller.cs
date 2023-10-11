@@ -23,17 +23,61 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 using Application = System.Net.Mime.MediaTypeNames.Application;
+using System.Runtime.Remoting.Contexts;
 
 namespace controller
 {
     public class pedidocontroller
     {
+        bool resultado = false;
+        string sql;
         conexao con = new conexao();
         // public static void GerarPDF(DataGridView dataGridView)
         //{
         //     throw new NotImplementedException();
         // }
 
+
+        public bool cadastrarPedido(pedidomodelo pm, int operacao)
+        {
+            try
+            {
+                switch (operacao)
+                {
+                    case 1:// inserir dados
+
+
+                        sql = "insert into pedido(cliente,emissao,status,entrega,endereco)" +
+                                                    "values(@cliente,@emissao,@status,@entrega,@endereco)";
+                        break;
+
+                    case 2: // atualizar
+
+                        sql = "update pedido set cliente=@cliente,emissao=@emissao,status=@status,entrega=@entrega,endereco=@endereco where idpedido=@id";
+                        break;
+                    case 3:
+                        sql = "DELETE from pedido where idpedido=@id";
+                        break;
+                }
+                string[] campos = { "@cliente", "@emissao", "@status", "@entrega", "@endereco" };
+                object[] valores = { pm.cliente, pm.emissao, pm.status, pm.entrega, pm.endereco };
+                if (con.cadastrar(pm.idpedido, campos, valores, sql) >= 1)
+                {
+                    resultado = true;
+                }
+                else
+                {
+                    resultado = false;
+                }
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
         public bool excluirproduto(int idproduto)
         {
             bool resultado = false;
@@ -90,6 +134,8 @@ namespace controller
                // Application.SetCompatibleTextRenderingDefault(false);
                 //   Application.Run(new GerarPDF());
             }
+
+            
         }
     }
    

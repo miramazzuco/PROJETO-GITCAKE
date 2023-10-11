@@ -28,6 +28,8 @@ namespace PROJETO_PPRT
         decimal total = 0;
         conexao com = new conexao();
         itemcontroller itemcontroller = new itemcontroller();
+        itemmodelo itmodelo = new itemmodelo();
+        pedidomodelo pdmodelo = new pedidomodelo();
         public Frmpedido()
         {
             InitializeComponent();
@@ -157,6 +159,11 @@ namespace PROJETO_PPRT
             dtitempedido.Columns[2].Name = "preco";
             dtitempedido.Columns[3].Name = "quantidade";
             dtitempedido.Columns[4].Name = "SubTotal";
+
+            itmodelo.produtoitem = Convert.ToInt32(id);
+            itmodelo.quantidadeitem = Convert.ToInt32(quantidade);
+            itmodelo.subtotalitem = Convert.ToDecimal(subTotal);
+            pdmodelo.itens.Add(itmodelo);
 
            // dtitempedido.DataSource
             if (String.IsNullOrEmpty(quantidade))//condicional para quantidade nula

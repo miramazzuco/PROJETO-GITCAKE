@@ -29,56 +29,57 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmpagamento));
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtppedido = new System.Windows.Forms.DateTimePicker();
+            this.cbstatus = new System.Windows.Forms.ComboBox();
+            this.txtcliente = new System.Windows.Forms.TextBox();
+            this.txtendereco = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbentrega = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_fecharpagamento = new System.Windows.Forms.Button();
+            this.btn_finalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtppedido
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(203, 150);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.dtppedido.Location = new System.Drawing.Point(202, 146);
+            this.dtppedido.Margin = new System.Windows.Forms.Padding(2);
+            this.dtppedido.Name = "dtppedido";
+            this.dtppedido.Size = new System.Drawing.Size(212, 20);
+            this.dtppedido.TabIndex = 33;
             // 
-            // comboBox1
+            // cbstatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 187);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 21);
-            this.comboBox1.TabIndex = 32;
+            this.cbstatus.FormattingEnabled = true;
+            this.cbstatus.Location = new System.Drawing.Point(199, 187);
+            this.cbstatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cbstatus.Name = "cbstatus";
+            this.cbstatus.Size = new System.Drawing.Size(92, 21);
+            this.cbstatus.TabIndex = 32;
             // 
-            // textBox3
+            // txtcliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(188, 106);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(116, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtcliente.Location = new System.Drawing.Point(188, 106);
+            this.txtcliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcliente.Name = "txtcliente";
+            this.txtcliente.Size = new System.Drawing.Size(116, 20);
+            this.txtcliente.TabIndex = 31;
             // 
-            // textBox2
+            // txtendereco
             // 
-            this.textBox2.Location = new System.Drawing.Point(169, 272);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 30;
+            this.txtendereco.Location = new System.Drawing.Point(169, 272);
+            this.txtendereco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtendereco.Name = "txtendereco";
+            this.txtendereco.Size = new System.Drawing.Size(135, 20);
+            this.txtendereco.TabIndex = 30;
             // 
             // label8
             // 
@@ -91,15 +92,15 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Endereço :";
             // 
-            // checkBox1
+            // cbentrega
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(133, 231);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbentrega.AutoSize = true;
+            this.cbentrega.Location = new System.Drawing.Point(133, 231);
+            this.cbentrega.Margin = new System.Windows.Forms.Padding(2);
+            this.cbentrega.Name = "cbentrega";
+            this.cbentrega.Size = new System.Drawing.Size(15, 14);
+            this.cbentrega.TabIndex = 28;
+            this.cbentrega.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -127,7 +128,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(40, 146);
+            this.label5.Location = new System.Drawing.Point(39, 146);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 24);
@@ -156,13 +157,13 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Detalhes do pedido :\r\n";
             // 
-            // textBox1
+            // txttotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 375);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 21;
+            this.txttotal.Location = new System.Drawing.Point(121, 375);
+            this.txttotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(98, 20);
+            this.txttotal.TabIndex = 21;
             // 
             // label2
             // 
@@ -196,30 +197,42 @@
             this.btn_fecharpagamento.UseVisualStyleBackColor = true;
             this.btn_fecharpagamento.Click += new System.EventHandler(this.btn_fecharpagamento_Click);
             // 
+            // btn_finalizar
+            // 
+            this.btn_finalizar.Location = new System.Drawing.Point(526, 343);
+            this.btn_finalizar.Name = "btn_finalizar";
+            this.btn_finalizar.Size = new System.Drawing.Size(171, 49);
+            this.btn_finalizar.TabIndex = 35;
+            this.btn_finalizar.Text = "FINALIZAR EMISSAO";
+            this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
+            // 
             // Frmpagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_finalizar);
             this.Controls.Add(this.btn_fecharpagamento);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dtppedido);
+            this.Controls.Add(this.cbstatus);
+            this.Controls.Add(this.txtcliente);
+            this.Controls.Add(this.txtendereco);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbentrega);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmpagamento";
             this.Text = "Frmpagamento";
+            this.Load += new System.EventHandler(this.Frmpagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,20 +241,21 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dtppedido;
+        private System.Windows.Forms.ComboBox cbstatus;
+        private System.Windows.Forms.TextBox txtcliente;
+        private System.Windows.Forms.TextBox txtendereco;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbentrega;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_fecharpagamento;
+        private System.Windows.Forms.Button btn_finalizar;
     }
 }

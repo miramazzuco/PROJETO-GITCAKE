@@ -115,28 +115,7 @@ namespace gitcake
             }
         }
 
-        private void btneditarproduto_Click(object sender, EventArgs e)
-        {
-            if (ValidarCampos())
-            {
-                pmodelo.descricao = txtproduto.Text;
-                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-                pmodelo.data_val = dtpdata.Value;
-                pmodelo.foto = lblfoto.Text;
-                if (pController.cadastrarProduto(pmodelo, 2) == true)
-                {
-                    MessageBox.Show("Cadastro com Sucesso");
-                    string sql = "SELECT * from produto";
-                    dataGridView1.DataSource = com.ObterDados(sql);
-                }
-                else
-                {
-                    MessageBox.Show("Erro no cadastro");
-                }
-            }
-        }
+       
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
@@ -181,6 +160,36 @@ namespace gitcake
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnedita_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                pmodelo.descricao = txtproduto.Text;
+                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                pmodelo.data_val = dtpdata.Value;
+                pmodelo.foto = lblfoto.Text;
+                if (pController.cadastrarProduto(pmodelo, 2) == true)
+                {
+                    MessageBox.Show("Editado com Sucesso");
+                    string sql = "SELECT * from produto";
+                    dataGridView1.DataSource = com.ObterDados(sql);
+                    tabPage2.Focus();
+                    tabestoque.SelectedIndex = 1;
+                    txtproduto.Clear();
+                    txtcodigo.Clear();
+                    txtpreco.Clear();
+                    txtquantidade.Value = 0;
+                    DateTime dtpdata = DateTime.Now;    
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao editar");
+                }
+            }
         }
     }
 }

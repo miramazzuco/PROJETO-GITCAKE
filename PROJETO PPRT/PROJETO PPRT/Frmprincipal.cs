@@ -174,10 +174,10 @@ namespace PROJETO_PPRT
 
         }
 
-        private void btnsobrenos_Click(object sender, EventArgs e)
+        private void btnsobrenos_Click_1(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-           Frmsobrenos ad = new Frmsobrenos();  
+            Frmsobrenos ad = new Frmsobrenos();
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;

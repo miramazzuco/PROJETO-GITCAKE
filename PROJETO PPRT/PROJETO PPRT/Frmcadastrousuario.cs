@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions; // Adicione esta referência para a validação de email
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -125,6 +126,7 @@ namespace PROJETO_PPRT
             {
                 MessageBox.Show("Usuário atualizado com sucesso");
                 dtusuario.DataSource = uscontroler.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
+              
             }
             else
             {
@@ -173,6 +175,7 @@ namespace PROJETO_PPRT
 
         private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             //convertendo a primeira coleta em string
             codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
             //convert o inteiro para string

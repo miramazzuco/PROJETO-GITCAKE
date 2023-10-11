@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmprincipal));
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnsobrenos = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnestoque = new System.Windows.Forms.Button();
             this.btncadastrar = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelmenu.SuspendLayout();
             this.panellogo.SuspendLayout();
@@ -58,8 +59,8 @@
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.panelmenu.Controls.Add(this.button2);
             this.panelmenu.Controls.Add(this.button1);
-            this.panelmenu.Controls.Add(this.btnsobrenos);
             this.panelmenu.Controls.Add(this.button5);
             this.panelmenu.Controls.Add(this.btnestoque);
             this.panelmenu.Controls.Add(this.btncadastrar);
@@ -74,6 +75,27 @@
             this.panelmenu.TabIndex = 0;
             this.panelmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmenu_Paint);
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 596);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(287, 119);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "     Sobre nós";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnsobrenos_Click_1);
+            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,7 +105,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 614);
+            this.button1.Location = new System.Drawing.Point(0, 495);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -94,27 +116,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnsobrenos
-            // 
-            this.btnsobrenos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnsobrenos.FlatAppearance.BorderSize = 0;
-            this.btnsobrenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsobrenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsobrenos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsobrenos.Image = ((System.Drawing.Image)(resources.GetObject("btnsobrenos.Image")));
-            this.btnsobrenos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsobrenos.Location = new System.Drawing.Point(0, 495);
-            this.btnsobrenos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnsobrenos.Name = "btnsobrenos";
-            this.btnsobrenos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnsobrenos.Size = new System.Drawing.Size(287, 119);
-            this.btnsobrenos.TabIndex = 7;
-            this.btnsobrenos.Text = "     Sobre nós";
-            this.btnsobrenos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsobrenos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnsobrenos.UseVisualStyleBackColor = true;
-            this.btnsobrenos.Click += new System.EventHandler(this.btnsobrenos_Click);
             // 
             // button5
             // 
@@ -312,12 +313,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(293, 85);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1920, 1080);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 980);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1920, 100);
+            this.panel3.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -369,7 +379,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnsobrenos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
@@ -377,5 +386,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
     }
 }

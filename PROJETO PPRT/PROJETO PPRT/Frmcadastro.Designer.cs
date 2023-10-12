@@ -115,7 +115,7 @@
             // txtproduto
             // 
             this.txtproduto.Location = new System.Drawing.Point(189, 201);
-            this.txtproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtproduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtproduto.Name = "txtproduto";
             this.txtproduto.Size = new System.Drawing.Size(122, 20);
             this.txtproduto.TabIndex = 4;
@@ -124,7 +124,7 @@
             // txtpreco
             // 
             this.txtpreco.Location = new System.Drawing.Point(189, 254);
-            this.txtpreco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtpreco.Margin = new System.Windows.Forms.Padding(2);
             this.txtpreco.Name = "txtpreco";
             this.txtpreco.Size = new System.Drawing.Size(122, 20);
             this.txtpreco.TabIndex = 6;
@@ -133,12 +133,11 @@
             // 
             this.dtpdata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpdata.Location = new System.Drawing.Point(189, 362);
-            this.dtpdata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpdata.Margin = new System.Windows.Forms.Padding(2);
             this.dtpdata.Name = "dtpdata";
             this.dtpdata.Size = new System.Drawing.Size(276, 24);
             this.dtpdata.TabIndex = 9;
             this.dtpdata.Value = new System.DateTime(2023, 9, 13, 21, 48, 23, 0);
-            this.dtpdata.ValueChanged += new System.EventHandler(this.chkperecivel_CheckedChanged);
             // 
             // btncadastrarproduto
             // 
@@ -147,7 +146,7 @@
             this.btncadastrarproduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncadastrarproduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btncadastrarproduto.Location = new System.Drawing.Point(448, 476);
-            this.btncadastrarproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btncadastrarproduto.Margin = new System.Windows.Forms.Padding(2);
             this.btncadastrarproduto.Name = "btncadastrarproduto";
             this.btncadastrarproduto.Size = new System.Drawing.Size(131, 42);
             this.btncadastrarproduto.TabIndex = 9;
@@ -162,7 +161,7 @@
             this.lblfoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblfoto.Location = new System.Drawing.Point(728, 351);
-            this.lblfoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblfoto.Margin = new System.Windows.Forms.Padding(2);
             this.lblfoto.Name = "lblfoto";
             this.lblfoto.Size = new System.Drawing.Size(91, 35);
             this.lblfoto.TabIndex = 11;
@@ -173,7 +172,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(572, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(386, 254);
             this.pictureBox1.TabIndex = 12;
@@ -184,7 +183,7 @@
             this.tabestoque.Controls.Add(this.tabPage1);
             this.tabestoque.Controls.Add(this.tabPage2);
             this.tabestoque.Location = new System.Drawing.Point(9, 10);
-            this.tabestoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabestoque.Margin = new System.Windows.Forms.Padding(2);
             this.tabestoque.Name = "tabestoque";
             this.tabestoque.SelectedIndex = 0;
             this.tabestoque.Size = new System.Drawing.Size(1018, 878);
@@ -212,9 +211,9 @@
             this.tabPage1.Controls.Add(this.txtproduto);
             this.tabPage1.Controls.Add(this.txtpreco);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1010, 852);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inserir";
@@ -278,7 +277,7 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(29, 36);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(72, 41);
             this.pictureBox2.TabIndex = 14;
@@ -307,9 +306,9 @@
             this.tabPage2.Controls.Add(this.btnpesquisar);
             this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1010, 852);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estoque";
@@ -353,7 +352,7 @@
             // 
             this.txtPesquisar.BackColor = System.Drawing.SystemColors.Window;
             this.txtPesquisar.Location = new System.Drawing.Point(308, 111);
-            this.txtPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(180, 20);
             this.txtPesquisar.TabIndex = 7;
@@ -365,7 +364,7 @@
             this.btnpesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnpesquisar.Location = new System.Drawing.Point(700, 90);
-            this.btnpesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnpesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.btnpesquisar.Name = "btnpesquisar";
             this.btnpesquisar.Size = new System.Drawing.Size(135, 41);
             this.btnpesquisar.TabIndex = 5;
@@ -382,7 +381,7 @@
             this.Controls.Add(this.tabestoque);
             this.ForeColor = System.Drawing.Color.Crimson;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frmcadastro";
             this.Text = "Frmcadastro";
             this.Load += new System.EventHandler(this.Frmcadastro_Load);

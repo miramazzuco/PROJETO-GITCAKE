@@ -56,9 +56,9 @@ namespace gitcake
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
-            
+            produtomodelo pmodelo = new produtomodelo();
             produtocontroller pController = new produtocontroller();
-            if(pmodelo.foto != "" && pmodelo.descricao != "" && String.IsNullOrEmpty(txtpreco.Text) && String.IsNullOrEmpty(txtquantidade.Text))
+            if(lblfoto.Text != "" && txtproduto.Text != "" && !String.IsNullOrEmpty(txtpreco.Text) && !String.IsNullOrEmpty(txtquantidade.Text))
             {
                 pmodelo.descricao = txtproduto.Text;
                 pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
@@ -123,31 +123,6 @@ namespace gitcake
         }
 
         
-
-        private void btneditarproduto_Click(object sender, EventArgs e)
-        {
-
-            pmodelo.descricao = txtproduto.Text;
-            pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-            pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-            pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-            /*if (chkperecivel.Checked)
-                pmodelo.perecivel = true;
-            else
-                pmodelo.perecivel = false;*/
-            pmodelo.data_val = dtpdata.Value;
-            pmodelo.foto = lblfoto.Text;
-            if (pController.cadastrarProduto(pmodelo, 2) == true)
-            {
-                MessageBox.Show("Cadastra com Sucesso");
-                string sql = "SELECT * from produto";
-                dataGridView1.DataSource = com.ObterDados(sql);
-            }
-            else
-            {
-                MessageBox.Show("Erro no cadastro");
-            }
-        }
         private void SelecionarClick(object sender, EventArgs e, string Id)
         {
             MessageBox.Show(" Produto Selecionado " + Id);

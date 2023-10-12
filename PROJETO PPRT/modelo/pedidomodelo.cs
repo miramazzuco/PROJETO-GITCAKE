@@ -16,6 +16,10 @@ namespace modelo
         private DateTime emissao_ped;
         public string cliente_ped;
         public List<itemmodelo> itens_ped;
+        /*public List<itemmodelo> iditem;
+        public List<itemmodelo> produtoitem;
+        public List<itemmodelo> quantidadeitem;
+        public List<itemmodelo> subtotalitem;*/
         public string status_ped;
         public bool entrega_ped;
         public string endereco_ped;
@@ -32,8 +36,10 @@ namespace modelo
             entrega_ped = false;
             endereco_ped = "";
             total_ped = 0;
-
-
+           /* iditem = new List<itemmodelo>();
+            produtoitem = new List<itemmodelo>();
+            quantidadeitem = new List<itemmodelo>();
+            subtotalitem = new List<itemmodelo>();*/
         }
 
         public int idpedido
@@ -65,6 +71,8 @@ namespace modelo
         {
             get { return itens_ped; }
             set { itens_ped = value; }
+
+            
         }
 
         public string status
@@ -90,6 +98,8 @@ namespace modelo
             get { return total_ped; }
             set { total_ped = value; }
         }
+
+        //public void Add(List<global::modelo.itemmodelo> list) => throw new NotImplementedException();
     }
 
 

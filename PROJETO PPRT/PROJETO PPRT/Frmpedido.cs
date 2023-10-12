@@ -18,6 +18,8 @@ using System.IO;
 using System.Drawing.Printing;
 using MySqlX.XDevAPI;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Microsoft.Win32;
+
 
 namespace PROJETO_PPRT
 {
@@ -30,6 +32,7 @@ namespace PROJETO_PPRT
         itemcontroller itemcontroller = new itemcontroller();
         itemmodelo itmodelo = new itemmodelo();
         pedidomodelo pdmodelo = new pedidomodelo();
+        List<itemmodelo> list = new List<itemmodelo>();
         public Frmpedido()
         {
             InitializeComponent();
@@ -74,7 +77,7 @@ namespace PROJETO_PPRT
                 TextBox qtde = new TextBox();
                 qtde.Name = "quantidade";
                 qtdeproduto = Convert.ToInt32(dt.Rows[registros][3].ToString());
-                // qtde.Leave += new EventHandler((sender1, e1) => QtdeLeave(sender1, e1, qtde.Text, qtdeproduto));
+                qtde.Leave += new EventHandler((sender1, e1) => QtdeLeave(sender1, e1, qtde.Text, qtdeproduto));
                 qtde.Location = new Point(10, 138);
 
                 if (!string.IsNullOrEmpty(qtde.Text))
@@ -107,25 +110,11 @@ namespace PROJETO_PPRT
                 registrar.FlatStyle = FlatStyle.Popup;
                 registrar.ForeColor = Color.FromArgb(255, 255, 128);
 
-                int produtoId = Convert.ToInt32(dt.Rows[registros][0].ToString());
-                int quantidadeSelecionada = int.Parse(qtde.Text); // Supondo que você tenha um campo de entrada para a quantidade.
-                itemmodelo produtoSelecionado = itemcontroller.CarregaItem(produtoId); // Implemente um método para obter o produto pelo ID.
-
-                if (produtoSelecionado != null)
-                {
-                   decimal subtotal = Convert.ToInt32(qtde.ToString()) * Convert.ToDecimal(preco.ToString());
-
-                    itemmodelo itemPedido = new itemmodelo()
-                    {
-                    
-                        iditem = produtoId,
-                        quantidadeitem = quantidadeSelecionada,
-                        subtotalitem = subtotal
-                    };
+                
 
                     // Adicione o ItemPedido à lista de itens do pedido
                   //.Itens.Add(itemPedido);
-                }
+                
 
 
                 //adicionando os componentes ao painel
@@ -148,9 +137,11 @@ namespace PROJETO_PPRT
 
         private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
         {
-            
+            itemcontroller itemcontroller = new itemcontroller();
+            itemmodelo itmodelo = new itemmodelo();
+            pedidomodelo pdmodelo = new pedidomodelo();
+            List<itemmodelo> list = new List<itemmodelo>();
 
-            
 
             decimal subTotal = 0;
             dtitempedido.ColumnCount = 5;
@@ -160,14 +151,11 @@ namespace PROJETO_PPRT
             dtitempedido.Columns[3].Name = "quantidade";
             dtitempedido.Columns[4].Name = "SubTotal";
 
-            itmodelo.produtoitem = Convert.ToInt32(id);
-            itmodelo.quantidadeitem = Convert.ToInt32(quantidade);
-            itmodelo.subtotalitem = Convert.ToDecimal(subTotal);
-            pdmodelo.itens.Add(itmodelo);
-
-           // dtitempedido.DataSource
-            if (String.IsNullOrEmpty(quantidade))//condicional para quantidade nula
-                quantidade = "1";
+            
+            
+           
+            if (String.IsNullOrEmpty(quantidade.ToString()))//condicional para quantidade nula
+                quantidade ="1" ;
             
 
             subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
@@ -177,7 +165,11 @@ namespace PROJETO_PPRT
             for (int i = 0; i < dtitempedido.RowCount; i++)
             {
                 total = total + Convert.ToDecimal(dtitempedido.Rows[i].Cells[4].Value);
-               
+
+                itmodelo.produtoitem = Convert.ToInt32(id.ToString());
+                itmodelo.quantidadeitem = Convert.ToInt32(quantidade.ToString());
+                itmodelo.subtotalitem = Convert.ToDecimal(subTotal.ToString());
+                pdmodelo.itens = list;
             }
 
             MessageBox.Show("Produto Selecionado" + subTotal.ToString());

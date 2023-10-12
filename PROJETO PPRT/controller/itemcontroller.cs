@@ -13,6 +13,27 @@ namespace controller
     public class itemcontroller
     {
         conexao con = new conexao();
+
+        public bool cadastrarItem(itemmodelo item) // passo o objetodo cadastro como parametro
+        {// declaro a variavel da resposta da query
+            bool resultado = false;
+            string sql = "insert into item(idproduto,quantidade,subtotal)values('" + item.produtoitem + "','" + item.quantidadeitem + "','" + item.subtotalitem + "')";
+            //chamando minha conexao
+
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open(); // abrindo o banco
+            MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
+            if (cmd.ExecuteNonQuery() >= 1)//executar o seu sql
+                resultado = true;
+            sqlcon.Close();//fecho a conexao
+            return resultado;// retorno o valor
+        }
+
+        public itemmodelo cadastrarItem(int produtoId)
+        {
+            throw new NotImplementedException();
+        }
+
         public itemmodelo CarregaItem(int iditem)
         {
             itemmodelo it = new itemmodelo();

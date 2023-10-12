@@ -78,6 +78,8 @@ namespace controller
             }
 
         }
+
+
         public bool excluirproduto(int idproduto)
         {
             bool resultado = false;

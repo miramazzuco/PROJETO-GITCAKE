@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using controller;
 using modelo;
@@ -14,6 +13,8 @@ namespace gitcake
         produtocontroller pController = new produtocontroller();
         int codigoproduto;
         conexao com = new conexao();
+        private ErrorProvider errorProvider = new ErrorProvider();
+        private bool isValid;
 
         public Frmcadastro()
         {
@@ -22,6 +23,9 @@ namespace gitcake
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            errorProvider.Clear();
+
+            errorProvider.Clear();
             txtcodigo.Text = dataGridView1.Rows[e.RowIndex].Cells["idproduto"].Value.ToString();
             txtproduto.Text = dataGridView1.Rows[e.RowIndex].Cells["produto"].Value.ToString();
             txtpreco.Text = dataGridView1.Rows[e.RowIndex].Cells["preco"].Value.ToString();
@@ -31,64 +35,90 @@ namespace gitcake
             lblfoto.Text = dataGridView1.Rows[e.RowIndex].Cells["foto"].Value.ToString();
             tabPage1.Focus();
             tabestoque.SelectedIndex = 0;
+
+
         }
 
         private void Frmcadastro_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT * from produto";
-            dataGridView1.DataSource = com.ObterDados(sql);
+            errorProvider.Clear();
+            try
+            {
+                string sql = "SELECT * from produto";
+                dataGridView1.DataSource = com.ObterDados(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
         }
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             if (ValidarCampos())
             {
-                pmodelo.descricao = txtproduto.Text;
-                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-                pmodelo.data_val = dtpdata.Value;
-                pmodelo.foto = lblfoto.Text;
-                produtocontroller pController = new produtocontroller();
-                if (pController.cadastrarProduto(pmodelo, 1) == true)
+                try
                 {
-                    MessageBox.Show("Cadastro com sucesso");
-                    string sql = "SELECT * from produto";
-                    dataGridView1.DataSource = com.ObterDados(sql);
+                    pmodelo.descricao = txtproduto.Text;
+                    pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                    pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                    pmodelo.data_val = dtpdata.Value;
+                    pmodelo.foto = lblfoto.Text;
+
+                    if (pController.cadastrarProduto(pmodelo, 1) == true)
+                    {
+                        MessageBox.Show("Cadastro com sucesso");
+                        string sql = "SELECT * from produto";
+                        dataGridView1.DataSource = com.ObterDados(sql);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro no Cadastro");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Erro no Cadastro");
+                    MessageBox.Show("Erro ao cadastrar o produto: " + ex.Message);
                 }
             }
         }
 
         private bool ValidarCampos()
         {
+            errorProvider.Clear();
+
+            bool isValid = true;
             if (string.IsNullOrWhiteSpace(txtproduto.Text))
             {
-                MessageBox.Show("O campo 'Produto' é obrigatório.");
-                return false;
+                errorProvider.SetError(txtproduto, "O campo 'Produto' é obrigatório.");
+                isValid = false;
+
+            }
+            else
+            {
+                errorProvider.Clear();
             }
 
             if (!decimal.TryParse(txtpreco.Text, out decimal preco) || preco <= 0)
             {
-                MessageBox.Show("Preço inválido. Insira um valor numérico positivo.");
-                return false;
+                errorProvider.SetError(txtpreco, "Preço inválido. Insira um valor numérico positivo.");
+                isValid = false;
             }
 
             if (!int.TryParse(txtquantidade.Text, out int quantidade) || quantidade == 0)
             {
-                MessageBox.Show("Quantidade inválida. Insira um valor numérico não negativo.");
-                return false;
+                errorProvider.SetError(txtquantidade, "Quantidade inválida. Insira um valor numérico não negativo.");
+                isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(lblfoto.Text) || !File.Exists(lblfoto.Text))
             {
-                MessageBox.Show("Selecione uma imagem válida.");
-                return false;
+                errorProvider.SetError(lblfoto, "Selecione uma imagem válida.");
+                isValid = false;
             }
 
-            return true;
+            return isValid;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,16 +145,23 @@ namespace gitcake
             }
         }
 
-       
-
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text + "%'";
-            dataGridView1.DataSource = com.ObterDados(sql);
+            errorProvider.Clear();
+            try
+            {
+                string sql = "SELECT * from produto where produto like '%" + txtPesquisar.Text + "%'";
+                dataGridView1.DataSource = com.ObterDados(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro na pesquisa: " + ex.Message);
+            }
         }
 
         private void btnexcluir_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             try
             {
                 pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
@@ -148,46 +185,56 @@ namespace gitcake
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro ao excluir o produto: " + ex.Message);
             }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
+            isValid = true;
 
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+            errorProvider.Clear();
         }
 
         private void btnedita_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             if (ValidarCampos())
             {
-                pmodelo.descricao = txtproduto.Text;
-                pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
-                pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-                pmodelo.data_val = dtpdata.Value;
-                pmodelo.foto = lblfoto.Text;
-                if (pController.cadastrarProduto(pmodelo, 2) == true)
+                try
                 {
-                    MessageBox.Show("Editado com Sucesso");
-                    string sql = "SELECT * from produto";
-                    dataGridView1.DataSource = com.ObterDados(sql);
-                    tabPage2.Focus();
-                    tabestoque.SelectedIndex = 1;
-                    txtproduto.Clear();
-                    txtcodigo.Clear();
-                    txtpreco.Clear();
-                    txtquantidade.Value = 0;
-                    DateTime dtpdata = DateTime.Now;    
+                    pmodelo.descricao = txtproduto.Text;
+                    pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
+                    pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
+                    pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                    pmodelo.data_val = dtpdata.Value;
+                    pmodelo.foto = lblfoto.Text;
+                    if (pController.cadastrarProduto(pmodelo, 2) == true)
+                    {
+                        MessageBox.Show("Editado com Sucesso");
+                        string sql = "SELECT * from produto";
+                        dataGridView1.DataSource = com.ObterDados(sql);
+                        tabPage2.Focus();
+                        tabestoque.SelectedIndex = 1;
+                        txtproduto.Clear();
+                        txtcodigo.Clear();
+                        txtpreco.Clear();
+                        txtquantidade.Text = "0";
+                        dtpdata.Value = DateTime.Now;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao editar");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao editar");
+                    MessageBox.Show("Erro ao editar o produto: " + ex.Message);
                 }
             }
         }

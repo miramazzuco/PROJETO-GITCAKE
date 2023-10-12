@@ -128,7 +128,8 @@
             this.dtusuario.RowTemplate.Height = 24;
             this.dtusuario.Size = new System.Drawing.Size(766, 423);
             this.dtusuario.TabIndex = 8;
-            this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
+            this.dtusuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellClick);
+            //this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
             // 
             // btneditarusuario
             // 
@@ -233,6 +234,7 @@
             this.Name = "Frmcadastrousuario";
             this.Text = "Frmcadastrousuario";
             this.Load += new System.EventHandler(this.Frmcadastrousuario_Load);
+            this.Click += new System.EventHandler(this.Frmcadastrousuario_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dtusuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -25,6 +25,9 @@ namespace PROJETO_PPRT
 {
     public partial class Frmpedido : Form
     {
+        int ite;
+        int idproduto;
+        int iditem;
         private Font printFont;
         private StreamReader StreamToPrint;
         decimal total = 0;
@@ -35,6 +38,7 @@ namespace PROJETO_PPRT
         List<itemmodelo> list = new List<itemmodelo>();
         public Frmpedido()
         {
+            
             InitializeComponent();
         }
 
@@ -42,6 +46,8 @@ namespace PROJETO_PPRT
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
+            
+
             DataTable dt = new DataTable();
 
             dt = com.ObterDados("select  * from produto ");
@@ -140,16 +146,17 @@ namespace PROJETO_PPRT
             itemcontroller itemcontroller = new itemcontroller();
             itemmodelo itmodelo = new itemmodelo();
             pedidomodelo pdmodelo = new pedidomodelo();
+            produtomodelo ptmodelo = new produtomodelo();
             List<itemmodelo> list = new List<itemmodelo>();
 
 
             decimal subTotal = 0;
-            dtitempedido.ColumnCount = 5;
+            /*dtitempedido.ColumnCount = 5;
             dtitempedido.Columns[0].Name = "Id";
             dtitempedido.Columns[1].Name = "produto";
             dtitempedido.Columns[2].Name = "preco";
             dtitempedido.Columns[3].Name = "quantidade";
-            dtitempedido.Columns[4].Name = "SubTotal";
+            dtitempedido.Columns[4].Name = "SubTotal";*/
 
             
             
@@ -160,21 +167,28 @@ namespace PROJETO_PPRT
 
             subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
-            dtitempedido.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
+            
+
 
             for (int i = 0; i < dtitempedido.RowCount; i++)
             {
-                total = total + Convert.ToDecimal(dtitempedido.Rows[i].Cells[4].Value);
+               
 
-                itmodelo.produtoitem = Convert.ToInt32(id.ToString());
+                itmodelo.produtoitem =Convert.ToInt32( id.ToString());
+                //ptmodelo.preco = Convert.ToDecimal(preco.ToString());
                 itmodelo.quantidadeitem = Convert.ToInt32(quantidade.ToString());
                 itmodelo.subtotalitem = Convert.ToDecimal(subTotal.ToString());
                 pdmodelo.itens = list;
             }
 
+            itemcontroller itcontroller = new itemcontroller();
+            dtitempedido.DataSource = com.ObterDados("select item.iditem, item.idproduto,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+
+            total = total + subTotal;
             MessageBox.Show("Produto Selecionado" + subTotal.ToString());
             txttotal.Text = total.ToString();
-            
+
+            //dtitempedido.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
@@ -200,9 +214,25 @@ namespace PROJETO_PPRT
 
             }
 
+            
+                if (itemcontroller.cadastrarItem(itmodelo) == true)
+                {
+                    MessageBox.Show("item cadastrado :  ");
+                    //confirmação de cadastro
+
+                }
+                else
+                {
+                    MessageBox.Show("item não encontrado :(");
+                }
+
+            
+
 
 
         }
+
+       
 
 
         private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
@@ -292,7 +322,27 @@ namespace PROJETO_PPRT
 
         private void btn_excluirprodpedido_Click(object sender, EventArgs e)
         {
-            pedidocontroller pdcontroller = new pedidocontroller();
+            //chamando o metodo excluir do usuario controler de verdade
+            itemcontroller itcontroller = new itemcontroller();
+            if (itcontroller.Excluir(iditem) == true)
+            { //excluir o usuario
+                MessageBox.Show("codigo do item " + iditem + "excluido");
+                dtitempedido.DataSource = itcontroller.ObterDados("select item.iditem, produto.produto,produto.preco,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+
+            }
+            else
+            { // falso erro ao excluir 
+                MessageBox.Show("erro ao excluir item");
+            }
+        }
+
+        private void dtitempedido_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //convertendo a primeira coleta em string
+            iditem = Convert.ToInt32(dtitempedido.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            //convert o inteiro para string
+            MessageBox.Show("Usuario selecionado :  " + iditem.ToString());
+           
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

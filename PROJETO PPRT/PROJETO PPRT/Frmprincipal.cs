@@ -19,18 +19,19 @@ namespace PROJETO_PPRT
     public partial class Frmprincipal : Form
     {
         int usi;
-        
+       
 
         public Frmprincipal(int usuario)
         {
-
+           
             usi = usuario;
             InitializeComponent();
+            
         }
 
-        
 
-        private void panelmenu_Paint(object sender, PaintEventArgs e)
+
+         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
             timer1.Start();
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -61,23 +62,13 @@ namespace PROJETO_PPRT
             umodelo = ucontrole.CarregaUsuario(usi);
             label5.Text = umodelo.nome;
 
+            
+
         }
 
 
 
-        private void btnpedido_Click(object sender, EventArgs e)
-        {
-            panel2.Controls.Clear();
-            Frmpedido ad = new Frmpedido();
-
-            ad.TopLevel = false;
-            ad.Dock = DockStyle.Fill;
-            ad.FormBorderStyle = FormBorderStyle.None;
-            panel2.Controls.Add(ad);
-            ad.Show();
-            pictureBox1.Visible = false;
-        }
-
+       
         private void btnsobrenos_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
@@ -165,6 +156,19 @@ namespace PROJETO_PPRT
         private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnpedido_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            Frmpedido ad = new Frmpedido();
+
+            ad.TopLevel = false;
+            ad.Dock = DockStyle.Fill;
+            ad.FormBorderStyle = FormBorderStyle.None;
+            panel2.Controls.Add(ad);
+            ad.Show();
+            pictureBox1.Visible = false;
         }
     }
 }

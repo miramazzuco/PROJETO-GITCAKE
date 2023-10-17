@@ -1,12 +1,17 @@
-﻿using gitcake;
-using modelo;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using modelo;
+//bibliotecas para banco
+using System.Data;
+using MySql.Data.MySqlClient;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using Org.BouncyCastle.Asn1.Cms;
+using System.Xml.Linq;
+using gitcake;
 
 namespace controller
 {
@@ -29,7 +34,40 @@ namespace controller
             return resultado;// retorno o valor
         }
 
-        public itemmodelo cadastrarItem(int produtoId)
+        public DataTable ObterDados(string sql)
+        {
+            DataTable dt = new DataTable();
+            MySqlConnection conn = con.getConexao();
+            conn.Open(); //abre o banco de dados
+            //preparo o comando sql
+            MySqlCommand sqlCon = new MySqlCommand(sql, conn);
+            // tipo de instrução testo
+            sqlCon.CommandType = System.Data.CommandType.Text;
+            sqlCon.CommandText = sql;
+            //ira montar as informacoes da consulta
+            MySqlDataAdapter dados = new MySqlDataAdapter(sqlCon);
+            dados.Fill(dt); // mosntrar a tabela de dados
+            conn.Close(); // fecho a conexao
+            return dt;
+
+        }
+
+        public bool Excluir(int iditem)
+        {
+            bool resultado = false;
+            MySqlConnection sqlcon = con.getConexao();
+            string sql = "delete from item where iditem =" + iditem;
+            sqlcon.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
+            mySqlCommand.CommandType = System.Data.CommandType.Text;
+            mySqlCommand.CommandText = sql;
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
+            {
+                resultado = true;
+            }
+            return resultado;
+        }
+        public itemmodelo cadastrarItem(int iditem)
         {
             throw new NotImplementedException();
         }
@@ -37,6 +75,7 @@ namespace controller
         public itemmodelo CarregaItem(int iditem)
         {
             itemmodelo it = new itemmodelo();
+            produtomodelo pm = new produtomodelo();
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             string sql = "SELECT * from item where iditem=@id";
@@ -50,7 +89,7 @@ namespace controller
                 it.iditem = Convert.ToInt32(registro["iditem"]);
                 it.produtoitem = Convert.ToInt32(registro["idproduto"]);
                 it.quantidadeitem = Convert.ToInt32(registro["quantidadeitem"]);
-                it.subtotalitem = Convert.ToInt32(registro["subtotal"]);
+                it.subtotalitem = Convert.ToDecimal(registro["subtotal"]);
                 
             }
             sqlcon.Close();

@@ -15,10 +15,10 @@ namespace modelo
 
         public itemmodelo()
         {
-            this.id_item = 0;
-            this.id_prod = 0;   
-            this.qtd_prod = 0;
-            this.subtotal = 0;
+            this.iditem = 0;
+            this.produtoitem = 0;   
+            this.quantidadeitem = 0;
+            this.subtotalitem = 0;
         }
 
         public int iditem

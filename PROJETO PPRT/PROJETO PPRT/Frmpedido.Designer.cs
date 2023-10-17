@@ -74,6 +74,7 @@
             this.dtitempedido.RowTemplate.Height = 24;
             this.dtitempedido.Size = new System.Drawing.Size(380, 574);
             this.dtitempedido.TabIndex = 21;
+            this.dtitempedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitempedido_CellContentDoubleClick);
             // 
             // btn_excluirprodpedido
             // 

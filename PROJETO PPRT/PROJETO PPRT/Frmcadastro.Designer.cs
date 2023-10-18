@@ -106,7 +106,7 @@
             this.label4.Size = new System.Drawing.Size(120, 29);
             this.label4.TabIndex = 3;
             this.label4.Text = "Validade :";
-            this.label4.Visible = false;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtproduto
             // 
@@ -127,7 +127,7 @@
             // dtpdata
             // 
             this.dtpdata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpdata.Location = new System.Drawing.Point(267, 333);
+            this.dtpdata.Location = new System.Drawing.Point(299, 333);
             this.dtpdata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpdata.Name = "dtpdata";
             this.dtpdata.Size = new System.Drawing.Size(391, 28);
@@ -316,6 +316,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
@@ -323,6 +325,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(116, 181);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,6 +358,7 @@
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(239, 22);
             this.txtPesquisar.TabIndex = 7;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // btnpesquisar
             // 

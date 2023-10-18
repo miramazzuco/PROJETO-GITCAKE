@@ -125,11 +125,11 @@ software, a GitCake nasceu da ideia de que a tecnologia pode ser tão suave e
 prazerosa quanto uma fatia de bolo fresco.</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Nossa jornada começou com a missão de simplificar a colaboração
-de equipes de desenvolvimento desoftware, tornando-a tão fácil e agradável
-quanto compartilhar uma sobremesa. Combinando a paixão por bolos com a expertise
-em tecnologia, desenvolvemos ferramentas inovadoras que transformama maneira como
-as equipes colaboram, rastreiam e gerenciam o código-fonte de seus projetos.</value>
+    <value>Nossa jornada começou com a missão de simplificar a colaboração de equipes
+ de desenvolvimento desoftware, tornando-a tão fácil e agradável quanto compartilha
+r uma sobremesa. Combinando a paixão por bolos com a expertise em tecnologia, 
+desenvolvemos ferramentas inovadoras que transformama maneira como as equipes
+ colaboram, rastreiam e gerenciam o código-fonte de seus projetos.</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Na GitCake, acreditamos que a inovação é o ingrediente-chave 
@@ -13059,30 +13059,30 @@ por bolosse encontram para criar algo verdadeiramente único.</value>
   </data>
   <data name="pictureBox4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="pictureBox5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -256,3 +256,8 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO P
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.xml
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.ResolveComReference.cache
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPLib.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPDXMLib.dll

@@ -55,6 +55,8 @@ namespace gitcake
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
         {
+            
+
             errorProvider.Clear();
             if (ValidarCampos())
             {
@@ -65,6 +67,7 @@ namespace gitcake
                     pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
                     pmodelo.data_val = dtpdata.Value;
                     pmodelo.foto = lblfoto.Text;
+
 
                     if (pController.cadastrarProduto(pmodelo, 1) == true)
                     {
@@ -237,6 +240,16 @@ namespace gitcake
                     MessageBox.Show("Erro ao editar o produto: " + ex.Message);
                 }
             }
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider.Clear();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

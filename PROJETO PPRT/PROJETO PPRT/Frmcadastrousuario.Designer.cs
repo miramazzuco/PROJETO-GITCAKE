@@ -119,17 +119,20 @@
             // 
             // dtusuario
             // 
+            this.dtusuario.AllowUserToAddRows = false;
+            this.dtusuario.AllowUserToDeleteRows = false;
             this.dtusuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
             this.dtusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtusuario.Location = new System.Drawing.Point(649, 82);
             this.dtusuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtusuario.Name = "dtusuario";
+            this.dtusuario.ReadOnly = true;
             this.dtusuario.RowHeadersWidth = 51;
             this.dtusuario.RowTemplate.Height = 24;
             this.dtusuario.Size = new System.Drawing.Size(766, 423);
             this.dtusuario.TabIndex = 8;
             this.dtusuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellClick);
-            //this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
+            this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
             // 
             // btneditarusuario
             // 

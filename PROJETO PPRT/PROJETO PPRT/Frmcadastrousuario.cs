@@ -51,13 +51,13 @@ namespace PROJETO_PPRT
 
         private void btncadastrarusuario_Click(object sender, EventArgs e)
         {
-
+            usuariocontroller usControle = new usuariocontroller();
             usuariomodelo usmodelo = new usuariomodelo();
             usmodelo.nome = txtnome.Text;
             usmodelo.senha = txtsenha.Text;
             usmodelo.email = txtemail.Text;
             usmodelo.perfil = idperfil;
-
+            
             errorProvider.Clear();
             bool isValid = true;
 
@@ -102,7 +102,9 @@ namespace PROJETO_PPRT
 
                 if (uscontroller.cadastrar(usmodelo) == true)
                 {
+
                     MessageBox.Show("Usuário cadastrado com sucesso, bem-vindo(a) " + txtnome.Text);
+                    dtusuario.DataSource = uscontroller.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
                     txtnome.Text = string.Empty;
                     txtsenha.Text = string.Empty;
                     txtemail.Text = string.Empty;
@@ -266,6 +268,11 @@ namespace PROJETO_PPRT
                 txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
                 cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
             }
+        }
+
+        private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

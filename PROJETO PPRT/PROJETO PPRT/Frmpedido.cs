@@ -36,6 +36,9 @@ namespace PROJETO_PPRT
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
+            textBox2.Visible = false;
+            label8.Visible = false;
+
             // Criação de um DataTable para armazenar dados da consulta SQL.
             DataTable dt = new DataTable();
 
@@ -289,6 +292,22 @@ namespace PROJETO_PPRT
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.Visible = true;
+                label8.Visible = true;
+            }
+            else
+            {
+                textBox2.Visible = false;
+                label8.Visible = false;
+            }
 
         }
     }

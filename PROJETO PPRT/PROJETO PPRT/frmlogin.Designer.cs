@@ -52,10 +52,9 @@ namespace PROJETO_PPRT
             // 
             this.btnfecharlog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnfecharlog.AutoSize = true;
-            this.btnfecharlog.Location = new System.Drawing.Point(1907, 4);
-            this.btnfecharlog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfecharlog.Location = new System.Drawing.Point(1795, 3);
             this.btnfecharlog.Name = "btnfecharlog";
-            this.btnfecharlog.Size = new System.Drawing.Size(32, 28);
+            this.btnfecharlog.Size = new System.Drawing.Size(24, 23);
             this.btnfecharlog.TabIndex = 0;
             this.btnfecharlog.Text = "X";
             this.btnfecharlog.UseVisualStyleBackColor = true;
@@ -70,10 +69,9 @@ namespace PROJETO_PPRT
             this.btnrecuperarsenha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnrecuperarsenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrecuperarsenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(16)))), ((int)(((byte)(3)))));
-            this.btnrecuperarsenha.Location = new System.Drawing.Point(404, 663);
-            this.btnrecuperarsenha.Margin = new System.Windows.Forms.Padding(4);
+            this.btnrecuperarsenha.Location = new System.Drawing.Point(367, 498);
             this.btnrecuperarsenha.Name = "btnrecuperarsenha";
-            this.btnrecuperarsenha.Size = new System.Drawing.Size(124, 26);
+            this.btnrecuperarsenha.Size = new System.Drawing.Size(93, 21);
             this.btnrecuperarsenha.TabIndex = 5;
             this.btnrecuperarsenha.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnrecuperarsenha.UseVisualStyleBackColor = false;
@@ -83,12 +81,11 @@ namespace PROJETO_PPRT
             // 
             this.btnlogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(16)))), ((int)(((byte)(3)))));
             this.btnlogar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogar.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogar.ForeColor = System.Drawing.Color.SandyBrown;
-            this.btnlogar.Location = new System.Drawing.Point(292, 554);
-            this.btnlogar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlogar.Location = new System.Drawing.Point(219, 535);
             this.btnlogar.Name = "btnlogar";
-            this.btnlogar.Size = new System.Drawing.Size(320, 50);
+            this.btnlogar.Size = new System.Drawing.Size(240, 64);
             this.btnlogar.TabIndex = 4;
             this.btnlogar.Text = "Logar";
             this.btnlogar.UseVisualStyleBackColor = false;
@@ -97,20 +94,18 @@ namespace PROJETO_PPRT
             // txtsenha
             // 
             this.txtsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsenha.Location = new System.Drawing.Point(292, 490);
-            this.txtsenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsenha.Location = new System.Drawing.Point(218, 407);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
-            this.txtsenha.Size = new System.Drawing.Size(320, 34);
+            this.txtsenha.Size = new System.Drawing.Size(241, 28);
             this.txtsenha.TabIndex = 1;
             // 
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(292, 391);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtusuario.Location = new System.Drawing.Point(219, 318);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(320, 34);
+            this.txtusuario.Size = new System.Drawing.Size(241, 28);
             this.txtusuario.TabIndex = 0;
             // 
             // lblmensagem
@@ -118,10 +113,9 @@ namespace PROJETO_PPRT
             this.lblmensagem.AutoSize = true;
             this.lblmensagem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblmensagem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblmensagem.Location = new System.Drawing.Point(1215, 752);
-            this.lblmensagem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmensagem.Location = new System.Drawing.Point(911, 611);
             this.lblmensagem.Name = "lblmensagem";
-            this.lblmensagem.Size = new System.Drawing.Size(0, 16);
+            this.lblmensagem.Size = new System.Drawing.Size(0, 13);
             this.lblmensagem.TabIndex = 10;
             // 
             // panel1
@@ -135,18 +129,20 @@ namespace PROJETO_PPRT
             this.panel1.Controls.Add(this.btnlogar);
             this.panel1.Controls.Add(this.txtusuario);
             this.panel1.Controls.Add(this.txtsenha);
-            this.panel1.Location = new System.Drawing.Point(186, 93);
+            this.panel1.Location = new System.Drawing.Point(84, 76);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(872, 869);
+            this.panel1.Size = new System.Drawing.Size(654, 706);
             this.panel1.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(292, 453);
+            this.label3.Location = new System.Drawing.Point(218, 377);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 29);
+            this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 13;
             this.label3.Text = "Senha :";
             // 
@@ -154,9 +150,10 @@ namespace PROJETO_PPRT
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(290, 347);
+            this.label2.Location = new System.Drawing.Point(218, 282);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 29);
+            this.label2.Size = new System.Drawing.Size(93, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "Usuario :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -165,45 +162,47 @@ namespace PROJETO_PPRT
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 106);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 246);
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(288, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 38);
+            this.label1.Size = new System.Drawing.Size(108, 34);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Create account";
+            this.label1.Text = "Sign in";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1064, 93);
+            this.pictureBox2.Location = new System.Drawing.Point(742, 76);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(843, 869);
+            this.pictureBox2.Size = new System.Drawing.Size(632, 706);
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
             // frmlogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1942, 960);
+            this.ClientSize = new System.Drawing.Size(1460, 748);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblmensagem);
             this.Controls.Add(this.btnfecharlog);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmlogin";
             this.Text = "frmlogin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

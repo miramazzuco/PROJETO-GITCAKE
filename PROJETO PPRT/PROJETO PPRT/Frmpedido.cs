@@ -150,6 +150,8 @@ namespace PROJETO_PPRT
             dataGridView1.Columns[3].Name = "quantidade";
             dataGridView1.Columns[4].Name = "SubTotal";
 
+            if (String.IsNullOrEmpty(quantidade.ToString()))//condicional para quantidade nula
+                quantidade = "1";
 
             // Cálculo do subtotal do produto selecionado.
             decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
@@ -164,7 +166,7 @@ namespace PROJETO_PPRT
 
 
             // Grava as informações da DataGridView em um arquivo binário.
-            string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\MyFile.txt.txt";
+            string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
 

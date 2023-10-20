@@ -22,11 +22,17 @@ namespace PROJETO_PPRT
 {
     public partial class Frmpedido : Form
     {
+
         // Declaração de variáveis de classe e objetos.
         private Font printFont;
         private StreamReader StreamToPrint;
         decimal total = 0;
         conexao com = new conexao();
+        
+       // itemcontroller itemcontroller = new itemcontroller();
+       // itemmodelo itmodelo = new itemmodelo();
+        pedidomodelo pdmodelo = new pedidomodelo();
+      //  List<itemmodelo> list = new List<itemmodelo>();
         public Frmpedido()
         {
             InitializeComponent();
@@ -36,6 +42,11 @@ namespace PROJETO_PPRT
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
+            itemcontroller itcontroller = new itemcontroller();
+            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+            
+
+            //determinar como inicialmente invisivel o endereço
             textBox2.Visible = false;
             label8.Visible = false;
 
@@ -112,7 +123,7 @@ namespace PROJETO_PPRT
                 registrar.Name = "Selecionar";
                 registrar.Text = "Selecionar";
                 registrar.Font = new Font("Arial", 8, FontStyle.Bold);
-                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text, descricao.Text, qtde.Text, preco.Text));
+                registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text, qtde.Text, preco.Text));
                 registrar.Location = new Point(10, 162);
                 registrar.Width = 100;
                 registrar.FlatStyle = FlatStyle.Popup;
@@ -141,19 +152,16 @@ namespace PROJETO_PPRT
 
 
 
-        private void SelecionarClick(object sender, EventArgs e, string id, string produto, string quantidade, string preco)
+        private void SelecionarClick(object sender, EventArgs e, string idproduto, string quantidade, string preco)
         {
+           
+            itemmodelo itmodelo = new itemmodelo();
+            itemcontroller itcontroller = new itemcontroller();
+            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+            dtitem.Refresh();
 
-
-            // Criação de colunas e adiciona informações do produto ao DataGridView.
-            dataGridView1.ColumnCount = 5;
-            dataGridView1.Columns[0].Name = "Id";
-            dataGridView1.Columns[1].Name = "produto";
-            dataGridView1.Columns[2].Name = "preco";
-            dataGridView1.Columns[3].Name = "quantidade";
-            dataGridView1.Columns[4].Name = "SubTotal";
-
-            if (String.IsNullOrEmpty(quantidade.ToString()))//condicional para quantidade nula
+            //condicional para quantidade nula
+            if (String.IsNullOrEmpty(quantidade.ToString()))
                 quantidade = "1";
 
             // Cálculo do subtotal do produto selecionado.
@@ -162,23 +170,28 @@ namespace PROJETO_PPRT
 
 
             // Adiciona informações do produto à DataGridView e atualiza o total.
-            dataGridView1.Rows.Add(id.ToString(), produto.ToString(), preco.ToString(), quantidade.ToString(), subTotal.ToString());
+           // dtitem.Rows.Add(default, idproduto.ToString(), quantidade.ToString(), subTotal.ToString());
             total = total + subTotal;
             MessageBox.Show("Produto Selecionado" + total.ToString());
             textBox1.Text = total.ToString();
+           
 
-
+            itmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
+            itmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
+            itmodelo.subtotal = subTotal;
+            itcontroller.cadastrarItem(itmodelo);
+            
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
 
                 // Grava informações sobre as colunas e as células na DataGridView.
-                bw.Write(dataGridView1.Columns.Count);
-                bw.Write(dataGridView1.Rows.Count);
-                foreach (DataGridViewRow dgvR in dataGridView1.Rows)
+                bw.Write(dtitem.Columns.Count);
+                bw.Write(dtitem.Rows.Count);
+                foreach (DataGridViewRow dgvR in dtitem.Rows)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; ++j)
+                    for (int j = 0; j < dtitem.Columns.Count; ++j)
                     {
                         object val = dgvR.Cells[j].Value;
                         if (val == null)
@@ -195,7 +208,8 @@ namespace PROJETO_PPRT
                 }
 
             }
-
+            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+            dtitem.Refresh();
         }
 
 
@@ -242,10 +256,10 @@ namespace PROJETO_PPRT
 
             // Método para gerar um PDF com base nos dados do DataGridView.
             //Exemplo de dados para o DataGridView
-            dataGridView1.Columns.Add("idproduto", "coluna 1");
-            dataGridView1.Columns.Add("Column2", "Coluna 2");
-            dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
-            dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
+            dtitem.Columns.Add("idproduto", "coluna 1");
+            dtitem.Columns.Add("Column2", "Coluna 2");
+            dtitem.Rows.Add("Linha1Col1", "Linha1Col2");
+            dtitem.Rows.Add("Linha2Col1", "Linha2Col2");
 
         }
 
@@ -310,6 +324,8 @@ namespace PROJETO_PPRT
             }
 
         }
+
+        
     }
 
 }

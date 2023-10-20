@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmpedido));
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtitem = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,18 +75,18 @@
             this.flowLayoutPanel1.TabIndex = 20;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // dataGridView1
+            // dtitem
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(426, 78);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(400, 599);
-            this.dataGridView1.TabIndex = 21;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtitem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
+            this.dtitem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtitem.Location = new System.Drawing.Point(426, 78);
+            this.dtitem.Margin = new System.Windows.Forms.Padding(2);
+            this.dtitem.Name = "dtitem";
+            this.dtitem.RowHeadersWidth = 51;
+            this.dtitem.RowTemplate.Height = 24;
+            this.dtitem.Size = new System.Drawing.Size(400, 599);
+            this.dtitem.TabIndex = 21;
+           // this.dtitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitem_CellContentClick);
             // 
             // label2
             // 
@@ -235,7 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1414, 816);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtitem);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
@@ -257,7 +257,7 @@
             this.Name = "Frmpedido";
             this.Text = "Frmpedido";
             this.Load += new System.EventHandler(this.Frmpedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,7 +267,7 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtitem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;

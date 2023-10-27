@@ -119,29 +119,41 @@
   </resheader>
   <data name="label1.Text" xml:space="preserve">
     <value>Bem-vindo ao delicioso mundo da GitCake, uma empresa
-que traz a doçura da inovação para o universo da tecnologia. 
-Fundada em 2023 por um grupo apaixonado por bolos e desenvolvimentode
-software, a GitCake nasceu da ideia de que a tecnologia pode ser tão suave e
-prazerosa quanto uma fatia de bolo fresco.</value>
+que traz a doçura da inovação para o universo da tecnologia.
+Fundada em 2023 por um grupo apaixonado por bolos
+e desenvolvimento de software, a GitCake nasceu
+da ideia de que a tecnologia pode ser tão suave e
+prazerosa quanto uma fatia de bolo fresco.
+
+</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Nossa jornada começou com a missão de simplificar a colaboração de equipes
- de desenvolvimento desoftware, tornando-a tão fácil e agradável quanto compartilha
-r uma sobremesa. Combinando a paixão por bolos com a expertise em tecnologia, 
-desenvolvemos ferramentas inovadoras que transformama maneira como as equipes
- colaboram, rastreiam e gerenciam o código-fonte de seus projetos.</value>
+    <value>Nossa jornada começou com a missão de simplificar 
+a colaboração de equipes de desenvolvimento de software,
+ tornando-a tão fácil e agradável quanto compartilhar uma sobremesa. 
+Combinando a paixão por bolos com a expertise em tecnologia, 
+desenvolvemos ferramentas inovadoras que transformam 
+a maneira como as equipes colaboram, rastreiam e
+ gerenciam o código-fonte de seus projetos.
+
+</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Na GitCake, acreditamos que a inovação é o ingrediente-chave 
-para o sucesso.Assim como um mestre confeiteiro aprimora suas
-receitas, estamos constantemente aprimorandonossas soluções para
-atender às necessidades em constante evolução de nossos clientes.</value>
+para o sucesso. Assim como um mestre confeiteiro 
+aprimora suas receitas, estamos constantemente
+ aprimorando nossas soluções para atender
+ às necessidades em constante evolução de nossos clientes.
+
+</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Então, junte-se a nós nesta jornada de inovação e satisfação.
-Na GitCake, estamos aqui para tornar a tecnologia mais doce, uma fatia de
-bolo por vez.Seja bem-vindo ao mundo da GitCake, onde a inovação e a paixão
-por bolosse encontram para criar algo verdadeiramente único.</value>
+Na GitCake, estamos aqui para tornar a tecnologia mais doce, 
+uma fatia de bolo por vez . Seja bem-vindo ao mundo da GitCake, 
+onde a inovação e a paixão por bolos se encontram 
+para criar algo verdadeiramente único.
+</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -13060,7 +13072,7 @@ por bolosse encontram para criar algo verdadeiramente único.</value>
   <data name="pictureBox4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUMSURBVFhH1Zdr
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUMSURBVFhH1Zdr
         iJRlFMdPVyu6UYTd60NRREQlRmaX2bnsunZDM7I+BaFIRQahFJZt9KGy2K11Z2Yn10z6YFZU4OYlESuQ
         CoKo3C7L0ooFVqu7rTu6bjvb9Ps/e2b3HWcSFFP6w2Gec3nOOc85z+Ud+18jm7AV6aQtdfbIIldrV2YS
         NgL9lY3ZpS4+MmhJ2NnpuK2mAp9mkvYV9EZbnZ3l6v8GRbNjCLQB6mXVRaiQTVoM/navhGQ7SepDn3L4

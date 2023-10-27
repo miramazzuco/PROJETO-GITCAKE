@@ -69,7 +69,7 @@ namespace PROJETO_PPRT
         private void btnrecuperarsenha_Click(object sender, EventArgs e)
         {
             conexao com = new conexao();
-            lblmensagem.Text = com.recuperaremail(txtusuario.Text);
+            lblesqueceu.Text = com.recuperaremail(txtusuario.Text);
         }
 
         private void btnfecharlog_Click(object sender, EventArgs e)
@@ -78,6 +78,16 @@ namespace PROJETO_PPRT
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

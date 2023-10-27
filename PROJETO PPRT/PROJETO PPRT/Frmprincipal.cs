@@ -133,7 +133,7 @@ namespace PROJETO_PPRT
         {
 
             // Caminho para o documento do Word que você deseja abrir
-            string filePath = @"C:\Users\cunha\Downloads\Documento 10.docx";
+            string filePath = @"C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\AJUDA.docx";
 
             // Verifique se o arquivo existe antes de tentar abrir
             if (System.IO.File.Exists(filePath))

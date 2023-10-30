@@ -154,7 +154,7 @@ namespace gitcake
                         //preparo a mensagem de email
                         MailMessage mail = new MailMessage();
                         //configura o email de envio
-                        mail.Sender = new MailAddress(email, "Sistema TDS");//ocuta o nome do email e by Sistema TDS (o emissor)
+                        mail.Sender = new MailAddress(email, "Sistema GITCAKE");//ocuta o nome do email e by Sistema TDS (o emissor)
                         mail.From = new MailAddress(email, "Recuperar senha");//titulo do email
                         //email do usuario
                         string emailusuario = dt.Rows[0][3].ToString();
@@ -177,7 +177,7 @@ namespace gitcake
                         mail.Body = "Ola " + dt.Rows[0][1].ToString() + "sua senha é: " + senhanova;
                         mail.IsBodyHtml = true;//cria um arquivo html
 
-                       /*confirmar = uscontroller.editar(usuariomodelo);
+                       confirmar = uscontroller.editar(usuariomodelo);
                         mail.Priority = MailPriority.High;//prioridade de envio
                         try
                         {
@@ -198,7 +198,7 @@ namespace gitcake
                         {
                             throw new Exception("Erro ao enviar email: " + ex.Message);
                         }
-                       */
+                      
 
 
                     }

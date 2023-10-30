@@ -8,43 +8,43 @@ namespace modelo
 {
     public class itemmodelo
     {
-        private int id_item;
-        private int id_prod;
-        private int qtd_prod;
-        private decimal subtotal;
+        public int id = 0;
+        public int idprod = 0;
+        public int qtd = 0;
+        public decimal sub = 0;
 
-        public itemmodelo()
-        {
-            this.iditem = 0;
-            this.produtoitem = 0;   
-            this.quantidadeitem = 0;
-            this.subtotalitem = 0;
+        public itemmodelo() {
+
+            this.id = 0;
+            this.idprod = 0;
+            this.qtd = 0;
+            this.sub = 0;
         }
 
         public int iditem
         {
-            get { return id_item; }
-            //alterar dados da variavel
-            set { id_item = value; }
+            get { return id; }
+            
+            set { id = value; }
         }
 
-        public int produtoitem
+        public int idproduto
         {
-            get { return id_prod; }
-            //alterar dados da variavel
-            set { id_prod = value; }
+            get { return idprod; }
+            set { idprod = value; }
         }
 
-        public int quantidadeitem
+        public int quantidade
         {
-            get { return qtd_prod; }
-            set { qtd_prod = value; }
+            get { return qtd; }
+            set { qtd = value; }
         }
 
-        public decimal subtotalitem
+        public decimal subtotal
         {
-            get { return subtotal; }
-            set { subtotal = value; }
+            get { return sub; }
+            set { sub = value; }
         }
+
     }
 }

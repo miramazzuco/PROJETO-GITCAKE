@@ -1,88 +1,95 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using controller;
-using modelo;
+﻿using controller;
 using gitcake;
+using modelo;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PROJETO_PPRT
 {
     public partial class frmlogin : Form
     {
+      // private System.Windows.Forms.Timer timer;
+      //  private Panel animatedPanel; // Renomeie a variável para evitar ambiguidade
+      //  private Color[] colors = { Color.SaddleBrown };
+      // private int currentColorIndex = 0;
+
         int codigousuario;
-        //determino uma variavel e a mudança do modelo
         usuariomodelo us = new usuariomodelo();
+
         public frmlogin()
         {
             InitializeComponent();
+
             
         }
 
+        // Resto do código do seu formulário...
+
         private void btnlogar_Click(object sender, EventArgs e)
         {
+            // Resto do código do evento btnlogar_Click
             conexao con = new conexao();
             usuariocontroller uscontrole = new usuariocontroller();
-            //determino variaveis aos preenchimentos
+            //determino variáveis aos preenchimentos
             us.nome = txtusuario.Text;
             us.senha = txtsenha.Text;
 
             //condicional para caso os campos não forem preenchidos
             if (string.IsNullOrEmpty(us.nome))
             {
-                MessageBox.Show("preencha o usuario por favor");
+                MessageBox.Show("preencha o usuário por favor");
                 txtusuario.Focus();//retorna o campo vazio
+                return; // Retorna para evitar continuar o processo de login
             }
 
             if (string.IsNullOrEmpty(us.senha))
             {
                 MessageBox.Show("insira a senha por favor");
                 txtsenha.Focus();
+                return; // Retorna para evitar continuar o processo de login
             }
 
-            //guardando o id do usuario retornado da consulta
+            //guardando o id do usuário retornado da consulta
             codigousuario = uscontrole.logar(us);
-            //apresenta na tela qual usuario acabou de logar no programa
-            
+            //apresenta na tela qual usuário acabou de logar no programa
+
             //condicionais para entrar no programa
-            if (uscontrole.logar(us) >= 1)
+            if (codigousuario >= 1)
             {
                 Frmprincipal principal = new Frmprincipal(codigousuario);
-                principal.ShowDialog();//estabeleço qual pagina vai rodar apos o login
+                principal.ShowDialog();//estabeleço qual página vai rodar após o login
             }
             else
             {
-                MessageBox.Show("Usuario ou senha não encontrados :(");
+                MessageBox.Show("Usuário ou senha não encontrados :(");
             }
-
         }
 
+        private void btnrecuperarsenha_Click(object sender, EventArgs e)
+        {
+            conexao com = new conexao();
+            lblesqueceu.Text = com.recuperaremail(txtusuario.Text);
+        }
 
         private void btnfecharlog_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-           
-
-        private void frmlogin_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-      
-
-        private void btnrecuperarsenha_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            conexao com = new conexao();
+            Close();
+        }
 
-            lblmensagem.Text = com.recuperaremail(txtusuario.Text);
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,7 +53,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 174);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(76, 209);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 24);
@@ -64,7 +65,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 231);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(73, 278);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
@@ -75,7 +77,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(98, 285);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(73, 347);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 24);
@@ -86,7 +89,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(98, 334);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(73, 412);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 24);
@@ -95,7 +99,7 @@
             // 
             // txtnome
             // 
-            this.txtnome.Location = new System.Drawing.Point(176, 174);
+            this.txtnome.Location = new System.Drawing.Point(165, 213);
             this.txtnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(135, 20);
@@ -103,7 +107,7 @@
             // 
             // txtsenha
             // 
-            this.txtsenha.Location = new System.Drawing.Point(176, 231);
+            this.txtsenha.Location = new System.Drawing.Point(165, 282);
             this.txtsenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.Size = new System.Drawing.Size(135, 20);
@@ -111,7 +115,7 @@
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(176, 285);
+            this.txtemail.Location = new System.Drawing.Point(165, 351);
             this.txtemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(135, 20);
@@ -119,28 +123,31 @@
             // 
             // dtusuario
             // 
+            this.dtusuario.AllowUserToAddRows = false;
+            this.dtusuario.AllowUserToDeleteRows = false;
             this.dtusuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(67)))), ((int)(((byte)(0)))));
             this.dtusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtusuario.Location = new System.Drawing.Point(448, 149);
+            this.dtusuario.Location = new System.Drawing.Point(453, 192);
             this.dtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtusuario.Name = "dtusuario";
+            this.dtusuario.ReadOnly = true;
             this.dtusuario.RowHeadersWidth = 51;
             this.dtusuario.RowTemplate.Height = 24;
-            this.dtusuario.Size = new System.Drawing.Size(560, 279);
+            this.dtusuario.Size = new System.Drawing.Size(558, 356);
             this.dtusuario.TabIndex = 8;
-            this.dtusuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentDoubleClick);
-            this.dtusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellDoubleClick);
+            this.dtusuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellClick);
+            this.dtusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentClick);
             // 
             // btneditarusuario
             // 
             this.btneditarusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
             this.btneditarusuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btneditarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneditarusuario.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btneditarusuario.Location = new System.Drawing.Point(482, 537);
+            this.btneditarusuario.Location = new System.Drawing.Point(453, 687);
             this.btneditarusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btneditarusuario.Name = "btneditarusuario";
-            this.btneditarusuario.Size = new System.Drawing.Size(151, 47);
+            this.btneditarusuario.Size = new System.Drawing.Size(163, 50);
             this.btneditarusuario.TabIndex = 9;
             this.btneditarusuario.Text = "Editar";
             this.btneditarusuario.UseVisualStyleBackColor = false;
@@ -150,12 +157,12 @@
             // 
             this.btnexcluirusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
             this.btnexcluirusuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnexcluirusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexcluirusuario.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexcluirusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnexcluirusuario.Location = new System.Drawing.Point(793, 537);
+            this.btnexcluirusuario.Location = new System.Drawing.Point(848, 687);
             this.btnexcluirusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnexcluirusuario.Name = "btnexcluirusuario";
-            this.btnexcluirusuario.Size = new System.Drawing.Size(151, 47);
+            this.btnexcluirusuario.Size = new System.Drawing.Size(163, 50);
             this.btnexcluirusuario.TabIndex = 10;
             this.btnexcluirusuario.Text = "Excluir";
             this.btnexcluirusuario.UseVisualStyleBackColor = false;
@@ -165,12 +172,12 @@
             // 
             this.btncadastrarusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
             this.btncadastrarusuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncadastrarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncadastrarusuario.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncadastrarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btncadastrarusuario.Location = new System.Drawing.Point(176, 537);
+            this.btncadastrarusuario.Location = new System.Drawing.Point(77, 687);
             this.btncadastrarusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncadastrarusuario.Name = "btncadastrarusuario";
-            this.btncadastrarusuario.Size = new System.Drawing.Size(151, 47);
+            this.btncadastrarusuario.Size = new System.Drawing.Size(163, 50);
             this.btncadastrarusuario.TabIndex = 11;
             this.btncadastrarusuario.Text = "Cadastrar";
             this.btncadastrarusuario.UseVisualStyleBackColor = false;
@@ -179,7 +186,7 @@
             // cboperfil
             // 
             this.cboperfil.FormattingEnabled = true;
-            this.cboperfil.Location = new System.Drawing.Point(176, 338);
+            this.cboperfil.Location = new System.Drawing.Point(165, 421);
             this.cboperfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboperfil.Name = "cboperfil";
             this.cboperfil.Size = new System.Drawing.Size(135, 21);
@@ -189,12 +196,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(123, 56);
+            this.label5.Location = new System.Drawing.Point(119, 87);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(227, 29);
+            this.label5.Size = new System.Drawing.Size(255, 31);
             this.label5.TabIndex = 13;
             this.label5.Text = "Detalhes do usúario";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -203,7 +210,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(47, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 65);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 52);
@@ -216,25 +223,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1095, 748);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cboperfil);
             this.Controls.Add(this.btncadastrarusuario);
-            this.Controls.Add(this.btnexcluirusuario);
-            this.Controls.Add(this.btneditarusuario);
-            this.Controls.Add(this.dtusuario);
-            this.Controls.Add(this.txtemail);
-            this.Controls.Add(this.txtsenha);
-            this.Controls.Add(this.txtnome);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtnome);
+            this.Controls.Add(this.btnexcluirusuario);
+            this.Controls.Add(this.txtsenha);
+            this.Controls.Add(this.btneditarusuario);
+            this.Controls.Add(this.txtemail);
+            this.Controls.Add(this.dtusuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Frmcadastrousuario";
             this.Text = "Frmcadastrousuario";
             this.Load += new System.EventHandler(this.Frmcadastrousuario_Load);
+            this.Click += new System.EventHandler(this.Frmcadastrousuario_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dtusuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

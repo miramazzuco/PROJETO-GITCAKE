@@ -248,24 +248,10 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO P
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PdfSharp.Charting.xml
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.Charting.resources.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Form1.resources
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.System.Drawing.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.xml
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.ResolveComReference.cache
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPLib.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.MediaPlayer.dll
-C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPDXMLib.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\gitcake.Frmcadastro.resources
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmpagamento.resources
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.System.Drawing.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.dll
@@ -305,7 +291,6 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\De
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MahApps.Metro.IconPacks.Zondicons.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MySql.Data.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PdfSharp.Charting.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PdfSharp.dll
@@ -322,7 +307,6 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\De
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\modelo.dll.config
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\BouncyCastle.Crypto.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\EPPlus.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.pdb
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Google.Protobuf.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\K4os.Compression.LZ4.xml
@@ -395,7 +379,6 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\De
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\MySql.Data.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PdfSharp.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\PdfSharp.Charting.xml
@@ -408,9 +391,3 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\De
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.Charting.resources.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.MediaPlayer.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPDXMLib.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\Interop.WMPLib.dll
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO PPRT.csproj.ResolveComReference.cache
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Form1.resources
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\gitcake.Frmcadastro.resources

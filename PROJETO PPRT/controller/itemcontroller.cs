@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using gitcake;
 using modelo;
+//bibliotecas para banco
+using System.Data;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using Org.BouncyCastle.Asn1.Cms;
+using System.Xml.Linq;
+using gitcake;
 
 namespace controller
 {
@@ -14,10 +19,11 @@ namespace controller
     {
         conexao con = new conexao();
 
-        public bool cadastrarItem(itemmodelo item)
-        {
+        public bool cadastrarItem(itemmodelo item) // passo o objetodo cadastro como parametro
+        {// declaro a variavel da resposta da query
             bool resultado = false;
-            string sql = "insert into item(iditem,idproduto,quantidade,subtotal)values('" + item.iditem + "','" + item.idproduto + "','" + item.quantidade + "','" + item.subtotal + "')";
+            string sql = "insert into item(idproduto,quantidade,subtotal)values('" + item.produtoitem + "','" + item.quantidadeitem + "','" + item.subtotalitem + "')";
+            //chamando minha conexao
 
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open(); // abrindo o banco
@@ -61,10 +67,15 @@ namespace controller
             }
             return resultado;
         }
+        public itemmodelo cadastrarItem(int iditem)
+        {
+            throw new NotImplementedException();
+        }
 
         public itemmodelo CarregaItem(int iditem)
         {
             itemmodelo it = new itemmodelo();
+            produtomodelo pm = new produtomodelo();
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             string sql = "SELECT * from item where iditem=@id";
@@ -76,10 +87,10 @@ namespace controller
                 registro.Read();//leia o resgitro
                 //gravando as informaçoes no modelo usuario
                 it.iditem = Convert.ToInt32(registro["iditem"]);
-                it.idproduto = Convert.ToInt32(registro["idproduto"]);
-                it.quantidade = Convert.ToInt32(registro["quantidade"]);
-                it.subtotal = Convert.ToDecimal(registro["subtotal"]);
-
+                it.produtoitem = Convert.ToInt32(registro["idproduto"]);
+                it.quantidadeitem = Convert.ToInt32(registro["quantidadeitem"]);
+                it.subtotalitem = Convert.ToDecimal(registro["subtotal"]);
+                
             }
             sqlcon.Close();
             return it;

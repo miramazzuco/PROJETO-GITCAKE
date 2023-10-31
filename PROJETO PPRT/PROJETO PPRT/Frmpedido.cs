@@ -316,8 +316,7 @@ namespace PROJETO_PPRT
 
         private void btn_avancarpedido_Click(object sender, EventArgs e)
         {
-            Frmpagamento pg = new Frmpagamento();
-            pg.ShowDialog();
+           
         }
 
         private void btn_excluirprodpedido_Click(object sender, EventArgs e)

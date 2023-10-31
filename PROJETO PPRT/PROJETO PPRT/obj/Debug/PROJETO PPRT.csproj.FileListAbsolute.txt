@@ -249,7 +249,6 @@ C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO P
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\cunha\OneDrive\Documentos\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\gitcake.Frmcadastro.resources
-C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\obj\Debug\PROJETO_PPRT.Frmpagamento.resources
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\PROJETO PPRT\bin\Debug\FontAwesome.Sharp.dll

@@ -29,41 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmpedido));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_pedido = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dtitem = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbentrega = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbstatus = new System.Windows.Forms.ComboBox();
+            this.dtpemissao = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtendereco = new System.Windows.Forms.TextBox();
+            this.txtcliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_pedido
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(737, 736);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Finalizar Pedido";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_pedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(0)))));
+            this.btn_pedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_pedido.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_pedido.Location = new System.Drawing.Point(737, 736);
+            this.btn_pedido.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_pedido.Name = "btn_pedido";
+            this.btn_pedido.Size = new System.Drawing.Size(214, 48);
+            this.btn_pedido.TabIndex = 5;
+            this.btn_pedido.Text = "Finalizar Pedido";
+            this.btn_pedido.UseVisualStyleBackColor = false;
+            this.btn_pedido.Click += new System.EventHandler(this.btn_pedido_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -86,7 +87,6 @@
             this.dtitem.RowTemplate.Height = 24;
             this.dtitem.Size = new System.Drawing.Size(400, 599);
             this.dtitem.TabIndex = 21;
-           // this.dtitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitem_CellContentClick);
             // 
             // label2
             // 
@@ -132,16 +132,15 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Entrega :";
             // 
-            // checkBox1
+            // ckbentrega
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(147, 428);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.ckbentrega.AutoSize = true;
+            this.ckbentrega.Location = new System.Drawing.Point(147, 428);
+            this.ckbentrega.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbentrega.Name = "ckbentrega";
+            this.ckbentrega.Size = new System.Drawing.Size(15, 14);
+            this.ckbentrega.TabIndex = 14;
+            this.ckbentrega.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -154,22 +153,26 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Endereço :";
             // 
-            // comboBox1
+            // cmbstatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 357);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cmbstatus.FormattingEnabled = true;
+            this.cmbstatus.Items.AddRange(new object[] {
+            "Aprovado",
+            "Aguardando",
+            "Cancelado"});
+            this.cmbstatus.Location = new System.Drawing.Point(199, 357);
+            this.cmbstatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbstatus.Name = "cmbstatus";
+            this.cmbstatus.Size = new System.Drawing.Size(92, 21);
+            this.cmbstatus.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // dtpemissao
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(199, 284);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtpemissao.Location = new System.Drawing.Point(199, 284);
+            this.dtpemissao.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpemissao.Name = "dtpemissao";
+            this.dtpemissao.Size = new System.Drawing.Size(212, 20);
+            this.dtpemissao.TabIndex = 19;
             // 
             // textBox1
             // 
@@ -213,21 +216,21 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Status do pedido :";
             // 
-            // textBox2
+            // txtendereco
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 498);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 20);
-            this.textBox2.TabIndex = 16;
+            this.txtendereco.Location = new System.Drawing.Point(199, 498);
+            this.txtendereco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtendereco.Name = "txtendereco";
+            this.txtendereco.Size = new System.Drawing.Size(212, 20);
+            this.txtendereco.TabIndex = 16;
             // 
-            // textBox3
+            // txtcliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 212);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 20);
-            this.textBox3.TabIndex = 17;
+            this.txtcliente.Location = new System.Drawing.Point(199, 212);
+            this.txtcliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcliente.Name = "txtcliente";
+            this.txtcliente.Size = new System.Drawing.Size(212, 20);
+            this.txtcliente.TabIndex = 17;
             // 
             // Frmpedido
             // 
@@ -237,12 +240,12 @@
             this.ClientSize = new System.Drawing.Size(1414, 816);
             this.Controls.Add(this.dtitem);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dtpemissao);
+            this.Controls.Add(this.cmbstatus);
+            this.Controls.Add(this.txtcliente);
+            this.Controls.Add(this.txtendereco);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ckbentrega);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -251,7 +254,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_pedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frmpedido";
@@ -265,22 +268,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_pedido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dtitem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbentrega;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbstatus;
+        private System.Windows.Forms.DateTimePicker dtpemissao;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtendereco;
+        private System.Windows.Forms.TextBox txtcliente;
     }
 }

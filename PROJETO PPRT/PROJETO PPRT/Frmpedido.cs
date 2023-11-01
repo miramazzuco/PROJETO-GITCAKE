@@ -17,6 +17,7 @@ using MySqlX.XDevAPI.Relational;
 using System.IO;
 using System.Drawing.Printing;
 using MySqlX.XDevAPI;
+using DocumentFormat.OpenXml.EMMA;
 
 namespace PROJETO_PPRT
 {
@@ -28,11 +29,15 @@ namespace PROJETO_PPRT
         private StreamReader StreamToPrint;
         decimal total = 0;
         conexao com = new conexao();
-        
-       // itemcontroller itemcontroller = new itemcontroller();
-       // itemmodelo itmodelo = new itemmodelo();
+        //validação dos campos 
+        private ErrorProvider errorProvider = new ErrorProvider();
+        private bool isValid;
+        // itemcontroller itemcontroller = new itemcontroller();
+        // itemmodelo itmodelo = new itemmodelo();
         pedidomodelo pdmodelo = new pedidomodelo();
-      //  List<itemmodelo> list = new List<itemmodelo>();
+        pedidocontroller pdcontroller = new pedidocontroller();
+        List<itemmodelo> list = new List<itemmodelo>();
+
         public Frmpedido()
         {
             InitializeComponent();
@@ -47,7 +52,7 @@ namespace PROJETO_PPRT
             
 
             //determinar como inicialmente invisivel o endereço
-            textBox2.Visible = false;
+            txtendereco.Visible = false;
             label8.Visible = false;
 
             // Criação de um DataTable para armazenar dados da consulta SQL.
@@ -312,20 +317,70 @@ namespace PROJETO_PPRT
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+
+        }
+        private bool ValidarCampos()
+        {
+            errorProvider.Clear();
+
+            bool isValid = true;
+            if (string.IsNullOrWhiteSpace(txtcliente.Text))
             {
-                textBox2.Visible = true;
-                label8.Visible = true;
+                errorProvider.SetError(txtcliente, "O campo 'Cliente' é obrigatório.");
+                isValid = false;
+
             }
             else
             {
-                textBox2.Visible = false;
-                label8.Visible = false;
+                errorProvider.Clear();
             }
 
+            /*if (!DateTime.TryParse(dtpemissao.Text, out DateTime emissao) || emissao < DateTime.Now)
+            {
+                errorProvider.SetError(dtpemissao, "Data inválido. Insira uma data valida.");
+                isValid = false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(cmbstatus.Text))
+            {
+                errorProvider.SetError(cmbstatus, "Status inválido. Insira um valor de status valido.");
+                isValid = false;
+            }*/
+
+
+            return isValid;
         }
 
-        
+        private void btn_pedido_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                try
+                {
+                    pdmodelo.emissao = dtpemissao.Value;
+                    pdmodelo.total = Convert.ToDecimal(textBox1.Text);
+                    pdmodelo.item = list;
+                    pdmodelo.statuspedido =cmbstatus.Text;
+                    pdmodelo.endereco = txtendereco.Text;
+                    pdmodelo.cliente = txtcliente.Text;
+
+
+                    if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
+                    {
+                        MessageBox.Show("Pedido emitido com sucesso");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro na emissao");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao emitir o pedido: " + ex.Message);
+                }
+            }
+        }
     }
 
 }

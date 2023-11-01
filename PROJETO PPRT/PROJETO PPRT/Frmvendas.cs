@@ -41,8 +41,9 @@ namespace PROJETO_PPRT
             chart1.Series["Quantidade de Produtos "].BorderColor = Color.Black;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-          
-            
+
+            string sql = "SELECT * from pedido";
+            dtpedido.DataSource = com.ObterDados(sql);
         }
 
     }

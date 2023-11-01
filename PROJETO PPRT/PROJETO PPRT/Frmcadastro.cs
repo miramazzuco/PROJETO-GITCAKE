@@ -74,6 +74,7 @@ namespace gitcake
                         MessageBox.Show("Cadastro com sucesso");
                         string sql = "SELECT * from produto";
                         dataGridView1.DataSource = com.ObterDados(sql);
+                        LimparCaminhoDaFoto();
                     }
                     else
                     {
@@ -183,6 +184,7 @@ namespace gitcake
                         tabestoque.SelectedIndex = 1;
                         string sql = "SELECT * from produto";
                         dataGridView1.DataSource = com.ObterDados(sql);
+                        LimparCaminhoDaFoto();
                     }
                 }
             }
@@ -224,9 +226,8 @@ namespace gitcake
                         dataGridView1.DataSource = com.ObterDados(sql);
                         tabPage2.Focus();
                         tabestoque.SelectedIndex = 1;
-                        txtproduto.Clear();
-                        txtcodigo.Clear();
-                        txtpreco.Clear();
+                        LimparCaminhoDaFoto();
+
                         txtquantidade.Text = "0";
                         dtpdata.Value = DateTime.Now;
                     }
@@ -245,11 +246,46 @@ namespace gitcake
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
+            string filtro = txtPesquisar.Text.Trim();// O método Trim em C# é usado para remover os espaços em branco
+                                                     // (ou outros caracteres de espaço em branco)
+            if (string.IsNullOrEmpty(filtro))
+            {
+                // Se o campo de pesquisa estiver vazio, recarregue todos os itens no DataGridView
+                string sql = "SELECT * from produto";
+                dataGridView1.DataSource = com.ObterDados(sql);
+            }
+            else
+            {
+                // Se houver texto no campo de pesquisa, aplique o filtro
+                try
+                {
+                    string sql = "SELECT * from produto where produto like '%" + filtro + "%'";
+                    dataGridView1.DataSource = com.ObterDados(sql);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro na pesquisa: " + ex.Message);
+                }
+            }
+
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+        private void LimparCaminhoDaFoto()
+        {
+           
+
+            txtproduto.Clear();
+            txtcodigo.Clear();
+            txtpreco.Clear();
+            txtquantidade.Text = "0";
+            pictureBox1.Image = null;
+            lblfoto.Text = "Foto";
+            lblfoto.Image = null;
+            
         }
     }
 }

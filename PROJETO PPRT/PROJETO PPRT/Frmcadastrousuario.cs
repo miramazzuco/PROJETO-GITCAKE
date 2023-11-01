@@ -25,6 +25,7 @@ namespace PROJETO_PPRT
         usuariocontroller uscontroller = new usuariocontroller();
 
         private ErrorProvider errorProvider = new ErrorProvider();
+       
         public Frmcadastrousuario()
         {
             InitializeComponent();
@@ -270,10 +271,7 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
     }
 
 }

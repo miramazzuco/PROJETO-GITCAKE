@@ -14,6 +14,8 @@ namespace PROJETO_PPRT
 {
     public partial class Frmvendas : Form
     {
+        private Color ColorLightGray;
+
         public Frmvendas()
         {
             InitializeComponent();
@@ -41,9 +43,25 @@ namespace PROJETO_PPRT
             chart1.Series["Quantidade de Produtos "].BorderColor = Color.Black;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-          
-            
+
+            chart2.Series.Clear();
+            chart2.Series.Add("Produtos");
+            chart2.Series["Produtos"].Points.DataBind(dataTable.AsEnumerable(), "produto", "quantidade", "");
+            chart2.Series["Produtos"].ChartType = SeriesChartType.Pie; // Definir o tipo de gráfico como Pie
+            chart2.Titles.Add("Produtos (Gráfico de Pizza)"); // Título diferente
+            chart2.BackColor = Color.LightGray; // Fundo cinza claro
+            chart2.Series["Produtos"]["PieLabelStyle"] = "Outside"; // Colocar os rótulos fora das fatias
+
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

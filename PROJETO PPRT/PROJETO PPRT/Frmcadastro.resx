@@ -118,6 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnpesquisar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCwEAHDooglMBAAAC9ElEQVRYR72XT4hNURzHB5OGBSLl
+        z0KI5M+CwuxYzEJMGGkWFkpTWEkSY3Xue2+eLAxRUwoJjaLYyEIhoSwIpVlRpJCEiPHf8fm995v7znnv
+        vjfvvjvdb307t/v9/r7nN+/ce8+ZpuFgrRlvbabD2uAM14/gG65/wtdcP2Q8ydgOW7RkZECgTLyfCT5B
+        Wwc/FP0j0Ii12eUEvYqYpB4+o36JRsUHE3fCwcpgacic0L9yO+MBxlNQlqTc+wW2a2T9oKiNgN9lgQ+K
+        95tGqc0D2miaWYfvqV9nfsBWtQ0PzHMoZB3DgH+MeZlALTWBrxkeL9UX+Nba/HS11Abmy36x2aNSLFCb
+        83OC0ypVB5O1QvmLh4rOqxQbslTUXy1lmT88lItUjgZG3vGw4CucplJDsDY3mwyegaHM4KhKlbD20hgM
+        7x1zn0qJQE6/k/lCb1eCTpc5RmjaVEoEcjb7ubm5KvngFdrgGw9NVCkRrO2Z5eea1Sr5oIEdjmlQbycG
+        WWOh82CbLSr5oIGukkk2megPTlwwIXtJmCsNdKrkA2Gtbzw4VaVEYM3n+blVl8As9I2ZDpUSgZxtfq6Z
+        oZKP4ofDvHTM/SolAjnXnMwBvR0NDMccM5uRWaBSQ6B+BXS/rHmVooF5PvxVKjC3YLPKsUBdCxnsoOHk
+        3+vakDD2OUXSBHt/vDdCmoYX/JygV+Xa4OmfQvFzv9hcgRPUUhPF+uC6Xx8MWHtknFqGh+xaFH0uC3lH
+        E7vgZLV5kNcWbR/8WFYnvBj7u0ITKwmLOGYVTkp34VnYi+cc431GttsKr0uWNnYTPTMJvh0RVgfNDcay
+        k7Q5rNHxQOF6+MQPq0r5NTZqnRxwOJi6uskWQhsBxfKayjrLz34TPub6DiNrbHbDxWoNwVKuQv9WnDxs
+        olvldMCEcsrmO+A1sVfldMCEa6BzPJMvpNmpcjpgwk1M7vy/IU1kulROB0y6lcn/lpqQhrJLVU4HxdOX
+        u0ml/CsItAm+muaetWbSf7lvuG7ybehFAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1

@@ -46,6 +46,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtendereco = new System.Windows.Forms.TextBox();
             this.txtcliente = new System.Windows.Forms.TextBox();
+            this.btn_excluiritem = new System.Windows.Forms.Button();
+            this.btn_limparitem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +89,7 @@
             this.dtitem.RowTemplate.Height = 24;
             this.dtitem.Size = new System.Drawing.Size(400, 599);
             this.dtitem.TabIndex = 21;
+            this.dtitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitem_CellContentClick);
             // 
             // label2
             // 
@@ -232,12 +235,34 @@
             this.txtcliente.Size = new System.Drawing.Size(212, 20);
             this.txtcliente.TabIndex = 17;
             // 
+            // btn_excluiritem
+            // 
+            this.btn_excluiritem.Location = new System.Drawing.Point(426, 682);
+            this.btn_excluiritem.Name = "btn_excluiritem";
+            this.btn_excluiritem.Size = new System.Drawing.Size(75, 23);
+            this.btn_excluiritem.TabIndex = 22;
+            this.btn_excluiritem.Text = "Excluir";
+            this.btn_excluiritem.UseVisualStyleBackColor = true;
+            this.btn_excluiritem.Click += new System.EventHandler(this.btn_excluiritem_Click);
+            // 
+            // btn_limparitem
+            // 
+            this.btn_limparitem.Location = new System.Drawing.Point(751, 682);
+            this.btn_limparitem.Name = "btn_limparitem";
+            this.btn_limparitem.Size = new System.Drawing.Size(75, 23);
+            this.btn_limparitem.TabIndex = 23;
+            this.btn_limparitem.Text = "Limpar";
+            this.btn_limparitem.UseVisualStyleBackColor = true;
+            this.btn_limparitem.Click += new System.EventHandler(this.btn_limparitem_Click);
+            // 
             // Frmpedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1414, 816);
+            this.Controls.Add(this.btn_limparitem);
+            this.Controls.Add(this.btn_excluiritem);
             this.Controls.Add(this.dtitem);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dtpemissao);
@@ -285,5 +310,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtendereco;
         private System.Windows.Forms.TextBox txtcliente;
+        private System.Windows.Forms.Button btn_excluiritem;
+        private System.Windows.Forms.Button btn_limparitem;
     }
 }

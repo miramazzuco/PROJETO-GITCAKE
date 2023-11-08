@@ -18,6 +18,7 @@ using System.IO;
 using System.Drawing.Printing;
 using MySqlX.XDevAPI;
 using DocumentFormat.OpenXml.EMMA;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 
 namespace PROJETO_PPRT
 {
@@ -32,10 +33,11 @@ namespace PROJETO_PPRT
         //validação dos campos 
         private ErrorProvider errorProvider = new ErrorProvider();
         private bool isValid;
-        // itemcontroller itemcontroller = new itemcontroller();
-        // itemmodelo itmodelo = new itemmodelo();
         pedidomodelo pdmodelo = new pedidomodelo();
         pedidocontroller pdcontroller = new pedidocontroller();
+        int iditem;
+        itemcontroller itcontroller = new itemcontroller();
+        itemmodelo itmodelo = new itemmodelo();
         List<itemmodelo> list = new List<itemmodelo>();
 
         public Frmpedido()
@@ -45,9 +47,9 @@ namespace PROJETO_PPRT
 
 
 
-        private void Frmpedido_Load(object sender, EventArgs e)
+        public void Frmpedido_Load(object sender, EventArgs e)
         {
-            itemcontroller itcontroller = new itemcontroller();
+           // itemcontroller itcontroller = new itemcontroller();
             dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
             
 
@@ -157,7 +159,7 @@ namespace PROJETO_PPRT
 
 
 
-        private void SelecionarClick(object sender, EventArgs e, string idproduto, string quantidade, string preco)
+        public void SelecionarClick(object sender, EventArgs e, string idproduto, string quantidade, string preco)
         {
            
             itemmodelo itmodelo = new itemmodelo();
@@ -230,75 +232,11 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void btnimprimir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                StreamToPrint = new StreamReader
-                   ("C:\\Users\\User\\Documents\\MyFile.txt.txt");
-                try
-                {
-                    printFont = new Font("Arial", 10);
-                    PrintDocument pd = new PrintDocument();
-                    pd.PrintPage += new PrintPageEventHandler
-                       (this.printDocument1_PrintPage);
-                    pd.Print();
-                }
-                finally
-                {
-                    StreamToPrint.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+       
 
-        }
+        
 
-        public void GerarPDF()
-        {
-
-            // Método para gerar um PDF com base nos dados do DataGridView.
-            //Exemplo de dados para o DataGridView
-            dtitem.Columns.Add("idproduto", "coluna 1");
-            dtitem.Columns.Add("Column2", "Coluna 2");
-            dtitem.Rows.Add("Linha1Col1", "Linha1Col2");
-            dtitem.Rows.Add("Linha2Col1", "Linha2Col2");
-
-        }
-
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs ev)
-        {
-            float linesPerPage = 0;
-            float yPos = 0;
-            int count = 0;
-            float leftMargin = ev.MarginBounds.Left;
-            float topMargin = ev.MarginBounds.Top;
-            string line = null;
-
-            // Calculate the number of lines per page.
-            linesPerPage = ev.MarginBounds.Height /
-               printFont.GetHeight(ev.Graphics);
-
-            // Print each line of the file.
-            while (count < linesPerPage &&
-               ((line = StreamToPrint.ReadLine()) != null))
-            {
-                yPos = topMargin + (count *
-                   printFont.GetHeight(ev.Graphics));
-                ev.Graphics.DrawString(line, printFont, Brushes.Black,
-                   leftMargin, yPos, new StringFormat());
-                count++;
-            }
-
-            // If more lines exist, print another page.
-            if (line != null)
-                ev.HasMorePages = true;
-            else
-                ev.HasMorePages = false;
-
-        }
+       
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -309,16 +247,10 @@ namespace PROJETO_PPRT
         {
 
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
         private bool ValidarCampos()
         {
             errorProvider.Clear();
@@ -335,17 +267,7 @@ namespace PROJETO_PPRT
                 errorProvider.Clear();
             }
 
-            /*if (!DateTime.TryParse(dtpemissao.Text, out DateTime emissao) || emissao < DateTime.Now)
-            {
-                errorProvider.SetError(dtpemissao, "Data inválido. Insira uma data valida.");
-                isValid = false;
-            }
-
-            if (!string.IsNullOrWhiteSpace(cmbstatus.Text))
-            {
-                errorProvider.SetError(cmbstatus, "Status inválido. Insira um valor de status valido.");
-                isValid = false;
-            }*/
+            
 
 
             return isValid;
@@ -379,6 +301,62 @@ namespace PROJETO_PPRT
                 {
                     MessageBox.Show("Erro ao emitir o pedido: " + ex.Message);
                 }
+            }
+        }
+        
+
+        public void dtitem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtém o valor da célula clicada
+                iditem = Convert.ToInt32(dtitem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+
+                // Faça algo com o valor da célula, por exemplo, exibindo-o em uma caixa de mensagem
+              //  MessageBox.Show("Valor da célula clicada: " + cellValue.ToString());
+            }
+
+            MessageBox.Show("Produto selecionado");
+
+        }
+
+        private void btn_excluiritem_Click(object sender, EventArgs e)
+        {
+            itemcontroller itcontroller = new itemcontroller();
+
+          //  iditem = Convert.ToInt32(com.ObterDados("select iditem from item where iditem = iditem"));
+
+                var confirmResult = MessageBox.Show("Tem certeza de que deseja excluir este produto do pedido?", "Confirmação", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    if (itcontroller.Excluiritem(iditem) == true)
+                    {
+                        MessageBox.Show("Código do usuário " + iditem + " excluído.");
+                        dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao excluir usuário.");
+                    }
+                }
+            
+        }
+
+        private void btn_limparitem_Click(object sender, EventArgs e)
+        {
+            // Verifica se a DataGridView possui dados antes de apagá-los
+            if (dtitem.Rows.Count > 0)
+            {
+                
+                    itcontroller.limparitem();
+               
+                // Limpa as linhas da DataGridView
+               // dtitem.Controls.Clear();
+                dtitem.DataSource = null; //Remover a datasource
+                dtitem.Columns.Clear(); //Remover as colunas
+                dtitem.Rows.Clear();    //Remover as linhas
+                dtitem.Refresh();    //Para a grid se actualizar
             }
         }
     }

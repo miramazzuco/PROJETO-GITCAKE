@@ -21,6 +21,7 @@ namespace PROJETO_PPRT
         int idperfil = 1;
         int codigo;
         int nome;
+        conexao com = new conexao();
 
         usuariocontroller uscontroller = new usuariocontroller();
 
@@ -29,7 +30,7 @@ namespace PROJETO_PPRT
         {
             InitializeComponent();
         }
-        conexao com = new conexao();
+        
 
 
         private void label5_Click(object sender, EventArgs e)
@@ -235,23 +236,6 @@ namespace PROJETO_PPRT
             }
         }
 
-        /*private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica se a célula clicada é válida
-            {
-
-
-                //convertendo a primeira coleta em string
-                codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-
-                //convert o inteiro para string
-                MessageBox.Show("Usuario selecionado :  " + codigo.ToString());
-                txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-                txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
-                txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-                cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
-            }
-        }*/
 
         private void Frmcadastrousuario_Click(object sender, EventArgs e)
         {

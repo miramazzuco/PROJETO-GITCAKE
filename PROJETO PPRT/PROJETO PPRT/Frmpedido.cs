@@ -19,6 +19,9 @@ using System.Drawing.Printing;
 using MySqlX.XDevAPI;
 using DocumentFormat.OpenXml.EMMA;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Color = System.Drawing.Color;
+using Font = System.Drawing.Font;
 
 namespace PROJETO_PPRT
 {
@@ -179,7 +182,7 @@ namespace PROJETO_PPRT
             // Adiciona informações do produto à DataGridView e atualiza o total.
            // dtitem.Rows.Add(default, idproduto.ToString(), quantidade.ToString(), subTotal.ToString());
             total = total + subTotal;
-            MessageBox.Show("Produto Selecionado" + total.ToString());
+            MessageBox.Show("Produto Selecionado" + preco.ToString());
             textBox1.Text = total.ToString();
            
 
@@ -313,7 +316,7 @@ namespace PROJETO_PPRT
                 iditem = Convert.ToInt32(dtitem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
 
                 // Faça algo com o valor da célula, por exemplo, exibindo-o em uma caixa de mensagem
-              //  MessageBox.Show("Valor da célula clicada: " + cellValue.ToString());
+                //  MessageBox.Show("Valor da célula clicada: " + cellValue.ToString());
             }
 
             MessageBox.Show("Produto selecionado");
@@ -323,7 +326,7 @@ namespace PROJETO_PPRT
         private void btn_excluiritem_Click(object sender, EventArgs e)
         {
             itemcontroller itcontroller = new itemcontroller();
-
+            produtomodelo pdmodelo = new produtomodelo();
           //  iditem = Convert.ToInt32(com.ObterDados("select iditem from item where iditem = iditem"));
 
                 var confirmResult = MessageBox.Show("Tem certeza de que deseja excluir este produto do pedido?", "Confirmação", MessageBoxButtons.YesNo);
@@ -332,12 +335,12 @@ namespace PROJETO_PPRT
                 {
                     if (itcontroller.Excluiritem(iditem) == true)
                     {
-                        MessageBox.Show("Código do usuário " + iditem + " excluído.");
+                        MessageBox.Show("Item " + pdmodelo.codigo + " excluído.");
                         dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao excluir usuário.");
+                        MessageBox.Show("Erro ao excluir produto.");
                     }
                 }
             
@@ -345,14 +348,21 @@ namespace PROJETO_PPRT
 
         private void btn_limparitem_Click(object sender, EventArgs e)
         {
-            // Verifica se a DataGridView possui dados antes de apagá-los
+            limpartabelaitem();
+            
+        }
+
+        public void limpartabelaitem()
+        {
             if (dtitem.Rows.Count > 0)
             {
-                
-                    itcontroller.limparitem();
-               
+
+                itcontroller.limparitem();
+
                 // Limpa as linhas da DataGridView
-               // dtitem.Controls.Clear();
+                // dtitem.Controls.Clear();
+                total = 0;
+                textBox1.Text = "";
                 dtitem.DataSource = null; //Remover a datasource
                 dtitem.Columns.Clear(); //Remover as colunas
                 dtitem.Rows.Clear();    //Remover as linhas

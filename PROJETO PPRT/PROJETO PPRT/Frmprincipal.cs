@@ -47,6 +47,7 @@ namespace PROJETO_PPRT
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmcadastrousuario" a ele.
             panel2.Controls.Clear();
             Frmcadastrousuario ad = new Frmcadastrousuario();
+           
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;
@@ -61,10 +62,13 @@ namespace PROJETO_PPRT
             // Carrega informações do usuário logado e exibe o nome do usuário em uma label.
             usuariomodelo umodelo = new usuariomodelo();
             usuariocontroller ucontrole = new usuariocontroller();
+            itemcontroller itcontroller = new itemcontroller();
             umodelo = ucontrole.CarregaUsuario(usi);
             label5.Text = umodelo.nome;
+            itcontroller.limparitem();
 
         }
+       
 
         private void btnpedido_Click(object sender, EventArgs e)
         {

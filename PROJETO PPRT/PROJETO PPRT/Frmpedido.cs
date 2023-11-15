@@ -190,7 +190,7 @@ namespace PROJETO_PPRT
             itmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
             itmodelo.subtotal = subTotal;
             itcontroller.cadastrarItem(itmodelo);
-            
+            itcontroller.CarregaItem(Convert.ToInt32(idproduto));
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
@@ -282,13 +282,14 @@ namespace PROJETO_PPRT
             {
                 try
                 {
+                   
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
                     pdmodelo.item = list;
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
-
+                    
 
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {
@@ -335,7 +336,7 @@ namespace PROJETO_PPRT
                 {
                     if (itcontroller.Excluiritem(iditem) == true)
                     {
-                        MessageBox.Show("Item " + pdmodelo.codigo + " excluído.");
+                        MessageBox.Show("Item " + pdmodelo.idproduto + " excluído.");
                         dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
                     }
                     else

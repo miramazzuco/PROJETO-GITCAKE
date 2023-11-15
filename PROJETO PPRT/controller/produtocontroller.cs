@@ -38,7 +38,7 @@ namespace controller
                 }
                 string[] campos = { "@nome", "@preco", "@qtde", "@data", "@foto" };
                 object[] valores = { prod.descricao, prod.preco, prod.quantidade, /*prod.perecivel*/ prod.data_val, prod.foto };
-                if (conn.cadastrar(prod.codigo, campos, valores, sql) >= 1)
+                if (conn.cadastrar(prod.idproduto, campos, valores, sql) >= 1)
                 {
                     resultado = true;
                 }

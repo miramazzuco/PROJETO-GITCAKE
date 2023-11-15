@@ -16,6 +16,7 @@ namespace controller
 
         public bool cadastrarItem(itemmodelo item)
         {
+            
             bool resultado = false;
             string sql = "insert into item(iditem,idproduto,quantidade,subtotal)values('" + item.iditem + "','" + item.idproduto + "','" + item.quantidade + "','" + item.subtotal + "')";
 
@@ -80,7 +81,9 @@ namespace controller
 
         public itemmodelo CarregaItem(int iditem)
         {
+            List<itemmodelo> list = new List<itemmodelo>();
             itemmodelo it = new itemmodelo();
+            pedidomodelo pd = new pedidomodelo();
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             string sql = "SELECT * from item where iditem=@id";
@@ -95,7 +98,7 @@ namespace controller
                 it.idproduto = Convert.ToInt32(registro["idproduto"]);
                 it.quantidade = Convert.ToInt32(registro["quantidade"]);
                 it.subtotal = Convert.ToDecimal(registro["subtotal"]);
-
+                pd.item = list;
             }
             sqlcon.Close();
             return it;

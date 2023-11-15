@@ -167,8 +167,8 @@ namespace gitcake
             errorProvider.Clear();
             try
             {
-                pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
-                if (pmodelo.codigo <= 0)
+                pmodelo.idproduto = Convert.ToInt32(txtcodigo.Text);
+                if (pmodelo.idproduto <= 0)
                 {
                     MessageBox.Show("Favor escolher um produto válido.");
                     return;
@@ -214,7 +214,7 @@ namespace gitcake
                     pmodelo.descricao = txtproduto.Text;
                     pmodelo.preco = Convert.ToDecimal(txtpreco.Text);
                     pmodelo.quantidade = Convert.ToInt32(txtquantidade.Text);
-                    pmodelo.codigo = Convert.ToInt32(txtcodigo.Text);
+                    pmodelo.idproduto = Convert.ToInt32(txtcodigo.Text);
                     pmodelo.data_val = dtpdata.Value;
                     pmodelo.foto = lblfoto.Text;
                     if (pController.cadastrarProduto(pmodelo, 2) == true)

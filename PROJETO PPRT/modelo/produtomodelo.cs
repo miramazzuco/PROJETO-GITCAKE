@@ -31,7 +31,7 @@ namespace modelo
             this.foto_prod = "0";
         }
         //metodo de acesso as variaveies
-        public int codigo
+        public int idproduto
         {
             get { return cod_prod; }
             //alterar dados da variavel

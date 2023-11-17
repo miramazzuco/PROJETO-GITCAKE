@@ -31,6 +31,11 @@ namespace controller
         bool resultado = false;// verificar o resultado 
         conexao conn = new conexao();// chamo o metodo conexao
         string sql;
+        public pedidocontroller()
+        {
+            conn = new conexao();
+
+        }
         public bool cadastrarpedido(pedidomodelo pedi, int operacao)
         {
             try
@@ -72,43 +77,20 @@ namespace controller
 
         }
 
-        /* public class GerarPDF
-         {
-             private Button printButton = new Button();
-             private DataGridView dataGridView1 = new DataGridView();
-             private PrintDocument printDocument1 = new PrintDocument();
+        
 
-             public GerarPDF()
-             {
-                 // Exemplo de dados para o DataGridView
-                 dataGridView1.Columns.Add("idproduto", "coluna 1");
-                 dataGridView1.Columns.Add("Column2", "Coluna 2");
-                 dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
-                 //dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
+        List<itemmodelo> lista = new List<itemmodelo>();
 
-                 printButton.Text = "Imprimir";
-                 printButton.Click += printButton_Click;
-                 printDocument1.PrintPage += printDocument1_PrintPage;
-
-                 Controls.GetInstance(dataGridView1);
-                 Controls.GetInstance(printButton);
-             }
-
-             private void printButton_Click(object sender, EventArgs e)
-             {
-                 printDocument1.Print();
-             }
-
-             private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-             {
-                 Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
-                 dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
-                 e.Graphics.DrawImage(bm, 0, 0);
-             }
-
-
-
-         }*/
+        public void popularlista(List<itemmodelo> lista)
+        {
+            
+            foreach (itemmodelo itens in lista)
+            {
+                lista.Add(itens);
+               
+            }
+        }
+                
     }
    
 

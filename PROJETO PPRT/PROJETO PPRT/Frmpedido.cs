@@ -282,15 +282,18 @@ namespace PROJETO_PPRT
             {
                 try
                 {
+                    List<itemmodelo> lista = new List<itemmodelo>();
+                    lista.Add(itmodelo);
+                   
                    
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                    pdmodelo.item = list;
+                    pdmodelo.item = lista;
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
-                    
 
+                    pdcontroller.popularlista(lista);
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {
                         MessageBox.Show("Pedido emitido com sucesso");

@@ -46,6 +46,7 @@ namespace PROJETO_PPRT
         {
             panel2.Controls.Clear();
             Frmcadastrousuario ad = new Frmcadastrousuario();
+           
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;
@@ -59,12 +60,15 @@ namespace PROJETO_PPRT
         {
             usuariomodelo umodelo = new usuariomodelo();
             usuariocontroller ucontrole = new usuariocontroller();
+            itemcontroller itcontroller = new itemcontroller();
             umodelo = ucontrole.CarregaUsuario(usi);
             label5.Text = umodelo.nome;
+            itcontroller.limparitem();
 
             
 
         }
+       
 
 
 

@@ -6,15 +6,18 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace modelo
 {
     public class pedidomodelo
     {
+        itemmodelo it = new itemmodelo();
+
         public int idped;
         public DateTime emissa;
         public string clienteped;
-        public List<itemmodelo> iten;
+        public string itemjson { get; set; }
         public string statusped;
         public Boolean entregaped;
         public string enderecoped;
@@ -27,7 +30,7 @@ namespace modelo
             this.idped = 0;
             this.emissa =  DateTime.Now;
             this.clienteped = "";
-            this.iten = new List<itemmodelo>();
+            
             this.statusped = "Aguardando";
             this.entregaped = false;
             this.enderecoped = "";
@@ -52,11 +55,12 @@ namespace modelo
             get { return clienteped; }
             set { clienteped = value; }
         }
-
-        public List<itemmodelo> item
+       
+        public string item 
         {
-            get { return iten; }
-            set { iten = value; }
+
+            get { return JsonSerializer.Deserialize<item>(itemjson); }
+            set { itemjson = JsonSerializer.Serialize(value); }
         }
 
         public string statuspedido
@@ -83,6 +87,10 @@ namespace modelo
             set { totalped = value; }
         }
 
+        class item
+        {
+
+        }
     }
 
 

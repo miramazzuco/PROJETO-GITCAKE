@@ -18,7 +18,7 @@ namespace controller
         {
             
             bool resultado = false;
-            string sql = "insert into item(iditem,idproduto,quantidade,subtotal)values('" + item.iditem + "','" + item.idproduto + "','" + item.quantidade + "','" + item.subtotal + "')";
+            string sql = "insert into item(iditem,idproduto,quantidade,subtotal)values('" + item.iditem + "','" + item.produtoitem + "','" + item.quantidadeitem + "','" + item.subtotalitem + "')";
 
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open(); // abrindo o banco
@@ -95,10 +95,10 @@ namespace controller
                 registro.Read();//leia o resgitro
                 //gravando as informaçoes no modelo usuario
                 it.iditem = Convert.ToInt32(registro["iditem"]);
-                it.idproduto = Convert.ToInt32(registro["idproduto"]);
-                it.quantidade = Convert.ToInt32(registro["quantidade"]);
-                it.subtotal = Convert.ToDecimal(registro["subtotal"]);
-                pd.item = list;
+                it.produtoitem = Convert.ToInt32(registro["idproduto"]);
+                it.quantidadeitem = Convert.ToInt32(registro["quantidade"]);
+                it.subtotalitem = Convert.ToDecimal(registro["subtotal"]);
+               
             }
             sqlcon.Close();
             return it;

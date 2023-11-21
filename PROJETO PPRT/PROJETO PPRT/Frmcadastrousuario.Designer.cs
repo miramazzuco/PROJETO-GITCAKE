@@ -128,8 +128,8 @@
             this.dtusuario.RowTemplate.Height = 24;
             this.dtusuario.Size = new System.Drawing.Size(560, 279);
             this.dtusuario.TabIndex = 8;
-            this.dtusuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentDoubleClick);
-            this.dtusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellDoubleClick);
+           // this.dtusuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellContentDoubleClick);
+            //this.dtusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtusuario_CellDoubleClick);
             // 
             // btneditarusuario
             // 

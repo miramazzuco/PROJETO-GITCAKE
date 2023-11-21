@@ -254,10 +254,7 @@ namespace PROJETO_PPRT
             }
         }
 
-        private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 
 }

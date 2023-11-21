@@ -79,17 +79,7 @@ namespace controller
 
         
 
-        List<itemmodelo> lista = new List<itemmodelo>();
-
-        public void popularlista(List<itemmodelo> lista)
-        {
-            
-            foreach (itemmodelo itens in lista)
-            {
-                lista.Add(itens);
-               
-            }
-        }
+        
                 
     }
    

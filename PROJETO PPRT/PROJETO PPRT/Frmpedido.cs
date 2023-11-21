@@ -36,12 +36,14 @@ namespace PROJETO_PPRT
         //validação dos campos 
         private ErrorProvider errorProvider = new ErrorProvider();
         private bool isValid;
+
         pedidomodelo pdmodelo = new pedidomodelo();
         pedidocontroller pdcontroller = new pedidocontroller();
+
         int iditem;
         itemcontroller itcontroller = new itemcontroller();
         itemmodelo itmodelo = new itemmodelo();
-        List<itemmodelo> list = new List<itemmodelo>();
+       
 
         public Frmpedido()
         {
@@ -186,9 +188,9 @@ namespace PROJETO_PPRT
             textBox1.Text = total.ToString();
            
 
-            itmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
-            itmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
-            itmodelo.subtotal = subTotal;
+            itmodelo.produtoitem = Convert.ToInt32(idproduto.ToString());
+            itmodelo.quantidadeitem = Convert.ToInt32(quantidade.ToString());
+            itmodelo.subtotalitem = subTotal;
             itcontroller.cadastrarItem(itmodelo);
             itcontroller.CarregaItem(Convert.ToInt32(idproduto));
             // Grava as informações da DataGridView em um arquivo binário.
@@ -282,18 +284,17 @@ namespace PROJETO_PPRT
             {
                 try
                 {
-                    List<itemmodelo> lista = new List<itemmodelo>();
-                    lista.Add(itmodelo);
+                    
                    
                    
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                    pdmodelo.item = lista;
+                    
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
 
-                    pdcontroller.popularlista(lista);
+                    
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {
                         MessageBox.Show("Pedido emitido com sucesso");

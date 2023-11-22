@@ -115,3 +115,9 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\Sy
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\obj\Debug\modelo.csproj.CopyComplete
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Text.Json.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.ValueTuple.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.Text.Json.xml
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\modelo\bin\Debug\System.ValueTuple.xml

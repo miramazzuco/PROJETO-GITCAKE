@@ -17,7 +17,7 @@ namespace modelo
         public int idped;
         public DateTime emissa;
         public string clienteped;
-        public string itemjson { get; set; }
+        public string itemjson;
         public string statusped;
         public Boolean entregaped;
         public string enderecoped;
@@ -30,7 +30,7 @@ namespace modelo
             this.idped = 0;
             this.emissa =  DateTime.Now;
             this.clienteped = "";
-            
+            this.itemjson = "";
             this.statusped = "Aguardando";
             this.entregaped = false;
             this.enderecoped = "";
@@ -59,8 +59,8 @@ namespace modelo
         public string item 
         {
 
-            get { return JsonSerializer.Deserialize<item>(itemjson); }
-            set { itemjson = JsonSerializer.Serialize(value); }
+            get { return itemjson; }
+            set { itemjson = value; }
         }
 
         public string statuspedido
@@ -87,10 +87,7 @@ namespace modelo
             set { totalped = value; }
         }
 
-        class item
-        {
-
-        }
+        
     }
 
 

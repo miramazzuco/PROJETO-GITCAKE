@@ -22,6 +22,8 @@ using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Color = System.Drawing.Color;
 using Font = System.Drawing.Font;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace PROJETO_PPRT
 {
@@ -43,8 +45,8 @@ namespace PROJETO_PPRT
         int iditem;
         itemcontroller itcontroller = new itemcontroller();
         itemmodelo itmodelo = new itemmodelo();
-       
-
+        string quantidade;
+ 
         public Frmpedido()
         {
             InitializeComponent();
@@ -166,9 +168,13 @@ namespace PROJETO_PPRT
 
         public void SelecionarClick(object sender, EventArgs e, string idproduto, string quantidade, string preco)
         {
-           
-            itemmodelo itmodelo = new itemmodelo();
+            produtomodelo pmodelo = new produtomodelo();
+            pedidomodelo pdmodelo = new pedidomodelo();
             itemcontroller itcontroller = new itemcontroller();
+
+            
+           
+            //atualiza a tabela item a cada produto selecionado
             dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
             dtitem.Refresh();
 
@@ -179,22 +185,30 @@ namespace PROJETO_PPRT
             // Cálculo do subtotal do produto selecionado.
             decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
+            //add JSON para listar os produtos 
+            var item = new itemmodelo( Convert.ToInt32(idproduto),Convert.ToInt32(quantidade), subTotal );
+           
+          string listaitem = JsonSerializer.Serialize(item);
+            MessageBox.Show(listaitem);
 
-
-            // Adiciona informações do produto à DataGridView e atualiza o total.
-           // dtitem.Rows.Add(default, idproduto.ToString(), quantidade.ToString(), subTotal.ToString());
+            //grava o preco total da compra de acordo com a seleção dos produtos
             total = total + subTotal;
             MessageBox.Show("Produto Selecionado" + preco.ToString());
             textBox1.Text = total.ToString();
            
-
+            //atualiza o modelo do item de acordo com os produtos selecionados
             itmodelo.produtoitem = Convert.ToInt32(idproduto.ToString());
             itmodelo.quantidadeitem = Convert.ToInt32(quantidade.ToString());
             itmodelo.subtotalitem = subTotal;
+            pdmodelo.item = listaitem;
             itcontroller.cadastrarItem(itmodelo);
             itcontroller.CarregaItem(Convert.ToInt32(idproduto));
+
+
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
+
+            //Grava o data grid
             using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
 
@@ -224,10 +238,10 @@ namespace PROJETO_PPRT
             dtitem.Refresh();
         }
 
-
+        // Método chamado quando ocorre um evento Leave em um campo de quantidade.
         private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
         {
-            // Método chamado quando ocorre um evento Leave em um campo de quantidade.
+            
             if (!string.IsNullOrEmpty(qtde))
             {
                 if (Convert.ToInt32(qtde) > qtdeprod || Convert.ToInt32(qtde) <= 0)
@@ -255,7 +269,7 @@ namespace PROJETO_PPRT
         
 
         
-        
+        //impede a confirmação do pedido caso haja falta de informações
         private bool ValidarCampos()
         {
             errorProvider.Clear();
@@ -284,21 +298,27 @@ namespace PROJETO_PPRT
             {
                 try
                 {
-                    
-                   
-                   
+                  
+                    produtomodelo pmodelo = new produtomodelo();
+
+                    //add JSON para listar os produtos 
+                   var item = new itemmodelo { produtoitem = pmodelo.idproduto, quantidadeitem = Convert.ToInt32(quantidade.ToString()) };
+                    string listaitem = JsonSerializer.Serialize(item);
+                    MessageBox.Show(listaitem);
+
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                    
+                   
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
 
+                    itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
                     
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {
                         MessageBox.Show("Pedido emitido com sucesso");
-                        
+                        string sql = "SELECT * FROM pedido";
                     }
                     else
                     {

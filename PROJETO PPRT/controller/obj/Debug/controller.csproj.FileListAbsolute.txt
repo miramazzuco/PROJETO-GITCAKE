@@ -136,3 +136,9 @@ C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debu
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.Text.Json.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.ValueTuple.dll
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.Text.Json.xml
+C:\Users\aluno\Documents\GitHub\PROJETO-GITCAKE\PROJETO PPRT\controller\bin\Debug\System.ValueTuple.xml

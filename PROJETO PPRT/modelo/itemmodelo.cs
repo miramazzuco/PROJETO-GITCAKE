@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,12 @@ namespace modelo
             this.quantidadeitem = 0;
             this.subtotalitem = 0;
         }
-
+        public itemmodelo( int produtoitem, int quantidadeitem, decimal subtotalitem)
+        {
+            this.produtoitem = produtoitem;
+            this.quantidadeitem = quantidadeitem;
+            this.subtotalitem = subtotalitem;
+        }
         public int iditem
         {
             get { return id_item; }

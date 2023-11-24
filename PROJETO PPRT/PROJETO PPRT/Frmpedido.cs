@@ -171,7 +171,7 @@ namespace PROJETO_PPRT
             produtomodelo pmodelo = new produtomodelo();
             pedidomodelo pdmodelo = new pedidomodelo();
             itemcontroller itcontroller = new itemcontroller();
-
+            
             
            
             //atualiza a tabela item a cada produto selecionado
@@ -204,7 +204,7 @@ namespace PROJETO_PPRT
             itcontroller.cadastrarItem(itmodelo);
             itcontroller.CarregaItem(Convert.ToInt32(idproduto));
 
-
+            itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
 
@@ -298,22 +298,22 @@ namespace PROJETO_PPRT
             {
                 try
                 {
-                  
+                    itemmodelo it = new itemmodelo();
                     produtomodelo pmodelo = new produtomodelo();
 
                     //add JSON para listar os produtos 
-                   var item = new itemmodelo { produtoitem = pmodelo.idproduto, quantidadeitem = Convert.ToInt32(quantidade.ToString()) };
-                    string listaitem = JsonSerializer.Serialize(item);
-                    MessageBox.Show(listaitem);
+                    //itemmodelo item = new itemmodelo { produtoitem = pmodelo.idproduto, quantidadeitem = Convert.ToInt32(quantidade.ToString()) };
+                    //string listaitem = JsonSerializer.Serialize(item);
+                    //MessageBox.Show(listaitem);
 
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                   
+                   // pdmodelo.item = listaitem;
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
 
-                    itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
+                    //itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
                     
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {

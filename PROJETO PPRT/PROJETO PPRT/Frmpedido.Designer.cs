@@ -76,7 +76,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 599);
             this.flowLayoutPanel1.TabIndex = 20;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+           // this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // dtitem
             // 
@@ -184,7 +184,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(98, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 

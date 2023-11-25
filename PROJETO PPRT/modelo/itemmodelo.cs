@@ -11,13 +11,15 @@ namespace modelo
     {
         private int id_item;
         private int id_prod;
+        private int id_pedi;
         private int qtd_prod;
         private decimal subtotal;
 
         public itemmodelo()
         {
             this.iditem = 0;
-            this.produtoitem = 0;   
+            this.produtoitem = 0;
+            this.pedidoitem = 0;
             this.quantidadeitem = 0;
             this.subtotalitem = 0;
         }

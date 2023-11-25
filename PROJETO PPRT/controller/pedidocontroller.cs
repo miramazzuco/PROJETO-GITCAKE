@@ -59,6 +59,8 @@ namespace controller
                 }
                 string[] campos = { "@emissao", "@cliente", "@item", "@statuspedido", "@entrega" , "@endereco","@total"};
                 object[] valores = { pedi.emissao, pedi.cliente, pedi.item, pedi.entrega, pedi.endereco, pedi.total };
+                ultimoidcadastrado = conn.cadastrarpedido(pedi.idped, campos, valores, sql);
+
                 if (conn.cadastrar(pedi.idpedido, campos, valores, sql) >= 1)
                 {
                     resultado = true;

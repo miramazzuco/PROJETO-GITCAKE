@@ -46,6 +46,8 @@ namespace PROJETO_PPRT
         itemcontroller itcontroller = new itemcontroller();
         itemmodelo itmodelo = new itemmodelo();
         string quantidade;
+
+        List<itemmodelo> listaproduto = new List<itemmodelo>();
  
         public Frmpedido()
         {
@@ -185,11 +187,6 @@ namespace PROJETO_PPRT
             // Cálculo do subtotal do produto selecionado.
             decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
-            //add JSON para listar os produtos 
-            var item = new itemmodelo( Convert.ToInt32(idproduto),Convert.ToInt32(quantidade), subTotal );
-           
-          string listaitem = JsonSerializer.Serialize(item);
-            MessageBox.Show(listaitem);
 
             //grava o preco total da compra de acordo com a seleção dos produtos
             total = total + subTotal;
@@ -200,11 +197,11 @@ namespace PROJETO_PPRT
             itmodelo.produtoitem = Convert.ToInt32(idproduto.ToString());
             itmodelo.quantidadeitem = Convert.ToInt32(quantidade.ToString());
             itmodelo.subtotalitem = subTotal;
-            pdmodelo.item = listaitem;
+           
             itcontroller.cadastrarItem(itmodelo);
             itcontroller.CarregaItem(Convert.ToInt32(idproduto));
 
-            itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
+            
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\aluno\\Documents\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
 
@@ -251,21 +248,7 @@ namespace PROJETO_PPRT
             }
         }
 
-       
-
-        
-
-       
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
         
 
         
@@ -301,18 +284,16 @@ namespace PROJETO_PPRT
                     itemmodelo it = new itemmodelo();
                     produtomodelo pmodelo = new produtomodelo();
 
-                    //add JSON para listar os produtos 
-                    //itemmodelo item = new itemmodelo { produtoitem = pmodelo.idproduto, quantidadeitem = Convert.ToInt32(quantidade.ToString()) };
-                    //string listaitem = JsonSerializer.Serialize(item);
-                    //MessageBox.Show(listaitem);
+                    
 
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                   // pdmodelo.item = listaitem;
+                   
                     pdmodelo.statuspedido =cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
                     pdmodelo.cliente = txtcliente.Text;
 
+                    
                     //itemmodelo itemdeserializado = JsonSerializer.Deserialize<itemmodelo>(listaitem);
                     
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
@@ -331,7 +312,15 @@ namespace PROJETO_PPRT
                 }
             }
         }
-        
+        */
+        ultimoidcadastrado = Convert.ToInt32(cadastrar.cadastrarpedido(pedidomodelo, 1));
+
+            foreach ( var itmodelo in listaproduto){
+
+                itmodelo.
+
+            }
+
 
         public void dtitem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -9,6 +9,7 @@ namespace modelo
     public class itemmodelo
     {
         public int id = 0;
+        public int idpedi = 0;
         public int idprod = 0;
         public int qtd = 0;
         public decimal sub = 0;
@@ -16,6 +17,7 @@ namespace modelo
         public itemmodelo() {
 
             this.id = 0;
+            this.idpedi = 0;
             this.idprod = 0;
             this.qtd = 0;
             this.sub = 0;
@@ -26,6 +28,12 @@ namespace modelo
             get { return id; }
             
             set { id = value; }
+        }
+
+        public int idpedido
+        {
+            get { return idpedi; }
+            set { idpedi = value; }
         }
 
         public int idproduto

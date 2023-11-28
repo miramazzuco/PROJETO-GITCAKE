@@ -46,11 +46,28 @@ namespace controller
 
         }
 
-        public bool Excluir(int iditem)
+      
+        public bool Excluiritem(int iditem)
         {
             bool resultado = false;
             MySqlConnection sqlcon = con.getConexao();
             string sql = "delete from item where iditem =" + iditem;
+            sqlcon.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
+            mySqlCommand.CommandType = System.Data.CommandType.Text;
+            mySqlCommand.CommandText = sql;
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
+            {
+                resultado = true;
+            }
+            return resultado;
+        }
+
+        public bool limparitem()
+        {
+            bool resultado = false;
+            MySqlConnection sqlcon = con.getConexao();
+            string sql = "TRUNCATE TABLE item";
             sqlcon.Open();
             MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
             mySqlCommand.CommandType = System.Data.CommandType.Text;

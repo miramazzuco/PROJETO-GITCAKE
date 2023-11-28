@@ -46,6 +46,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_excluiitem = new System.Windows.Forms.Button();
+            this.btn_limpaitem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             this.dtitem.RowTemplate.Height = 24;
             this.dtitem.Size = new System.Drawing.Size(400, 599);
             this.dtitem.TabIndex = 21;
-           // this.dtitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitem_CellContentClick);
+            this.dtitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtitem_CellContentClick);
             // 
             // label2
             // 
@@ -229,12 +231,34 @@
             this.textBox3.Size = new System.Drawing.Size(212, 20);
             this.textBox3.TabIndex = 17;
             // 
+            // btn_excluiitem
+            // 
+            this.btn_excluiitem.Location = new System.Drawing.Point(426, 682);
+            this.btn_excluiitem.Name = "btn_excluiitem";
+            this.btn_excluiitem.Size = new System.Drawing.Size(75, 23);
+            this.btn_excluiitem.TabIndex = 22;
+            this.btn_excluiitem.Text = "Excluir";
+            this.btn_excluiitem.UseVisualStyleBackColor = true;
+            this.btn_excluiitem.Click += new System.EventHandler(this.btn_excluiitem_Click);
+            // 
+            // btn_limpaitem
+            // 
+            this.btn_limpaitem.Location = new System.Drawing.Point(751, 682);
+            this.btn_limpaitem.Name = "btn_limpaitem";
+            this.btn_limpaitem.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpaitem.TabIndex = 23;
+            this.btn_limpaitem.Text = "Limpar";
+            this.btn_limpaitem.UseVisualStyleBackColor = true;
+            this.btn_limpaitem.Click += new System.EventHandler(this.btn_limpaitem_Click);
+            // 
             // Frmpedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1414, 816);
+            this.Controls.Add(this.btn_limpaitem);
+            this.Controls.Add(this.btn_excluiitem);
             this.Controls.Add(this.dtitem);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dateTimePicker1);
@@ -282,5 +306,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btn_excluiitem;
+        private System.Windows.Forms.Button btn_limpaitem;
     }
 }

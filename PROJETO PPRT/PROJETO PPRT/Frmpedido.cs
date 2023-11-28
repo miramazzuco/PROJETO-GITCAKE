@@ -27,9 +27,10 @@ namespace PROJETO_PPRT
         private Font printFont;
         private StreamReader StreamToPrint;
         decimal total = 0;
+        int iditem;
         conexao com = new conexao();
         
-       // itemcontroller itemcontroller = new itemcontroller();
+        itemcontroller itcontroller = new itemcontroller();
        // itemmodelo itmodelo = new itemmodelo();
         pedidomodelo pdmodelo = new pedidomodelo();
       //  List<itemmodelo> list = new List<itemmodelo>();
@@ -325,7 +326,66 @@ namespace PROJETO_PPRT
 
         }
 
-        
+        private void btn_excluiitem_Click(object sender, EventArgs e)
+        {
+            itemcontroller itcontroller = new itemcontroller();
+            produtomodelo pdmodelo = new produtomodelo();
+            //  iditem = Convert.ToInt32(com.ObterDados("select iditem from item where iditem = iditem"));
+
+            var confirmResult = MessageBox.Show("Tem certeza de que deseja excluir este produto do pedido?", "Confirmação", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                if (itcontroller.Excluiritem(iditem) == true)
+                {
+                    MessageBox.Show("Item " + pdmodelo.codigo + " excluído.");
+                    dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto,item.quantidade,item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir produto.");
+                }
+            }
+        }
+
+        private void btn_limpaitem_Click(object sender, EventArgs e)
+        {
+            limpartabelaitem();
+        }
+
+        //fun. limpar tds as informações do datagridview e do banco
+        public void limpartabelaitem()
+        {
+            if (dtitem.Rows.Count > 0)
+            {
+
+                itcontroller.limparitem();
+
+                // Limpa as linhas da DataGridView
+                // dtitem.Controls.Clear();
+                total = 0;
+                textBox1.Text = "";
+                dtitem.DataSource = null; //Remover a datasource
+                dtitem.Columns.Clear(); //Remover as colunas
+                dtitem.Rows.Clear();    //Remover as linhas
+                dtitem.Refresh();    //Para a grid se actualizar
+            }
+        }
+
+        //fun. para selecionar a celula da datagridview para pegar as informações A.E
+        private void dtitem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtém o valor da célula clicada
+                iditem = Convert.ToInt32(dtitem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+
+                // Faça algo com o valor da célula, por exemplo, exibindo-o em uma caixa de mensagem
+                //  MessageBox.Show("Valor da célula clicada: " + cellValue.ToString());
+            }
+
+            MessageBox.Show("Produto selecionado");
+        }
     }
 
 }

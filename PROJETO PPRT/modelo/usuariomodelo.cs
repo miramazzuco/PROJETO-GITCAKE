@@ -13,6 +13,7 @@ namespace modelo
         public string senha;
         public int perfil;
         public string email;
+        public string telefone;
 
         public usuariomodelo()
         {
@@ -20,6 +21,9 @@ namespace modelo
             senha = null;
             perfil = 0;
             email = null;
+            telefone = null;
         }
+
+        
     }
 }

@@ -14,21 +14,27 @@ using System.Windows.Forms;
 using DocumentFormat.OpenXml;
 using System.Diagnostics;
 using OfficeOpenXml;
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.EMMA;
 
 namespace PROJETO_PPRT
 {
+
     public partial class Frmprincipal : Form
     {
         int usi;
+        bool isAdmin = false; // Variável para identificar se o usuário é um administrador.
+        bool isUsuario = false;
+        int verifapefil;
 
-
-        public Frmprincipal(int usuario)
+        public Frmprincipal(int usuario,int verefica)
         {
-
-            usi = usuario;// Inicializa a variável "usi" com o valor passado como argumento para o construtor.
+            usi = usuario;
+           verifapefil = verefica;
+            // Inicializa a variável "usi" com o valor passado como argumento para o construtor.
             InitializeComponent();
-        }
 
+        }
 
         private void panelmenu_Paint(object sender, PaintEventArgs e)
         {
@@ -36,17 +42,16 @@ namespace PROJETO_PPRT
             timer1.Start();
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
 
-
             DateTime data = DateTime.Now;
             label3.Text = data.ToString("dd/MM/yyyy");
-
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmcadastrousuario" a ele.
             panel2.Controls.Clear();
-            Frmcadastrousuario ad = new Frmcadastrousuario();
+            Frmcadastrousuario ad = new Frmcadastrousuario(usi,verifapefil);
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;
@@ -62,8 +67,25 @@ namespace PROJETO_PPRT
             usuariomodelo umodelo = new usuariomodelo();
             usuariocontroller ucontrole = new usuariocontroller();
             umodelo = ucontrole.CarregaUsuario(usi);
+
             label5.Text = umodelo.nome;
 
+         
+
+            if (umodelo.perfil == 1)
+            {
+                // Desabilite ou oculte recursos específicos que não são para usuários regulares
+                // Por exemplo, você pode desabilitar botões ou ocultar painéis.
+                btnvendas.Visible = true;
+                btncadastrar.Visible = false;
+            }
+
+            if (umodelo.perfil == 2)
+            {
+                // Desabilite ou oculte recursos específicos que não são para administradores
+                // Por exemplo, você pode desabilitar botões ou ocultar painéis.
+                btnvendas.Visible = true;
+            }
         }
 
         private void btnpedido_Click(object sender, EventArgs e)
@@ -83,7 +105,6 @@ namespace PROJETO_PPRT
         private void button2_Click(object sender, EventArgs e)
         {
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmsobrenos" a ele.
-
             panel2.Controls.Clear();
             Frmsobrenos ad = new Frmsobrenos();
 
@@ -93,15 +114,14 @@ namespace PROJETO_PPRT
             panel2.Controls.Add(ad);
             ad.Show();
             pictureBox1.Visible = false;
-
         }
-
 
         private void btnestoque_Click(object sender, EventArgs e)
         {
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmcadastro" a ele.
             panel2.Controls.Clear();
-            Frmcadastro ad = new Frmcadastro();
+
+            Frmcadastro ad = new Frmcadastro(usi, verifapefil);
 
             ad.TopLevel = false;
             ad.Dock = DockStyle.Fill;
@@ -111,10 +131,9 @@ namespace PROJETO_PPRT
             pictureBox1.Visible = false;
         }
 
-
         private void btnvendas_Click(object sender, EventArgs e)
         {
-
+            
 
             // Remove todos os controles do painel "panel2" e adiciona uma instância de "Frmvendas" a ele.
             panel2.Controls.Clear();
@@ -126,12 +145,11 @@ namespace PROJETO_PPRT
             panel2.Controls.Add(ad);
             ad.Show();
             pictureBox1.Visible = false;
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             // Caminho para o documento do Word que você deseja abrir
             string filePath = @"C:\Users\cunha\Downloads\Central de ajuda 🪄 (1).docx";
 
@@ -141,17 +159,13 @@ namespace PROJETO_PPRT
                 // Abra o arquivo com o aplicativo padrão associado
                 Process.Start(filePath);
             }
-
-
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             // Fecha o formulário atual e encerra a aplicação.
             Close();
             Application.Exit();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -164,6 +178,7 @@ namespace PROJETO_PPRT
         {
 
         }
+
         private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -176,6 +191,7 @@ namespace PROJETO_PPRT
 
         private void btnsobrenos_Click_1(object sender, EventArgs e)
         {
+           
             panel2.Controls.Clear();
             Frmsobrenos ad = new Frmsobrenos();
 

@@ -9,19 +9,20 @@ namespace PROJETO_PPRT
 {
     public partial class frmlogin : Form
     {
-      // private System.Windows.Forms.Timer timer;
-      //  private Panel animatedPanel; // Renomeie a variável para evitar ambiguidade
-      //  private Color[] colors = { Color.SaddleBrown };
-      // private int currentColorIndex = 0;
+        // private System.Windows.Forms.Timer timer;
+        //  private Panel animatedPanel; // Renomeie a variável para evitar ambiguidade
+        //  private Color[] colors = { Color.SaddleBrown };
+        // private int currentColorIndex = 0;
 
         int codigousuario;
         usuariomodelo us = new usuariomodelo();
+
 
         public frmlogin()
         {
             InitializeComponent();
 
-            
+
         }
 
         // Resto do código do seu formulário...
@@ -57,7 +58,9 @@ namespace PROJETO_PPRT
             //condicionais para entrar no programa
             if (codigousuario >= 1)
             {
-                Frmprincipal principal = new Frmprincipal(codigousuario);
+                int verifica = con.verificaperfil(codigousuario);
+
+                Frmprincipal principal = new Frmprincipal(codigousuario, verifica);
                 principal.ShowDialog();//estabeleço qual página vai rodar após o login
             }
             else
@@ -89,6 +92,28 @@ namespace PROJETO_PPRT
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtusuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnloginin_Click(object sender, EventArgs e)
+        {
+
+            usuariocontroller usuarioController = new usuariocontroller();
+            Frmacesso frmacesso = new Frmacesso();
+            frmacesso.Show();
+
+            
+        
 
         }
     }

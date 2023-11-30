@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using controller;
+using DocumentFormat.OpenXml.EMMA;
 using modelo;
 
 namespace gitcake
@@ -16,10 +17,28 @@ namespace gitcake
         private ErrorProvider errorProvider = new ErrorProvider();
         private bool isValid;
 
-        public Frmcadastro()
+        public Frmcadastro(int codigo, int verifapefil)
         {
             InitializeComponent();
+            if (verifapefil == 1)
+            {
+                // Desabilite ou oculte recursos específicos que não são para usuários regulares
+                // Por exemplo, você pode desabilitar botões ou ocultar painéis.
+                btnexcluir.Visible = false;
+                label3.Visible = false;
+                txtpreco.Visible = false;
+            }
+
+            if (verifapefil == 2)
+            {
+                // Desabilite ou oculte recursos específicos que não são para administradores
+                // Por exemplo, você pode desabilitar botões ou ocultar painéis.
+                
+            }
+            conexao com = new conexao();
         }
+
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -51,6 +70,9 @@ namespace gitcake
             {
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
+
+
+            
         }
 
         private void btncadastrarproduto_Click(object sender, EventArgs e)
@@ -165,6 +187,8 @@ namespace gitcake
 
         private void btnexcluir_Click(object sender, EventArgs e)
         {
+
+           
             errorProvider.Clear();
             try
             {
@@ -192,6 +216,7 @@ namespace gitcake
             {
                 MessageBox.Show("Erro ao excluir o produto: " + ex.Message);
             }
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -286,6 +311,11 @@ namespace gitcake
             lblfoto.Text = "Foto";
             lblfoto.Image = null;
             
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

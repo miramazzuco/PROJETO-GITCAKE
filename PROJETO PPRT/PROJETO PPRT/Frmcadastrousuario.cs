@@ -1,18 +1,10 @@
 ﻿using controller;
-using gitcake;
 using modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions; // Adicione esta referência para a validação de email
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PROJETO_PPRT
 {
@@ -22,49 +14,66 @@ namespace PROJETO_PPRT
         int codigo;
         int nome;
 
-        usuariocontroller uscontroller = new usuariocontroller();
+        public DataGridView Dtusuario => dtusuario;
+        private usuariocontroller uscontroller = new usuariocontroller();
 
         private ErrorProvider errorProvider = new ErrorProvider();
-       
-        public Frmcadastrousuario()
+
+        public Frmcadastrousuario(int codigo, int verifapefil)
         {
             InitializeComponent();
+            dtusuario.CellFormatting += dtusuario_CellFormatting;
+            if (verifapefil == 1)
+            {
+                btnexcluirusuario.Visible = false;
+                label2.Visible = false;
+                txtsenha.Visible = false;
+            }
+
+            if (verifapefil == 2)
+            {
+                btnexcluirusuario.Visible = true;
+            }
         }
-        conexao com = new conexao();
 
-
-        private void label5_Click(object sender, EventArgs e)
+        private void Frmacesso_UsuarioCadastrado(object sender, EventArgs e)
         {
+            // Atualize o DataGridView ou faça qualquer ação necessária
+            AtualizarDadosUsuarios();
+        }
 
+        public void InscreverEventoUsuarioCadastrado(Frmacesso frmacesso)
+        {
+            frmacesso.UsuarioCadastrado += Frmacesso_UsuarioCadastrado;
         }
 
         private void Frmcadastrousuario_Load(object sender, EventArgs e)
         {
-            usuariocontroller usControle = new usuariocontroller();
-            dtusuario.DataSource = usControle.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
-            cboperfil.DataSource = usControle.ObterDados("select  * from perfil");
+            AtualizarDadosUsuarios();
+            cboperfil.DataSource = uscontroller.ObterDados("select  * from perfil");
             cboperfil.DisplayMember = "perfil";
             cboperfil.ValueMember = "idperfil";
+        }
 
-
-
+        public void AtualizarDadosUsuarios()
+        {
+            dtusuario.DataSource = uscontroller.ObterDados("SELECT idusuario, nome, senha, email,perfil FROM usuario");
+            // Atualizar outras configurações ou manipulações de dados, se necessário
         }
 
         private void btncadastrarusuario_Click(object sender, EventArgs e)
         {
-            usuariocontroller usControle = new usuariocontroller();
             usuariomodelo usmodelo = new usuariomodelo();
             usmodelo.nome = txtnome.Text;
             usmodelo.senha = txtsenha.Text;
             usmodelo.email = txtemail.Text;
             usmodelo.perfil = idperfil;
-            
+
             errorProvider.Clear();
             bool isValid = true;
 
             if (string.IsNullOrWhiteSpace(usmodelo.nome) || string.IsNullOrWhiteSpace(usmodelo.senha) || string.IsNullOrWhiteSpace(usmodelo.email))
             {
-
                 errorProvider.SetError(txtnome, "Preencha um nome válido!");
                 isValid = false;
             }
@@ -85,7 +94,7 @@ namespace PROJETO_PPRT
 
             if (!IsValidEmail(usmodelo.email))
             {
-                errorProvider.SetError(txtemail, "Insira um endereço de email válido.");
+                errorProvider.SetError(txtemail, "Insira um endereço de e-mail válido.");
                 isValid = false;
             }
             else
@@ -98,18 +107,14 @@ namespace PROJETO_PPRT
                 MessageBox.Show("Selecione um perfil válido.");
                 isValid = false;
             }
-            if (isValid == true)
+
+            if (isValid)
             {
-
-                if (uscontroller.cadastrar(usmodelo) == true)
+                if (uscontroller.cadastrar(usmodelo))
                 {
-
                     MessageBox.Show("Usuário cadastrado com sucesso, bem-vindo(a) " + txtnome.Text);
-                    dtusuario.DataSource = uscontroller.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
-                    txtnome.Text = string.Empty;
-                    txtsenha.Text = string.Empty;
-                    txtemail.Text = string.Empty;
-                    cboperfil.SelectedIndex = 1;
+                    AtualizarDadosUsuarios();
+                    LimparCampos();
                 }
                 else
                 {
@@ -118,9 +123,16 @@ namespace PROJETO_PPRT
             }
         }
 
+        private void LimparCampos()
+        {
+            txtnome.Text = string.Empty;
+            txtsenha.Text = string.Empty;
+            txtemail.Text = string.Empty;
+            cboperfil.SelectedIndex = 1;
+        }
+
         private void btneditarusuario_Click(object sender, EventArgs e)
         {
-            usuariocontroller uscontroler = new usuariocontroller();
             usuariomodelo usmodelo = new usuariomodelo();
             usmodelo.nome = txtnome.Text;
             usmodelo.senha = txtsenha.Text;
@@ -128,23 +140,18 @@ namespace PROJETO_PPRT
             usmodelo.perfil = idperfil;
             usmodelo.email = txtemail.Text;
 
-            // Limpa os ícones de erro do ErrorProvider
             errorProvider.Clear();
             bool isValid = true;
 
             if (string.IsNullOrWhiteSpace(usmodelo.nome) || string.IsNullOrWhiteSpace(usmodelo.senha) || string.IsNullOrWhiteSpace(usmodelo.email))
             {
                 errorProvider.SetError(txtnome, "Preencha todos os campos obrigatórios!");
-
                 isValid = false;
-
             }
             else
             {
                 errorProvider.SetError(txtnome, "");
             }
-
-
 
             if (usmodelo.senha.Length < 4 || !usmodelo.senha.Any(char.IsLetter) || !usmodelo.senha.Any(char.IsDigit))
             {
@@ -156,11 +163,9 @@ namespace PROJETO_PPRT
                 errorProvider.SetError(txtsenha, "");
             }
 
-
-
             if (!IsValidEmail(usmodelo.email))
             {
-                errorProvider.SetError(txtemail, "Insira um endereço de email válido.");
+                errorProvider.SetError(txtemail, "Insira um endereço de e-mail válido.");
                 isValid = false;
             }
             else
@@ -168,47 +173,38 @@ namespace PROJETO_PPRT
                 errorProvider.SetError(txtemail, "");
             }
 
-
             if (idperfil <= 0)
             {
                 MessageBox.Show("Selecione um perfil válido.");
                 isValid = false;
             }
 
-
             if (isValid)
             {
-                if (uscontroler.editar(usmodelo) == true)
+                if (uscontroller.editar(usmodelo))
                 {
                     MessageBox.Show("Usuário atualizado com sucesso");
-                    dtusuario.DataSource = uscontroler.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
-
-                    // Limpa os campos após a edição
-                    txtnome.Text = string.Empty;
-                    txtsenha.Text = string.Empty;
-                    txtemail.Text = string.Empty;
-                    cboperfil.SelectedIndex = 0;
+                    AtualizarDadosUsuarios();
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar usuário.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Erro ao atualizar usuário.");
-            }
-
         }
 
         private void btnexcluirusuario_Click(object sender, EventArgs e)
         {
-            usuariocontroller uscontroller = new usuariocontroller();
-
-            var confirmResult = MessageBox.Show("Tem certeza de que deseja excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo);
-
+            var confirmResult = MessageBox.Show("Tem certeza de que deseja excluir este usuário?", "Confirme a exclusão",
+                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmResult == DialogResult.Yes)
             {
-                if (uscontroller.Excluir(codigo) == true)
+                if (uscontroller.Excluir(codigo))
                 {
-                    MessageBox.Show("Código do usuário " + codigo + " excluído.");
-                    dtusuario.DataSource = uscontroller.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
+                    MessageBox.Show("Usuário excluído com sucesso");
+                    AtualizarDadosUsuarios();
+                    LimparCampos();
                 }
                 else
                 {
@@ -219,7 +215,6 @@ namespace PROJETO_PPRT
 
         private void cboperfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             idperfil = Convert.ToInt32(((DataRowView)cboperfil.SelectedItem)["idperfil"]);
         }
 
@@ -236,42 +231,24 @@ namespace PROJETO_PPRT
             }
         }
 
-        /*private void dtusuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica se a célula clicada é válida
-            {
-
-
-                //convertendo a primeira coleta em string
-                codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-
-                //convert o inteiro para string
-                MessageBox.Show("Usuario selecionado :  " + codigo.ToString());
-                txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-                txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
-                txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-                cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
-            }
-        }*/
-
-        private void Frmcadastrousuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtusuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 codigo = Convert.ToInt32(dtusuario.Rows[e.RowIndex].Cells["idusuario"].Value);
                 txtnome.Text = dtusuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-                txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
                 txtsenha.Text = dtusuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-                cboperfil.Text = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
+                txtemail.Text = dtusuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
+                cboperfil.SelectedValue = dtusuario.Rows[e.RowIndex].Cells["perfil"].Value;
             }
         }
 
-     
+        private void dtusuario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dtusuario.Columns["senha"].Index && e.Value != null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
+            }
+        }
     }
-
 }

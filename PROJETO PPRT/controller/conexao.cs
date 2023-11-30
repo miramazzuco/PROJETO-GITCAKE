@@ -72,6 +72,40 @@ namespace gitcake
             }
 
         }
+
+        public long cadastrapedido(int codigo, string[] campos, object[] valores, string sql)
+        {
+
+            long ultimoidcadastrado;
+            int registro = 0;
+            try
+            {
+                conn = getConexao();//chamo o metodo obter conexao
+                conn.Open(); // abro o banco direto
+                //preparo o comando sql
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //monto meu paramentros do slq
+                for (int i = 0; i < valores.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue(campos[i], valores[i]);
+
+                }// se Houver erro
+                if (codigo > 0)
+                {
+                    cmd.Parameters.AddWithValue("@id", codigo);
+                }
+                registro = cmd.ExecuteNonQuery();
+                ultimoidcadastrado = cmd.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception (ex.Message);
+            }
+            return ultimoidcadastrado;
+        }
+
         public int atualizar(string[] campos, object[] valores, string sql)
         {
             int resgistro = 0;

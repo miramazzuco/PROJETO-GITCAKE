@@ -12,7 +12,6 @@ using MySql.Data.MySqlClient;
 using PdfSharp;//biblioteca gerar pdf
 using PdfSharp.Drawing;// para desenho
 using PdfSharp.Pdf;// conversao
-using modelo;
 using controller;
 using System.Drawing.Printing;
 using Org.BouncyCastle.Asn1.Crmf;
@@ -28,53 +27,102 @@ namespace controller
 {
     public class pedidocontroller
     {
+        bool resultado = false;// verificar o resultado 
+        // chamo o metodo conexao
+        string sql;
+        conexao conn = new conexao();
+       
+       
+        public bool cadastrarpedido(pedidomodelo pedi, int operacao)
+        {
+            try
+            {
+                switch (operacao)
+                {
+                    case 1:// inserir dados
+
+
+                        sql = "insert into pedido(emissao,cliente,statuspedido,entrega,endereco,total)" +
+                                                    "values(@emissao,@cliente,@statuspedido,@entrega,@endereco,@total)";
+                        break;
+
+                    case 2: // atualizar
+
+                        sql = "update pedido set emissao=@emissao,cliente=@cliente,statuspedido=@statuspedido,entrega=@entrega,endereco=@endereco where idpedido=@id";
+                        break;
+                    // case 3:
+                    //   sql = "DELETE from pedido where idpedido=@id";
+                    // break;
+                    default:
+                        break;
+                }
+                string[] campos = { "@emissao", "@cliente", "@statuspedido", "@entrega", "@endereco", "@total" };
+                object[] valores = { pedi.emissao, pedi.cliente, pedi.statuspedido, pedi.entrega, pedi.endereco, pedi.total };
+
+                ultimoidcadastrado = conn.cadastrapedido(pedi.idpedido, campos, valores, sql);
+                if (ultimoidcadastrado >= 1)
+                {
+                    return ultimoidcadastrado;
+                }
+                
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
+
+
         // public static void GerarPDF(DataGridView dataGridView)
         //{
         //     throw new NotImplementedException();
         // }
 
-        public class GerarPDF
-        {
-            private Button printButton = new Button();
-            private DataGridView dataGridView1 = new DataGridView();
-            private PrintDocument printDocument1 = new PrintDocument();
+        /* public class GerarPDF
+         {
+             private Button printButton = new Button();
+             private DataGridView dataGridView1 = new DataGridView();
+             private PrintDocument printDocument1 = new PrintDocument();
 
-            public GerarPDF()
-            {
-                // Exemplo de dados para o DataGridView
-                dataGridView1.Columns.Add("idproduto", "coluna 1");
-                dataGridView1.Columns.Add("Column2", "Coluna 2");
-                dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
-                //dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
+             public GerarPDF()
+             {
+                 // Exemplo de dados para o DataGridView
+                 dataGridView1.Columns.Add("idproduto", "coluna 1");
+                 dataGridView1.Columns.Add("Column2", "Coluna 2");
+                 dataGridView1.Rows.Add("Linha1Col1", "Linha1Col2");
+                 //dataGridView1.Rows.Add("Linha2Col1", "Linha2Col2");
 
-                printButton.Text = "Imprimir";
-                printButton.Click += printButton_Click;
-                printDocument1.PrintPage += printDocument1_PrintPage;
+                 printButton.Text = "Imprimir";
+                 printButton.Click += printButton_Click;
+                 printDocument1.PrintPage += printDocument1_PrintPage;
 
-                Controls.GetInstance(dataGridView1);
-                Controls.GetInstance(printButton);
-            }
+                 Controls.GetInstance(dataGridView1);
+                 Controls.GetInstance(printButton);
+             }
 
-            private void printButton_Click(object sender, EventArgs e)
-            {
-                printDocument1.Print();
-            }
+             private void printButton_Click(object sender, EventArgs e)
+             {
+                 printDocument1.Print();
+             }
 
-            private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-            {
-                Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
-                dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
-                e.Graphics.DrawImage(bm, 0, 0);
-            }
+             private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+             {
+                 Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+                 dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+                 e.Graphics.DrawImage(bm, 0, 0);
+             }
 
-            [STAThread]
-            public static void Main()
-            {
-                //Application.EnableVisualStyles();
-               // Application.SetCompatibleTextRenderingDefault(false);
-                //   Application.Run(new GerarPDF());
-            }
-        }
+             [STAThread]
+             public static void Main()
+             {
+                 //Application.EnableVisualStyles();
+                // Application.SetCompatibleTextRenderingDefault(false);
+                 //   Application.Run(new GerarPDF());
+             }
+         }*/
     }
    
 

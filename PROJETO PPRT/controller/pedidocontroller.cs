@@ -31,9 +31,9 @@ namespace controller
         // chamo o metodo conexao
         string sql;
         conexao conn = new conexao();
+         public long ultimoidcadastrado;
        
-       
-        public bool cadastrarpedido(pedidomodelo pedi, int operacao)
+        public long cadastrapedido(pedidomodelo pedi, int operacao)
         {
             try
             {
@@ -74,6 +74,20 @@ namespace controller
             }
 
         }
+
+        /*public bool cadastrarPedido(pedidomodelo pedi)
+        {
+            bool resultado = false;
+            string sql = "insert into pedido(idpedido,emissao,cliente,statuspedido,entrega,endereco,total)values('" + pedi.idpedido + "','" + pedi.emissao + "','" + pedi.cliente + "','" + pedi.statuspedido + "','" + pedi.entrega + "','" + pedi.endereco + "','" + pedi.total + "')";
+
+            MySqlConnection sqlcon = conn.getConexao();
+            sqlcon.Open(); // abrindo o banco
+            MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
+            if (cmd.ExecuteNonQuery() >= 1)//executar o seu sql
+                resultado = true;
+            sqlcon.Close();//fecho a conexao
+            return resultado;// retorno o valor
+        }*/
 
 
         // public static void GerarPDF(DataGridView dataGridView)

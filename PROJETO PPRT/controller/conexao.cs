@@ -95,7 +95,7 @@ namespace gitcake
                     cmd.Parameters.AddWithValue("@id", codigo);
                 }
                 registro = cmd.ExecuteNonQuery();
-                ultimoidcadastrado = cmd.ExecuteNonQuery();
+                ultimoidcadastrado = cmd.LastInsertedId;
                 conn.Close();
 
             }

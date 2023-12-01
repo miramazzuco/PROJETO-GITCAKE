@@ -48,7 +48,7 @@ namespace PROJETO_PPRT
             
 
             //determinar como inicialmente invisivel o endereço
-            textBox2.Visible = false;
+            txtendereco.Visible = false;
             label8.Visible = false;
 
             // Criação de um DataTable para armazenar dados da consulta SQL.
@@ -214,113 +214,20 @@ namespace PROJETO_PPRT
         }
 
 
-        private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
-        {
-            // Método chamado quando ocorre um evento Leave em um campo de quantidade.
-            if (!string.IsNullOrEmpty(qtde))
-            {
-                if (Convert.ToInt32(qtde) > qtdeprod || Convert.ToInt32(qtde) <= 0)
-                {
-                    MessageBox.Show("Quantidade indisponivel", "Alerta");
-                }
-            }
-        }
+        
 
-        private void btnimprimir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                StreamToPrint = new StreamReader
-                   ("C:\\Users\\User\\Documents\\MyFile.txt.txt");
-                try
-                {
-                    printFont = new Font("Arial", 10);
-                    PrintDocument pd = new PrintDocument();
-                    pd.PrintPage += new PrintPageEventHandler
-                       (this.printDocument1_PrintPage);
-                    pd.Print();
-                }
-                finally
-                {
-                    StreamToPrint.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        public void GerarPDF()
-        {
-
-            // Método para gerar um PDF com base nos dados do DataGridView.
-            //Exemplo de dados para o DataGridView
-            dtitem.Columns.Add("idproduto", "coluna 1");
-            dtitem.Columns.Add("Column2", "Coluna 2");
-            dtitem.Rows.Add("Linha1Col1", "Linha1Col2");
-            dtitem.Rows.Add("Linha2Col1", "Linha2Col2");
-
-        }
-
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs ev)
-        {
-            float linesPerPage = 0;
-            float yPos = 0;
-            int count = 0;
-            float leftMargin = ev.MarginBounds.Left;
-            float topMargin = ev.MarginBounds.Top;
-            string line = null;
-
-            // Calculate the number of lines per page.
-            linesPerPage = ev.MarginBounds.Height /
-               printFont.GetHeight(ev.Graphics);
-
-            // Print each line of the file.
-            while (count < linesPerPage &&
-               ((line = StreamToPrint.ReadLine()) != null))
-            {
-                yPos = topMargin + (count *
-                   printFont.GetHeight(ev.Graphics));
-                ev.Graphics.DrawString(line, printFont, Brushes.Black,
-                   leftMargin, yPos, new StringFormat());
-                count++;
-            }
-
-            // If more lines exist, print another page.
-            if (line != null)
-                ev.HasMorePages = true;
-            else
-                ev.HasMorePages = false;
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (cbentrega.Checked)
             {
-                textBox2.Visible = true;
+                txtendereco.Visible = true;
                 label8.Visible = true;
             }
             else
             {
-                textBox2.Visible = false;
+                txtendereco.Visible = false;
                 label8.Visible = false;
             }
 
@@ -385,6 +292,25 @@ namespace PROJETO_PPRT
             }
 
             MessageBox.Show("Produto selecionado");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pedidocontroller pdcontroller = new pedidocontroller();
+            pedidomodelo pdmodelo = new pedidomodelo();
+           
+            itemmodelo itmodelo = new itemmodelo();
+
+
+            pdmodelo.emissao = DateTime.Now;
+            pdmodelo.cliente = txtcliente.Text;
+            pdmodelo.statuspedido = "Aguardando";
+            pdmodelo.entrega = false;
+            pdmodelo.endereco = txtendereco.Text;
+            pdcontroller.cadastrapedido(pdmodelo, 1);
+            itcontroller.atualizaitem(pdmodelo.idpedido);
+
+
         }
     }
 

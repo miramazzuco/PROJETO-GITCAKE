@@ -36,16 +36,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbentrega = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbstatus = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtendereco = new System.Windows.Forms.TextBox();
+            this.txtcliente = new System.Windows.Forms.TextBox();
             this.btn_excluiitem = new System.Windows.Forms.Button();
             this.btn_limpaitem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtitem)).BeginInit();
@@ -66,6 +66,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Finalizar Pedido";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -75,7 +76,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 599);
             this.flowLayoutPanel1.TabIndex = 20;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // dtitem
             // 
@@ -134,16 +134,15 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Entrega :";
             // 
-            // checkBox1
+            // cbentrega
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(147, 428);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbentrega.AutoSize = true;
+            this.cbentrega.Location = new System.Drawing.Point(147, 428);
+            this.cbentrega.Margin = new System.Windows.Forms.Padding(2);
+            this.cbentrega.Name = "cbentrega";
+            this.cbentrega.Size = new System.Drawing.Size(15, 14);
+            this.cbentrega.TabIndex = 14;
+            this.cbentrega.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -156,14 +155,14 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Endereço :";
             // 
-            // comboBox1
+            // cbstatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 357);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cbstatus.FormattingEnabled = true;
+            this.cbstatus.Location = new System.Drawing.Point(199, 357);
+            this.cbstatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cbstatus.Name = "cbstatus";
+            this.cbstatus.Size = new System.Drawing.Size(92, 21);
+            this.cbstatus.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
@@ -180,7 +179,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(98, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -215,21 +213,21 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Status do pedido :";
             // 
-            // textBox2
+            // txtendereco
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 498);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 20);
-            this.textBox2.TabIndex = 16;
+            this.txtendereco.Location = new System.Drawing.Point(199, 498);
+            this.txtendereco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtendereco.Name = "txtendereco";
+            this.txtendereco.Size = new System.Drawing.Size(212, 20);
+            this.txtendereco.TabIndex = 16;
             // 
-            // textBox3
+            // txtcliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 212);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 20);
-            this.textBox3.TabIndex = 17;
+            this.txtcliente.Location = new System.Drawing.Point(199, 212);
+            this.txtcliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcliente.Name = "txtcliente";
+            this.txtcliente.Size = new System.Drawing.Size(212, 20);
+            this.txtcliente.TabIndex = 17;
             // 
             // btn_excluiitem
             // 
@@ -262,11 +260,11 @@
             this.Controls.Add(this.dtitem);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbstatus);
+            this.Controls.Add(this.txtcliente);
+            this.Controls.Add(this.txtendereco);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbentrega);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -296,16 +294,16 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbentrega;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbstatus;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtendereco;
+        private System.Windows.Forms.TextBox txtcliente;
         private System.Windows.Forms.Button btn_excluiitem;
         private System.Windows.Forms.Button btn_limpaitem;
     }

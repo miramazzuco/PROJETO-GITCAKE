@@ -13,6 +13,7 @@ namespace controller
     public class itemcontroller
     {
         conexao con = new conexao();
+        pedidocontroller pdcontroller = new pedidocontroller();
 
         public bool cadastrarItem(itemmodelo item)
         {
@@ -68,6 +69,23 @@ namespace controller
             bool resultado = false;
             MySqlConnection sqlcon = con.getConexao();
             string sql = "TRUNCATE TABLE item";
+            sqlcon.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
+            mySqlCommand.CommandType = System.Data.CommandType.Text;
+            mySqlCommand.CommandText = sql;
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
+            {
+                resultado = true;
+            }
+            return resultado;
+        }
+
+        public bool atualizaitem(int iditem)
+        {
+            bool resultado = false;
+            MySqlConnection sqlcon = con.getConexao();
+             string sql = "UPDATE item SET idpedido =" + Convert.ToInt32(pdcontroller.ultimoidcadastrado) + "WHERE iditem =" + iditem;
+            //string sql = "UPDATE item SET idpedido WHERE iditem =" + iditem;
             sqlcon.Open();
             MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
             mySqlCommand.CommandType = System.Data.CommandType.Text;

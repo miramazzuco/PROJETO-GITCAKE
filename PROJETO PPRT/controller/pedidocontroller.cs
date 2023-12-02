@@ -32,6 +32,7 @@ namespace controller
         string sql;
         conexao conn = new conexao();
          public long ultimoidcadastrado;
+       // itemmodelo it = new itemmodelo();
        
         public long cadastrapedido(pedidomodelo pedi, int operacao)
         {
@@ -73,6 +74,25 @@ namespace controller
 
             }
 
+        }
+
+        public bool atualizaitem(int iditem)
+        {
+            bool resultado = false;
+            MySqlConnection sqlcon = conn.getConexao();
+            string sql = "UPDATE item SET idpedido =" + Convert.ToInt32(ultimoidcadastrado) + "WHERE iditem=@iditem";
+            //string sql = "UPDATE item SET idpedido WHERE iditem =" + iditem;
+            sqlcon.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
+            mySqlCommand.Parameters.AddWithValue("@iditem", iditem);
+            mySqlCommand.CommandType = System.Data.CommandType.Text;
+            mySqlCommand.CommandText = sql;
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
+            {
+                return resultado;
+            }
+            resultado = true;
+            return resultado;
         }
 
         /*public bool cadastrarPedido(pedidomodelo pedi)

@@ -80,45 +80,38 @@ namespace controller
             return resultado;
         }
 
-        public bool atualizaitem(int iditem)
-        {
-            bool resultado = false;
-            MySqlConnection sqlcon = con.getConexao();
-             string sql = "UPDATE item SET idpedido =" + Convert.ToInt32(pdcontroller.ultimoidcadastrado) + "WHERE iditem =" + iditem;
-            //string sql = "UPDATE item SET idpedido WHERE iditem =" + iditem;
-            sqlcon.Open();
-            MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
-            mySqlCommand.CommandType = System.Data.CommandType.Text;
-            mySqlCommand.CommandText = sql;
-            if (mySqlCommand.ExecuteNonQuery() >= 1)
-            {
-                resultado = true;
-            }
-            return resultado;
-        }
+        
 
-        public itemmodelo CarregaItem(int iditem)
+        public List<itemmodelo> CarregaItem(string sql)
         {
-            itemmodelo it = new itemmodelo();
+            List<itemmodelo> it = new List<itemmodelo>();
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
-            string sql = "SELECT * from item where iditem=@id";
+            //string sql = "SELECT * from item where iditem=@id";
             MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
-            cmd.Parameters.AddWithValue("@id", iditem);//substituo o valor
+            //cmd.Parameters.AddWithValue("@id", iditem);//substituo o valor
             MySqlDataReader registro = cmd.ExecuteReader();//leia os dados do banco de dados
             if (registro.HasRows)//existe linha de registro
             {
-                registro.Read();//leia o resgitro
-                //gravando as informaçoes no modelo usuario
-                it.iditem = Convert.ToInt32(registro["iditem"]);
-                it.idproduto = Convert.ToInt32(registro["idproduto"]);
-                it.quantidade = Convert.ToInt32(registro["quantidade"]);
-                it.subtotal = Convert.ToDecimal(registro["subtotal"]);
-
-            }
-            sqlcon.Close();
+                while (registro.Read())
+                {
+                    itemmodelo itmodelo = new itemmodelo
+                    {
+                        iditem = Convert.ToInt32(registro["iditem"]),
+                        idproduto = Convert.ToInt32(registro["idproduto"]),
+                        idpedido = Convert.ToInt32(registro["idpedido"]),
+                        quantidade = Convert.ToInt32(registro["quantidade"]),
+                        subtotal = Convert.ToDecimal(registro["subtotal"]),
+                    };
+                    it.Add(itmodelo);
+                }//leia o resgitro
+            }  //gravando as informaçoes no modelo usuario
             return it;
 
         }
+           
+            
+
+        
     }
 }

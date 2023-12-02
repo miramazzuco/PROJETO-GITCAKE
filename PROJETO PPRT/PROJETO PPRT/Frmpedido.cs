@@ -28,10 +28,11 @@ namespace PROJETO_PPRT
         private StreamReader StreamToPrint;
         decimal total = 0;
         int iditem;
+        int idpedido;
         conexao com = new conexao();
         
         itemcontroller itcontroller = new itemcontroller();
-       // itemmodelo itmodelo = new itemmodelo();
+        itemmodelo itmodelo = new itemmodelo();
         pedidomodelo pdmodelo = new pedidomodelo();
       //  List<itemmodelo> list = new List<itemmodelo>();
         public Frmpedido()
@@ -176,7 +177,7 @@ namespace PROJETO_PPRT
             MessageBox.Show("Produto Selecionado" + total.ToString());
             textBox1.Text = total.ToString();
            
-
+            
             itmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
             itmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
             itmodelo.subtotal = subTotal;
@@ -202,6 +203,7 @@ namespace PROJETO_PPRT
                         }
                         else
                         {
+                            itmodelo.iditem = Convert.ToInt32(dgvR.Cells[j].Value);
                             bw.Write(true);
                             bw.Write(val.ToString());
                         }
@@ -297,9 +299,10 @@ namespace PROJETO_PPRT
         private void button1_Click(object sender, EventArgs e)
         {
             pedidocontroller pdcontroller = new pedidocontroller();
+            //itemcontroller itcontroller = new itemcontroller();
             pedidomodelo pdmodelo = new pedidomodelo();
-           
-            itemmodelo itmodelo = new itemmodelo();
+
+            long codpedido;
 
 
             pdmodelo.emissao = DateTime.Now;
@@ -307,8 +310,9 @@ namespace PROJETO_PPRT
             pdmodelo.statuspedido = "Aguardando";
             pdmodelo.entrega = false;
             pdmodelo.endereco = txtendereco.Text;
-            pdcontroller.cadastrapedido(pdmodelo, 1);
-            itcontroller.atualizaitem(pdmodelo.idpedido);
+            codpedido=pdcontroller.cadastrapedido(pdmodelo, 1);
+            //itcontroller.CarregaItem(itemmodelo);
+            pdcontroller.atualizaitem(itmodelo.iditem);
 
 
         }

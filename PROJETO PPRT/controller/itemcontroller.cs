@@ -22,7 +22,7 @@ namespace controller
         public bool cadastrarItem(itemmodelo item) // passo o objetodo cadastro como parametro
         {// declaro a variavel da resposta da query
             bool resultado = false;
-            string sql = "insert into item(idproduto,quantidade,subtotal)values('" + item.produtoitem + "','" + item.quantidadeitem + "','" + item.subtotalitem + "')";
+            string sql = "insert into item(idproduto,quantidade,subtotal)values('" + item.idproduto + "','" + item.quantidade + "','" + item.subtotal + "')";
             //chamando minha conexao
 
             MySqlConnection sqlcon = con.getConexao();
@@ -87,9 +87,9 @@ namespace controller
                 registro.Read();//leia o resgitro
                 //gravando as informaçoes no modelo usuario
                 it.iditem = Convert.ToInt32(registro["iditem"]);
-                it.produtoitem = Convert.ToInt32(registro["idproduto"]);
-                it.quantidadeitem = Convert.ToInt32(registro["quantidadeitem"]);
-                it.subtotalitem = Convert.ToDecimal(registro["subtotal"]);
+                it.idproduto = Convert.ToInt32(registro["idproduto"]);
+                it.quantidade = Convert.ToInt32(registro["quantidadeitem"]);
+                it.subtotal = Convert.ToDecimal(registro["subtotal"]);
                 
             }
             sqlcon.Close();

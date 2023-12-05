@@ -11,14 +11,14 @@ namespace modelo
         private int id_item;
         private int id_prod;
         private int qtd_prod;
-        private decimal subtotal;
+        private decimal subtotalitem;
 
         public itemmodelo()
         {
             this.iditem = 0;
-            this.produtoitem = 0;   
-            this.quantidadeitem = 0;
-            this.subtotalitem = 0;
+            this.idproduto = 0;   
+            this.quantidade = 0;
+            this.subtotal = 0;
         }
 
         public int iditem
@@ -28,23 +28,23 @@ namespace modelo
             set { id_item = value; }
         }
 
-        public int produtoitem
+        public int idproduto
         {
             get { return id_prod; }
             //alterar dados da variavel
             set { id_prod = value; }
         }
 
-        public int quantidadeitem
+        public int quantidade
         {
             get { return qtd_prod; }
             set { qtd_prod = value; }
         }
 
-        public decimal subtotalitem
+        public decimal subtotal
         {
-            get { return subtotal; }
-            set { subtotal = value; }
+            get { return subtotalitem; }
+            set { subtotalitem = value; }
         }
     }
 }

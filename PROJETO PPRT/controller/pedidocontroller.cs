@@ -53,7 +53,7 @@ namespace controller
                         break;
                 }
                 string[] campos = { "@emissao", "@cliente", "@idproduto","@quantidade" ,"@statuspedido", "@entrega", "@endereco", "@total" };
-                object[] valores = { pedi.emissao, pedi.cliente, pedi.idproduto, pedi.quantidade,pedi.entrega, pedi.endereco, pedi.total };
+                object[] valores = { pedi.emissao, pedi.cliente, pedi.idproduto, pedi.quantidade,pedi.statuspedido,pedi.entrega, pedi.endereco, pedi.total };
                 if (conn.cadastrar(pedi.idpedido, campos, valores, sql) >= 1)
                 {
                     resultado = true;
@@ -70,6 +70,33 @@ namespace controller
 
             }
 
+        }
+
+        public pedidomodelo carregapedido(int idpedido)
+        {
+           
+            pedidomodelo pd = new pedidomodelo();
+            MySqlConnection sqlcon = conn.getConexao();
+            sqlcon.Open();
+            string sql = "SELECT * from pedido where idpedido=@id";
+            MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
+            cmd.Parameters.AddWithValue("@id", idpedido);//substituo o valor
+            MySqlDataReader registro = cmd.ExecuteReader();//leia os dados do banco de dados
+            if (registro.HasRows)//existe linha de registro
+            {
+                registro.Read();//leia o resgitro
+                //gravando as informaçoes no modelo usuario
+                pd.idpedido = Convert.ToInt32(registro["idpedido"]);
+                pd.emissao = Convert.ToDateTime(registro["emissao"]);
+                pd.cliente = Convert.ToString(registro["cliente"]);
+                pd.idproduto = Convert.ToInt32(registro["idproduto"]);
+                pd.quantidade = Convert.ToInt32(registro["quantidade"]);
+                pd.statuspedido = Convert.ToString(registro["statuspedido"]);
+                pd.entrega = Convert.ToBoolean(registro["entrega"]);
+                pd.endereco = Convert.ToString(registro["endereco"]);
+            }
+            sqlcon.Close();
+            return pd;
         }
 
         /* public class GerarPDF

@@ -28,6 +28,7 @@ namespace PROJETO_PPRT
         private Font printFont;
         private StreamReader StreamToPrint;
         decimal total = 0;
+        int idpedido;
         conexao com = new conexao();
         //validação dos campos
         private ErrorProvider errorProvider = new ErrorProvider();
@@ -35,6 +36,7 @@ namespace PROJETO_PPRT
         //sentensas
         pedidomodelo pdmodelo = new pedidomodelo();
         pedidocontroller pdcontroller = new pedidocontroller();
+        produtomodelo pmodelo = new produtomodelo();
        
 
         public Frmpedido()
@@ -180,7 +182,18 @@ namespace PROJETO_PPRT
 
             pdmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
             pdmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
+
+           /* string qtde = quantidade;
+            int qtdeprod = Convert.ToInt32(pmodelo.quantidade);
+                // Método chamado quando ocorre um evento Leave em um campo de quantidade.
+               
+                    if (Convert.ToInt32(qtde) > qtdeprod)
+                    {
+                        MessageBox.Show("Quantidade indisponivel", "Alerta");
+                    }*/
+                
             
+
             //itcontroller.cadastrarItem(itmodelo);
 
             // Grava as informações da DataGridView em um arquivo binário.
@@ -214,7 +227,7 @@ namespace PROJETO_PPRT
         }
 
 
-        private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
+        /*private void QtdeLeave(object sender, EventArgs e, string qtde, int qtdeprod)
         {
             // Método chamado quando ocorre um evento Leave em um campo de quantidade.
             if (!string.IsNullOrEmpty(qtde))
@@ -224,7 +237,7 @@ namespace PROJETO_PPRT
                     MessageBox.Show("Quantidade indisponivel", "Alerta");
                 }
             }
-        }
+        }*/
 
         private void btnimprimir_Click(object sender, EventArgs e)
         {
@@ -324,6 +337,9 @@ namespace PROJETO_PPRT
             {
                 try
                 {
+                    pedidocontroller pdcontroller = new pedidocontroller();
+                    pedidomodelo pdmodelo = new pedidomodelo();
+
                     pdmodelo.emissao = dtpemissao.Value;
                     pdmodelo.cliente = txtcliente.Text;
                     pdmodelo.idproduto = Convert.ToInt32(txtprodutopedido.Text);
@@ -331,8 +347,9 @@ namespace PROJETO_PPRT
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
                     pdmodelo.statuspedido = cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
-                    
 
+                   
+                   
 
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
                     {
@@ -343,12 +360,16 @@ namespace PROJETO_PPRT
                     {
                         MessageBox.Show("Erro na emissao");
                     }
+
+                    pdcontroller.carregapedido(Convert.ToInt32(idpedido));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao emitir o pedido: " + ex.Message);
                 }
             }
+
+
             
         }
 

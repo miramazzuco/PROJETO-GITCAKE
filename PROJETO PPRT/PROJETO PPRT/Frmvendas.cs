@@ -1,9 +1,13 @@
-﻿using gitcake;
+﻿using controller;
+using gitcake;
+using modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +19,10 @@ namespace PROJETO_PPRT
     public partial class Frmvendas : Form
     {
         private Color ColorLightGray;
-
+        private Font printFont;
+        private StreamReader StreamToPrint;
+        pedidocontroller pdcontroller = new pedidocontroller();
+        conexao com = new conexao();
         public Frmvendas()
         {
             InitializeComponent();
@@ -23,10 +30,12 @@ namespace PROJETO_PPRT
 
         private void Frmvendas_Load(object sender, EventArgs e)
         {
-            conexao com = new conexao();
+           
 
             // Obtenha os dados do banco de dados
             DataTable dataTable = com.ObterDados("SELECT produto, quantidade FROM produto");
+
+            dtpedido.DataSource = com.ObterDados("SELECT idpedido, emissao, cliente, idproduto, quantidade, statuspedido, entrega, endereco FROM pedido");
 
             // Configure o tipo de gráfico (no exemplo, estou usando um gráfico de barras)
             chart1.Series.Clear();
@@ -53,6 +62,7 @@ namespace PROJETO_PPRT
             chart2.Series["Produtos"]["PieLabelStyle"] = "Outside"; // Colocar os rótulos fora das fatias
 
         }
+        
 
         private void chart1_Click(object sender, EventArgs e)
         {
@@ -62,6 +72,31 @@ namespace PROJETO_PPRT
         private void chart2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txtPesquisar.Text.Trim();// O método Trim em C# é usado para remover os espaços em branco
+                                                     // (ou outros caracteres de espaço em branco)
+            if (string.IsNullOrEmpty(filtro))
+            {
+                // Se o campo de pesquisa estiver vazio, recarregue todos os itens no DataGridView
+                string sql = "SELECT * from pedido";
+                dtpedido.DataSource = com.ObterDados(sql);
+            }
+            else
+            {
+                // Se houver texto no campo de pesquisa, aplique o filtro
+                try
+                {
+                    string sql = "SELECT * from pedido where pedido like '%" + filtro + "%'";
+                    dtpedido.DataSource = com.ObterDados(sql);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro na pesquisa: " + ex.Message);
+                }
+            }
         }
     }
 }

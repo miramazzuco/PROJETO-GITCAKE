@@ -17,6 +17,7 @@ namespace PROJETO_PPRT
         int codigousuario;
         usuariomodelo us = new usuariomodelo();
 
+       
 
         public frmlogin()
         {
@@ -104,12 +105,18 @@ namespace PROJETO_PPRT
         {
 
         }
-
+        public void LimparCampos()
+        {
+            txtusuario.Text = string.Empty;
+            txtsenha.Text = string.Empty;
+            // Adicione outros campos conforme necessário
+        }
         private void btnloginin_Click(object sender, EventArgs e)
         {
-
+            usuariomodelo usuariomodelo = new usuariomodelo();
             usuariocontroller usuarioController = new usuariocontroller();
             Frmacesso frmacesso = new Frmacesso();
+          
             frmacesso.Show();
 
             

@@ -163,11 +163,19 @@ namespace PROJETO_PPRT
 
         private void button5_Click(object sender, EventArgs e)
         {
+            frmlogin frmlogin = new frmlogin();
+
+            frmlogin.LimparCampos();
+
             // Fecha o formulário atual e encerra a aplicação.
+          
+
             Close();
-            Application.Exit();
+           
+            frmlogin.Show();
         }
 
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Atualiza a label com a hora atual a cada intervalo de tempo (tick) do temporizador.

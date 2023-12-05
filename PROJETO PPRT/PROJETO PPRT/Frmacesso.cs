@@ -154,5 +154,10 @@ namespace PROJETO_PPRT
             // Remova ou comente a linha abaixo para evitar erros relacionados ao DataGridView
             // dtusuario.DataSource = usControle.ObterDados("select usuario.idusuario, usuario.nome,usuario.senha,perfil.perfil,usuario.email from usuario inner join perfil on usuario.perfil=perfil.idperfil");
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

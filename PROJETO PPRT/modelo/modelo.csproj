@@ -93,7 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="itemmodelo.cs" />
     <Compile Include="pedidomodelo.cs" />
     <Compile Include="produtomodelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

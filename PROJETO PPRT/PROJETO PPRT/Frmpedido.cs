@@ -32,11 +32,10 @@ namespace PROJETO_PPRT
         //validação dos campos
         private ErrorProvider errorProvider = new ErrorProvider();
         private bool isValid;
-        // itemcontroller itemcontroller = new itemcontroller();
-        // itemmodelo itmodelo = new itemmodelo();
+        //sentensas
         pedidomodelo pdmodelo = new pedidomodelo();
         pedidocontroller pdcontroller = new pedidocontroller();
-        List<itemmodelo> list = new List<itemmodelo>();
+       
 
         public Frmpedido()
         {
@@ -47,17 +46,16 @@ namespace PROJETO_PPRT
 
         private void Frmpedido_Load(object sender, EventArgs e)
         {
-            itemcontroller itcontroller = new itemcontroller();
-            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
-
+            
 
             //determinar como inicialmente invisivel o endereço
             txtendereco.Visible = false;
             label8.Visible = false;
 
+
             // Criação de um DataTable para armazenar dados da consulta SQL.
             DataTable dt = new DataTable();
-
+            //determinar de qual tabela no BD a dt pega
             dt = com.ObterDados("select  * from produto ");
             int registros;
             int x = 0, y = 0;
@@ -72,14 +70,14 @@ namespace PROJETO_PPRT
                 produto.Height = 190;
                 produto.Width = 115;
 
-
-                Label idproduto = new Label();//crio uma label
+                // Criação de um label para exibir informações do produto.
+                Label idproduto = new Label();
                 idproduto.Name = "idproduto";
                 idproduto.Location = new Point(-2, 10);
-                idproduto.Text = dt.Rows[registros][0].ToString();//mostra o registro
+                idproduto.Text = dt.Rows[registros][0].ToString();
 
-
-                PictureBox foto = new PictureBox();//crio a area da foto
+                // Criação de um foto para exibir informações do produto.
+                PictureBox foto = new PictureBox();
                 foto.Location = new Point(15, 0);
                 foto.SizeMode = PictureBoxSizeMode.StretchImage;
                 foto.Name = "foto";
@@ -122,7 +120,7 @@ namespace PROJETO_PPRT
                 {
                     qtde.Enabled = true;
                 }
-
+                
 
                 Button registrar = new Button();
                 registrar.Name = "Selecionar";
@@ -154,41 +152,40 @@ namespace PROJETO_PPRT
                 x = 0;
             }
         }
+       
 
-
+        
 
         private void SelecionarClick(object sender, EventArgs e, string idproduto, string quantidade, string preco)
         {
 
-            itemmodelo itmodelo = new itemmodelo();
-            itemcontroller itcontroller = new itemcontroller();
-            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
-            dtitem.Refresh();
+            
 
             //condicional para quantidade nula
             if (String.IsNullOrEmpty(quantidade.ToString()))
                 quantidade = "1";
 
             // Cálculo do subtotal do produto selecionado.
-            decimal subTotal = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
+            decimal total = Convert.ToInt32(quantidade.ToString()) * Convert.ToDecimal(preco.ToString());
 
 
 
             // Adiciona informações do produto à DataGridView e atualiza o total.
             // dtitem.Rows.Add(default, idproduto.ToString(), quantidade.ToString(), subTotal.ToString());
-            total = total + subTotal;
+            
             MessageBox.Show("Produto Selecionado" + total.ToString());
             textBox1.Text = total.ToString();
+            txtprodutopedido.Text = idproduto.ToString();
+            txtquantidadepedido.Text = quantidade.ToString();
 
-
-            itmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
-            itmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
-            itmodelo.subtotal = subTotal;
-            itcontroller.cadastrarItem(itmodelo);
+            pdmodelo.idproduto = Convert.ToInt32(idproduto.ToString());
+            pdmodelo.quantidade = Convert.ToInt32(quantidade.ToString());
+            
+            //itcontroller.cadastrarItem(itmodelo);
 
             // Grava as informações da DataGridView em um arquivo binário.
             string file = "C:\\Users\\cunha\\OneDrive\\Documentos\\GitHub\\PROJETO-GITCAKE\\PROJETO PPRT\\PROJETO PPRT\\bin\\Debug\\MyFile.txt.txt";
-            using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
+            /*using (BinaryWriter bw = new BinaryWriter(File.Open(file, FileMode.Create)))
             {
 
                 // Grava informações sobre as colunas e as células na DataGridView.
@@ -212,9 +209,8 @@ namespace PROJETO_PPRT
                     }
                 }
 
-            }
-            dtitem.DataSource = itcontroller.ObterDados("select item.iditem, produto.idproduto, item.quantidade, item.subtotal from item inner join produto on item.idproduto=produto.idproduto");
-            dtitem.Refresh();
+            }*/
+
         }
 
 
@@ -261,10 +257,10 @@ namespace PROJETO_PPRT
 
             // Método para gerar um PDF com base nos dados do DataGridView.
             //Exemplo de dados para o DataGridView
-            dtitem.Columns.Add("idproduto", "coluna 1");
-            dtitem.Columns.Add("Column2", "Coluna 2");
-            dtitem.Rows.Add("Linha1Col1", "Linha1Col2");
-            dtitem.Rows.Add("Linha2Col1", "Linha2Col2");
+            //dtitem.Columns.Add("idproduto", "coluna 1");
+            //dtitem.Columns.Add("Column2", "Coluna 2");
+            //dtitem.Rows.Add("Linha1Col1", "Linha1Col2");
+            //dtitem.Rows.Add("Linha2Col1", "Linha2Col2");
 
         }
 
@@ -300,25 +296,7 @@ namespace PROJETO_PPRT
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+      
         private bool ValidarCampos()
         {
             errorProvider.Clear();
@@ -335,18 +313,7 @@ namespace PROJETO_PPRT
                 errorProvider.Clear();
             }
 
-            /*if (!DateTime.TryParse(dtpemissao.Text, out DateTime emissao) || emissao < DateTime.Now)
-            {
-                errorProvider.SetError(dtpemissao, "Data inválido. Insira uma data valida.");
-                isValid = false;
-            }
-
-            if (!string.IsNullOrWhiteSpace(cmbstatus.Text))
-            {
-                errorProvider.SetError(cmbstatus, "Status inválido. Insira um valor de status valido.");
-                isValid = false;
-            }*/
-
+            
 
             return isValid;
         }
@@ -358,11 +325,13 @@ namespace PROJETO_PPRT
                 try
                 {
                     pdmodelo.emissao = dtpemissao.Value;
+                    pdmodelo.cliente = txtcliente.Text;
+                    pdmodelo.idproduto = Convert.ToInt32(txtprodutopedido.Text);
+                    pdmodelo.quantidade = Convert.ToInt32(txtquantidadepedido.Text);
                     pdmodelo.total = Convert.ToDecimal(textBox1.Text);
-                    pdmodelo.item = list;
                     pdmodelo.statuspedido = cmbstatus.Text;
                     pdmodelo.endereco = txtendereco.Text;
-                    pdmodelo.cliente = txtcliente.Text;
+                    
 
 
                     if (pdcontroller.cadastrarpedido(pdmodelo, 1) == true)
@@ -380,7 +349,7 @@ namespace PROJETO_PPRT
                     MessageBox.Show("Erro ao emitir o pedido: " + ex.Message);
                 }
             }
-            dtitem.Rows.Clear();
+            
         }
 
 
@@ -390,14 +359,9 @@ namespace PROJETO_PPRT
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Botão 'button1' foi clicado.");
-            dtitem.Rows.Clear();
-            RecalcularTotal();
-        }
+        
 
-        private void RecalcularTotal()
+        /*private void RecalcularTotal()
         {
             // Recalcula o total com base nos itens restantes na DataGridView.
             total = 0;
@@ -407,7 +371,9 @@ namespace PROJETO_PPRT
                 total += subtotal;
             }
             textBox1.Text = total.ToString();
-        }
+        }*/
+
+       
     }
 
 }

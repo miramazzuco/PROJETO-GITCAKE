@@ -12,7 +12,8 @@ namespace modelo
         public int idped;
         public DateTime emissa;
         public string clienteped;
-        public List<itemmodelo> iten;
+        public int idprodutoped;
+        public int quantidadeped;
         public string statusped;
         public Boolean entregaped;
         public string enderecoped;
@@ -25,7 +26,8 @@ namespace modelo
             this.idped = 0;
             this.emissa = DateTime.Now;
             this.clienteped = "";
-            this.iten = new List<itemmodelo>();
+            this.idprodutoped = 0;
+            this.quantidadeped = 0;
             this.statusped = "Aguardando";
             this.entregaped = false;
             this.enderecoped = "";
@@ -51,10 +53,16 @@ namespace modelo
             set { clienteped = value; }
         }
 
-        public List<itemmodelo> item
+        public int idproduto
         {
-            get { return iten; }
-            set { iten = value; }
+            get { return idprodutoped; }
+            set { idprodutoped = value; }
+        }
+
+        public int quantidade
+        {
+            get { return quantidadeped; }
+            set { quantidadeped = value; }
         }
 
         public string statuspedido

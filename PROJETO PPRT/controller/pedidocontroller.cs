@@ -40,20 +40,20 @@ namespace controller
                     case 1:// inserir dados
 
 
-                        sql = "insert into pedido(emissao,cliente,item,statuspedido,entrega,endereco,total)" +
-                                                    "values(@emissao,@cliente,@item,@statuspedido,@entrega,@endereco,@total)";
+                        sql = "insert into pedido(emissao,cliente,idproduto,quantidade,statuspedido,entrega,endereco,total)" +
+                                                    "values(@emissao,@cliente,@idproduto,@quantidade,@statuspedido,@entrega,@endereco,@total)";
                         break;
 
                     case 2: // atualizar
 
-                        sql = "update pedido set emissao=@emissao,cliente=@cliente,item=@item,statuspedido=@statuspedido,entrega=@entrega,endereco=@endereco,total=@total where idpedido=@id";
+                        sql = "update pedido set emissao=@emissao,cliente=@cliente,idproduto=@idproduto,quantidade=@quantidade,statuspedido=@statuspedido,entrega=@entrega,endereco=@endereco,total=@total where idpedido=@id";
                         break;
                     case 3:
                         sql = "DELETE from pedido where idpedido=@id";
                         break;
                 }
-                string[] campos = { "@emissao", "@cliente", "@item", "@statuspedido", "@entrega", "@endereco", "@total" };
-                object[] valores = { pedi.emissao, pedi.cliente, pedi.item, pedi.entrega, pedi.endereco, pedi.total };
+                string[] campos = { "@emissao", "@cliente", "@idproduto","@quantidade" ,"@statuspedido", "@entrega", "@endereco", "@total" };
+                object[] valores = { pedi.emissao, pedi.cliente, pedi.idproduto, pedi.quantidade,pedi.entrega, pedi.endereco, pedi.total };
                 if (conn.cadastrar(pedi.idpedido, campos, valores, sql) >= 1)
                 {
                     resultado = true;

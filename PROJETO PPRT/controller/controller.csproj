@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexao.cs" />
-    <Compile Include="itemcontroller.cs" />
     <Compile Include="pedidocontroller.cs" />
     <Compile Include="produtocontroller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

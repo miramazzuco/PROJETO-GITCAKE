@@ -72,10 +72,27 @@ namespace gitcake
             }
 
         }
+
+
         public int atualizar(string[] campos, object[] valores, string sql)
         {
             int resgistro = 0;
             return resgistro;
+        }
+
+        public int verificaperfil(int codigo)
+        {
+            int registro ;
+            string sql = "select  perfil from usuario where idusuario = @id";
+            MySqlConnection conn = getConexao();
+           conn.Open() ;
+            MySqlCommand commnad = new MySqlCommand(sql, conn); 
+            commnad.CommandType = CommandType.Text;
+            commnad.CommandText = sql;
+            commnad.Parameters.AddWithValue("@id", codigo);
+            registro = Convert.ToInt32(commnad.ExecuteScalar());
+
+            return registro;
         }
 
         public DataTable ObterDados(string sql)
@@ -133,8 +150,8 @@ namespace gitcake
                     //verefico se achou algum registro
                     if (dt.Rows.Count > 0)
                     {
-                        string email = "miramazzuco@outlook.com";
-                        string senha = "Mi#2006*";
+                        string email = "Gitcake@outlook.com";
+                        string senha = "PPRT123@";
                         //chamar o acesso ao email
                         SmtpClient cliente = new SmtpClient();
                         //chamo o nome do servidor
@@ -174,7 +191,7 @@ namespace gitcake
                         usuariomodelo.idusuario = Convert.ToInt32(dt.Rows[0][0].ToString());
 
 
-                        mail.Body = "Ola " + dt.Rows[0][1].ToString() + "sua senha é: " + senhanova;
+                        mail.Body = "Olá , " + dt.Rows[0][1].ToString() + " sua senha é: " + senhanova;
                         mail.IsBodyHtml = true;//cria um arquivo html
 
                        /*confirmar = uscontroller.editar(usuariomodelo);
@@ -186,7 +203,7 @@ namespace gitcake
                                 //enviar email
                                 cliente.SendAsync(email, emailusuario, mail.Subject, mail.Body, 1);
 
-                                msg = "e-mail enviado com sucesso " + usuariomodelo.senha;
+                                msg = "e-mail enviado com sucesso " ;
                             }
                             else
                             {
@@ -217,4 +234,5 @@ namespace gitcake
 
         }
     }
+
 }

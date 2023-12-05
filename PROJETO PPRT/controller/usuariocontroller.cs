@@ -19,7 +19,7 @@ namespace controller
     {
         // criando medoto de cadastrar usuario
         conexao con = new conexao();
-        public bool cadastrar(usuariomodelo usuario) // passo o objetodo cadastro como parametro
+        public bool cadastrar( usuariomodelo usuario) // passo o objetodo cadastro como parametro
         {// declaro a variavel da resposta da query
             bool resultado = false;
             string sql = "insert into usuario(nome,senha,perfil,email)values('" + usuario.nome + "','" + usuario.senha + "','" + usuario.perfil + "','" + usuario.email + "')";
@@ -139,7 +139,11 @@ namespace controller
             }
 
         }
-       
+
+        public bool cadastrar(int v1, string[] strings, object[] objects, string v2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
